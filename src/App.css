@@ -169,8 +169,8 @@
 .lightbox .planet{height:300px;width:300px}
 .lightbox .mock-app,.lightbox .code-window{max-width:650px}
 .lightbox .pixel-title{font-size:70px}
-.lang-ico{font-size:15px;color:#777c86;margin-right: -25px}
-.navbar{display: flex; justify-content: flex-end}
+.lang-ico{font-size:15px;color:#777c86;margin-right: -15px; display:flex}
+.navbar{display: flex;  align-items: right; justify-content: right;}
 .pattern-waves {position: absolute;width: 100%;height: 100%; }
 .waves-wrapper {width: 80%; height: 100%; margin-left: 200px; position: absolute; top: 0; z-index: -100; }
 #wrapper{ position: absolute; width: 100%; height: 100%;}

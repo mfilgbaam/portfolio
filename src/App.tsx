@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import type { CSSProperties } from 'react'
 import './App.css'
 import './i18n'
 import { useTranslation } from 'react-i18next'
@@ -27,16 +26,19 @@ function Art({ kind, title }: { kind: string; title: string }) {
 }
 
 function App() {
+
+    const handlechangeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  }
+
   const [route, setRoute] = useState(window.location.hash)
   const [category, setCategory] = useState<Category>('Todos')
-  const [language, setLanguage] = useState<Language>(navigator.language === 'EN' || navigator.language === 'ES' ? navigator.language : 'EN')
+  const [language, setLanguage] = useState<Language>(navigator.language === "en" ? 'EN' : navigator.language === "es" ? 'ES' : 'EN')
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [lightbox, setLightbox] = useState(false)
   const { t, i18n} = useTranslation()
 
-  const handlechangeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  }
+
 
 
   useEffect(() => {
@@ -67,8 +69,8 @@ function App() {
       <nav aria-label="Navegación principal" className="navbar">
         <p className="lang-ico">文</p>
         <div className="segmented-lang" role="group" aria-label="Language">
-            <div className="segment-indicator-lang" style={{ transform: `translateX(${(["EN", "ES"] as Language[]).indexOf(language) * 100}%)` }} />
-            {(["EN", "ES"] as Language[]).map(l => <button key={l} aria-pressed={language === l} onClick={() => {setLanguage(l);handlechangeLanguage(l === 'EN' ? "en": l === 'ES' ? "es": "en")}}> {l}</button>)}
+            <div className="segment-indicator-lang" style={{ transform: `translateX(${(['EN', 'ES'] as Language[]).indexOf(language) * 100}%)` }} />
+            {(['EN', 'ES'] as Language[]).map(l => <button key={l} aria-pressed={language === l} onClick={() => {setLanguage(l);handlechangeLanguage(l === 'EN' ? "en" : l === 'ES' ? "es": "en")}}> {l}</button>)}
           </div>
         <button onClick={() => goSection('proyectos')}>{t("proyectos")}</button>
         <button onClick={() => goSection('sobre-mi')}>{t("about")}</button>
@@ -152,8 +154,8 @@ function App() {
             <button className="orbit-button" onClick={() => setSpin(!spin)} aria-pressed={spin}>{spin ? 'Ⅱ Pausar' : '↻ Dale una vuelta'}</button>
           </div>*/}
           <div className="waves-wrapper">
-          <PatternWaves preset="lines" color="#ff6a00" backgroundColor="#120f17" fade="edges" interactive cursorSize={25} cursorStrength={0.2} pattern="plus" wave="ripple" spacing={5} markSize={1}
-            depth={0.5} light={0} shine={0.} contrast={2.5} speed={0.3} scale={1} direction={31} opacity={1} fadeSize={1} characters=".:-=+*#%@" intro paused={false}/>
+          <PatternWaves preset="lines" color="#ff6a00" backgroundColor="#120f17" fade="edges" interactive cursorSize={125} cursorStrength={0.1} pattern="plus" wave="ripple" spacing={5} markSize={1}
+            depth={0.5} light={0} shine={0.1} contrast={2.5} speed={0.3} scale={1} direction={31} opacity={1} fadeSize={1} characters=".:-=+*#%@" intro paused={false}/>
           </div>
         </div>
       </section>
