@@ -3,6 +3,7 @@ import type { CSSProperties } from 'react'
 import './App.css'
 import './i18n'
 import { useTranslation } from 'react-i18next'
+import PatternWaves from './PatternWaves'
 
 type Category = 'Todos' | 'Videojuegos' | 'Programación'
 type Language = 'EN' | 'ES'
@@ -30,8 +31,6 @@ function App() {
   const [category, setCategory] = useState<Category>('Todos')
   const [language, setLanguage] = useState<Language>(navigator.language === 'EN' || navigator.language === 'ES' ? navigator.language : 'EN')
   const [selectedTags, setSelectedTags] = useState<string[]>([])
-  const [spin, setSpin] = useState(false)
-  const [pointer, setPointer] = useState({ x: 0, y: 0 })
   const [lightbox, setLightbox] = useState(false)
   const { t, i18n} = useTranslation()
 
@@ -69,11 +68,11 @@ function App() {
         <p className="lang-ico">文</p>
         <div className="segmented-lang" role="group" aria-label="Language">
             <div className="segment-indicator-lang" style={{ transform: `translateX(${(["EN", "ES"] as Language[]).indexOf(language) * 100}%)` }} />
-            {(["EN", "ES"] as Language[]).map(l => <button key={l} aria-pressed={language === l} onClick={() => {handlechangeLanguage(l === 'EN' ? "en": l === 'ES' ? "es": "en")}}> {l}</button>)}
+            {(["EN", "ES"] as Language[]).map(l => <button key={l} aria-pressed={language === l} onClick={() => {setLanguage(l);handlechangeLanguage(l === 'EN' ? "en": l === 'ES' ? "es": "en")}}> {l}</button>)}
           </div>
         <button onClick={() => goSection('proyectos')}>{t("proyectos")}</button>
-        <button onClick={() => goSection('sobre-mi')}>Sobre mí</button>
-        <button className="contact-nav" onClick={() => goSection('contacto')}>Hablemos <span><Arrow /></span></button>
+        <button onClick={() => goSection('sobre-mi')}>{t("about")}</button>
+        <button className="contact-nav" onClick={() => goSection('contacto')}>{t("contact")} <span><Arrow /></span></button>
         </nav>
     </header>
     {unknown ? <main className="detail"> {/* Pagina de proyecto no encontrado */}
@@ -130,26 +129,32 @@ function App() {
         <span>{projects[(projects.indexOf(project) + 1) % projects.length].title} ↗</span>
       </a>
     </main> : <main> {/* Pagina principal */}
-      <section className="hero" onPointerMove={e => { const r = e.currentTarget.getBoundingClientRect(); setPointer({ x: (e.clientX - r.left - r.width / 2) / 35, y: (e.clientY - r.top - r.height / 2) / 35 }) }} onPointerLeave={() => setPointer({ x: 0, y: 0 })}> {/* Encabezado pagina principal */}
-        <div className="hero-copy">
-          <p className="eyebrow"><span className="status-dot" /> CÓDIGO, CREATIVIDAD Y UN POCO DE CAFÉ</p>
-          <h1>Ideas que se<br />juegan<span>.</span><br />Código que<br /><em>conecta.</em></h1>
-          <p className="intro">Desarrollo videojuegos y experiencias digitales.<br />Transformo ideas en mundos que explorar y<br className="desktop-break" /> herramientas que hacen la vida más sencilla.</p>
-          <button className="primary" onClick={() => goSection('proyectos')}>Explorar proyectos <span><Arrow /></span></button>
-          <span className="hero-caption">DE LA PRIMERA IDEA AL ÚLTIMO PIXEL.</span>
-        </div>
-        <div className="hero-visual" style={{ '--px': `${pointer.x}deg`, '--py': `${-pointer.y}deg` } as CSSProperties}><div className="visual-grid" />
-          <span className="visual-label">PLAY. BUILD. REPEAT.</span>
-          <div className={`sculpture ${spin ? 'spinning' : ''}`}>
-            <div className="sculpture-ring ring-a" />
-            <div className="sculpture-ring ring-b" />
-            <div className="sculpture-ring ring-c" />
-            <div className="sculpture-core" />
+      <section className="hero"> {/* Encabezado pagina principal */}
+        <div id="wrapper">
+          <div className="hero-copy">
+            <p className="eyebrow"><span className="status-dot" /> CÓDIGO, CREATIVIDAD Y UN POCO DE CAFÉ</p>
+            <h1>Ideas que se<br />juegan<span>.</span><br />Código que<br /><em>conecta.</em></h1>
+            <p className="intro">Desarrollo videojuegos y experiencias digitales.<br />Transformo ideas en mundos que explorar y<br className="desktop-break" /> herramientas que hacen la vida más sencilla.</p>
+            <button className="primary" onClick={() => goSection('proyectos')}>Explorar proyectos <span><Arrow /></span></button>
+            <span className="hero-caption">DE LA PRIMERA IDEA AL ÚLTIMO PIXEL.</span>
           </div>
-          <span className="floating-chip chip-code">&lt;/&gt;</span>
-          <span className="floating-chip chip-play">✦</span>
-          <span className="visual-index">FIG. 01 — IDEAS EN ÓRBITA</span>
-          <button className="orbit-button" onClick={() => setSpin(!spin)} aria-pressed={spin}>{spin ? 'Ⅱ Pausar' : '↻ Dale una vuelta'}</button>
+          {/*<div className="hero-visual" style={{ '--px': `${pointer.x}deg`, '--py': `${-pointer.y}deg` } as CSSProperties}><div className="visual-grid" />
+            <span className="visual-label">PLAY. BUILD. REPEAT.</span>
+            <div className={`sculpture ${spin ? 'spinning' : ''}`}>
+              <div className="sculpture-ring ring-a" />
+              <div className="sculpture-ring ring-b" />
+              <div className="sculpture-ring ring-c" />
+              <div className="sculpture-core" />
+            </div>
+            <span className="floating-chip chip-code">&lt;/&gt;</span>
+            <span className="floating-chip chip-play">✦</span>
+            <span className="visual-index">FIG. 01 — IDEAS EN ÓRBITA</span>
+            <button className="orbit-button" onClick={() => setSpin(!spin)} aria-pressed={spin}>{spin ? 'Ⅱ Pausar' : '↻ Dale una vuelta'}</button>
+          </div>*/}
+          <div className="waves-wrapper">
+          <PatternWaves preset="lines" color="#ff6a00" backgroundColor="#120f17" fade="edges" interactive cursorSize={25} cursorStrength={0.2} pattern="plus" wave="ripple" spacing={5} markSize={1}
+            depth={0.5} light={0} shine={0.} contrast={2.5} speed={0.3} scale={1} direction={31} opacity={1} fadeSize={1} characters=".:-=+*#%@" intro paused={false}/>
+          </div>
         </div>
       </section>
       <div className="hero-bottom">
