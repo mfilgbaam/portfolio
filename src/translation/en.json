@@ -1,6 +1,12 @@
 {
     "proyectos" : "Projects",
     "about" : "About me",
-    "contact" : "Contact"
+    "contact" : "Contact",
+    "eyebrow" : "I BUILD WHAT I WANT, BECAUSE I CAN",
+    "intro" : "Full Stack development and interactive projects from idea to conception. A combination of creativity, optimization and constant learning to create unique and functional digital experiences.",
+    "explore" : "My projects",
+    "herocaption" : "IF YOU READ THIS YOU HAVE TO HIRE ME",
+    "hero-bottom" : "DESIGN · CODING",
+    "hero-next" : "SHOW ME MORE"
 
 }

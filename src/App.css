@@ -2,21 +2,21 @@
 .header{height:108px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
 .brand{font-family:'Space Grotesk',sans-serif;font-size:42px;font-weight:700;letter-spacing:-4px;display:flex;align-items:center;padding:0}
 .brand>span:first-child{color:var(--orange)}
-.brand-name{font:11px 'DM Sans',sans-serif;letter-spacing:1px;margin-left:24px;color:#aaa}
+.brand-name{font:14px 'DM Sans',sans-serif;letter-spacing:1px;margin-left:24px;color:#aaa}
 .header nav{display:flex;gap:34px;align-items:center;font-size:13px}
 .header nav button{padding:10px 0}
 .contact-nav{border:1px solid #444!important;padding:11px 18px!important;border-radius:5px}
 .contact-nav span{color:var(--orange);margin-left:20px}
 .hero{display:grid;grid-template-columns:1fr 1fr;min-height:620px;align-items:center;position:relative}
-.eyebrow{font-size:10px;font-weight:600;letter-spacing:1.7px;color:var(--muted);display:flex;align-items:center;gap:9px}
+.eyebrow{font-size:10px;font-weight:600;letter-spacing:1.7px;color:var(--muted);display:flex;align-items:center;gap:9px; margin-top: 10px}
 .status-dot{height:6px;width:6px;border-radius:100%;background:var(--orange);box-shadow:0 0 10px #ff794855}
 .hero h1{font-size:70px;line-height:1.04;font-weight:500;letter-spacing:-4px;margin:27px 0 24px}
 .hero h1>span,h2>span,.detail h1>span{color:var(--orange)}em{font-style:normal;color:var(--orange)}
-.intro{font-size:14px;line-height:1.8;color:#a5a5a9}
+.intro{font-size:14px;line-height:1.8;width: 350px ;color:#a5a5a9; text-align: justify;}
 .primary{background:var(--orange);color:#161311;padding:15px 20px;border-radius:5px;font-size:12px;font-weight:700;margin-top:27px;display:inline-flex;gap:45px;align-items:center;transition:background .2s}
 .primary:hover{background:#ff9b73}
 .primary span{font-size:21px}
-.hero-caption{display:block;font-size:8px;letter-spacing:1.4px;color:#6e7075;margin-top:18px}
+.hero-caption{display:block;font-size:8px;letter-spacing:1.4px;color:#aaacb3;margin-top:18px}
 .hero-visual{height:480px;position:relative;perspective:900px;transform:rotateX(var(--py)) rotateY(var(--px));transition:transform .3s}
 .visual-grid{position:absolute;inset:40px 0 0;background-image:linear-gradient(#2b2d3430 1px,transparent 1px),linear-gradient(90deg,#2b2d3430 1px,transparent 1px);background-size:43px 43px;mask-image:radial-gradient(ellipse,#000,transparent 70%)}
 .visual-label{position:absolute;top:54px;right:28px;font-size:8px;letter-spacing:2px;color:#70747d}
@@ -31,7 +31,7 @@
 .chip-play{right:15px;bottom:99px;width:55px;height:55px;color:var(--orange);font-size:30px;transform:rotate(12deg)}
 .visual-index{position:absolute;bottom:20px;left:25px;font:8px monospace;color:#777b86;letter-spacing:1px}
 .orbit-button{position:absolute;bottom:13px;right:24px;border:1px solid #33363d;border-radius:20px;padding:8px 13px;font-size:10px;color:#a3a9b7}
-.hero-bottom{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:20px 0 25px;font-size:8px;letter-spacing:1.8px;color:#777a81}
+.hero-bottom{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:0px 0 25px;font-size:8px;letter-spacing:1.8px;color:#777a81}
 .hero-bottom button{font-size:8px;letter-spacing:1.5px}
 .hero-bottom button span{margin-left:25px;color:var(--orange);font-size:18px}.projects-section{padding-top:76px;scroll-margin-top:20px}
 .section-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px}.section-heading h2{font-size:36px;letter-spacing:-1.5px;margin-top:14px;font-weight:500}
@@ -40,7 +40,7 @@
 .segmented-lang{position:relative;display:flex;padding:4px;border:1px solid #303237;border-radius:7px;background:#191b1e;width:100px}
 .segmented button{width:33.33%;z-index:1;padding:11px 3px;font-size:11px;color:#92959d;transition:color .25s}
 .segmented button[aria-pressed=true]{color:#161311;font-weight:700}
-.segmented-lang{position:relative;display:flex;padding:4px;border:1px solid #303237;border-radius:7px;background:#191b1e;width:100px}
+.segmented-lang{position:relative;display:flex;padding:4px;border:1px solid #303237;border-radius:7px;background:#191b1e;width: 100px;}
 .segmented-lang button{width:50%;z-index:1;padding:11px 3px;font-size:11px;color:#92959d;transition:color .25s}
 .segmented-lang button[aria-pressed=true]{color:#161311;font-weight:700}
 .segment-indicator{position:absolute;width:calc((100% - 8px)/3);left:4px;top:4px;bottom:4px;background:var(--orange);border-radius:4px;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
@@ -170,9 +170,9 @@
 .lightbox .mock-app,.lightbox .code-window{max-width:650px}
 .lightbox .pixel-title{font-size:70px}
 .lang-ico{font-size:15px;color:#777c86;margin-right: -15px; display:flex}
-.navbar{display: flex;  align-items: right; justify-content: right;}
+.navbar{display: flex; justify-content: flex-end; align-items: center; margin-left: 20px}
 .pattern-waves {position: absolute;width: 100%;height: 100%; }
-.waves-wrapper {width: 80%; height: 100%; margin-left: 200px; position: absolute; top: 0; z-index: -100; }
+.waves-wrapper {width: 80%; height: 100%; margin-left: 20%; position: absolute; top: 0; z-index: -100; }
 #wrapper{ position: absolute; width: 100%; height: 100%;}
 
 @media(min-width:1400px){.hero{min-height:690px}.hero h1{font-size:80px}.hero-visual{height:520px}.sculpture{width:330px;height:330px}.sculpture-core{inset:120px}}

@@ -65,7 +65,7 @@ function App() {
   
   return <>
     <header className="header">
-      <button className="brand" onClick={home} aria-label="Ir a inicio">m<span>.</span><span className="brand-name">portfolio / dev</span></button>
+      <button className="brand" onClick={home} aria-label="Ir a inicio">m<span>.</span><span className="brand-name">portfolio</span></button>
       <nav aria-label="Navegación principal" className="navbar">
         <p className="lang-ico">文</p>
         <div className="segmented-lang" role="group" aria-label="Language">
@@ -134,34 +134,21 @@ function App() {
       <section className="hero"> {/* Encabezado pagina principal */}
         <div id="wrapper">
           <div className="hero-copy">
-            <p className="eyebrow"><span className="status-dot" /> CÓDIGO, CREATIVIDAD Y UN POCO DE CAFÉ</p>
-            <h1>Ideas que se<br />juegan<span>.</span><br />Código que<br /><em>conecta.</em></h1>
-            <p className="intro">Desarrollo videojuegos y experiencias digitales.<br />Transformo ideas en mundos que explorar y<br className="desktop-break" /> herramientas que hacen la vida más sencilla.</p>
-            <button className="primary" onClick={() => goSection('proyectos')}>Explorar proyectos <span><Arrow /></span></button>
-            <span className="hero-caption">DE LA PRIMERA IDEA AL ÚLTIMO PIXEL.</span>
+            <p className="eyebrow"><span className="status-dot" /> {t('eyebrow')}</p>
+            <h1><em>MARCOS</em><br />FILGUEIRAS<br />BAAMONDE<br /></h1>
+            <p className="intro">{t('intro')}</p>
+            <button className="primary" onClick={() => goSection('proyectos')}>{t('explore')} <span><Arrow /></span></button>
+            <span className="hero-caption">{t('herocaption')}</span>
           </div>
-          {/*<div className="hero-visual" style={{ '--px': `${pointer.x}deg`, '--py': `${-pointer.y}deg` } as CSSProperties}><div className="visual-grid" />
-            <span className="visual-label">PLAY. BUILD. REPEAT.</span>
-            <div className={`sculpture ${spin ? 'spinning' : ''}`}>
-              <div className="sculpture-ring ring-a" />
-              <div className="sculpture-ring ring-b" />
-              <div className="sculpture-ring ring-c" />
-              <div className="sculpture-core" />
-            </div>
-            <span className="floating-chip chip-code">&lt;/&gt;</span>
-            <span className="floating-chip chip-play">✦</span>
-            <span className="visual-index">FIG. 01 — IDEAS EN ÓRBITA</span>
-            <button className="orbit-button" onClick={() => setSpin(!spin)} aria-pressed={spin}>{spin ? 'Ⅱ Pausar' : '↻ Dale una vuelta'}</button>
-          </div>*/}
           <div className="waves-wrapper">
-          <PatternWaves preset="lines" color="#ff6a00" backgroundColor="#120f17" fade="edges" interactive cursorSize={125} cursorStrength={0.1} pattern="plus" wave="ripple" spacing={5} markSize={1}
+          <PatternWaves preset="lines" color="#ff6a00" backgroundColor="#101113" fade="edges" interactive cursorSize={125} cursorStrength={0.1} pattern="plus" wave="ripple" spacing={5} markSize={1}
             depth={0.5} light={0} shine={0.1} contrast={2.5} speed={0.3} scale={1} direction={31} opacity={1} fadeSize={1} characters=".:-=+*#%@" intro paused={false}/>
           </div>
         </div>
       </section>
       <div className="hero-bottom">
-        <span>DESARROLLADOR · CREADOR · CURIOSO</span>
-        <button onClick={() => goSection('proyectos')}>SIGUE EXPLORANDO <span>↓</span></button>
+        <span>{t('hero-bottom')}</span>
+        <button onClick={() => goSection('proyectos')}>{t('hero-next')} <span>↓</span></button>
       </div>
       <section id="proyectos" className="projects-section"> {/* Lista de proyectos */}
         <div className="section-heading">
