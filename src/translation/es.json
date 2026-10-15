@@ -7,5 +7,19 @@
     "explore" : "Mis proyectos",
     "herocaption" : "SI LEES ESTO ME TIENES QUE CONTRATAR",
     "hero-bottom" : "DISEÑO · PROGRAMACIÓN",
-    "hero-next" : "ENSEÑAME MÁS"
+    "hero-next" : "ENSEÑAME MÁS",
+    "notfound" : "404 / PROYECTO NO ENCONTRADO",
+    "notfound-desc" : "Esta idea aún no existe",
+    "notfound-back" : "Volver al portfolio ↗",
+    "project-section": "01 / MIS PROYECTOS",
+    "project-sectitle": "Buscas algo en concreto",
+    "project-gendesc": "Despliegue completo de lo que he construido, desde código hasta proyectos interactivos.",
+    "project-gamedesc": "Conjunto de videojuegos que he desarrollado o en los que he participado, ya sea como programador, diseñador o artista.",
+    "project-codedesc": "Mis proyectos más orientados al desarrollo de software tradicional. Tanto de frontend como de backend.",
+    "project-count": "Proyectos",
+    "project-filter-all": "Todos",
+    "project-filter-games": "Videojuegos",
+    "project-filter-code": "Software",
+    "project-filter-tags": "FILTRAR POR",
+    "about-title": "02 / ¿QUIÉN ES ESTE TIPO?"
 }

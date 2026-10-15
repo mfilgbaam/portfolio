@@ -7,6 +7,20 @@
     "explore" : "My projects",
     "herocaption" : "IF YOU READ THIS YOU HAVE TO HIRE ME",
     "hero-bottom" : "DESIGN · CODING",
-    "hero-next" : "SHOW ME MORE"
+    "hero-next" : "SHOW ME MORE",
+    "notfound" : "404 / PROJECT NOT FOUND",
+    "notfound-desc" : "This idea does not exist yet",
+    "notfound-back" : "Back to portfolio ↗",
+    "project-section": "01 / MY PROJECTS",
+    "project-sectitle": "Looking for something",
+    "project-gendesc": "A full display of what I have built, from code to interactive projects.",
+    "project-gamedesc": "A collection of video games I have developed or participated in, either as a programmer, designer or artist.",
+    "project-codedesc": "My projects more oriented to traditional software development. Both frontend and backend.",
+    "project-count": "Projects",
+    "project-filter-all": "All",
+    "project-filter-games": "Videogames",
+    "project-filter-code": "Software",
+    "project-filter-tags": "FILTER BY",
+    "about-title": "02 / WHO IS THIS GUY?"
 
 }

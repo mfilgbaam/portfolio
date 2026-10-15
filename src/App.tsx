@@ -6,15 +6,17 @@ import PatternWaves from './PatternWaves'
 
 type Category = 'Todos' | 'Videojuegos' | 'Programación'
 type Language = 'EN' | 'ES'
-type Project = { id: string; title: string; category: Exclude<Category, 'Todos'>; description: string; tags: string[]; year: string; art: string; detail: string; images?: { src: string; alt: string }[]; video?: string }
+const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', 'Node.js'] as const
+type Tag = typeof tags[number]
+type Project = { id: string; title: string; category: Exclude<Category, 'Todos'>; description: string; tags: Tag[]; year: string; art: string; detail: string; images?: { src: string; alt: string }[]; video?: string }
 const projects: Project[] = [
-  { id: 'orbital', title: 'Orbital', category: 'Videojuegos', description: 'Una aventura espacial donde cada órbita cuenta.', tags: ['Unity', 'C#', '3D'], year: '2025', art: 'space', detail: 'Un concepto de exploración espacial centrado en el movimiento y el descubrimiento. El jugador navega entre pequeños mundos, encuentra nuevas rutas y aprende a utilizar la gravedad a su favor.' },
+  { id: 'orbital', title: 'Orbital', category: 'Videojuegos', description: 'Una aventura espacial donde cada órbita cuenta.', tags: [], year: '2025', art: 'space', detail: 'Un concepto de exploración espacial centrado en el movimiento y el descubrimiento. El jugador navega entre pequeños mundos, encuentra nuevas rutas y aprende a utilizar la gravedad a su favor.' },
   { id: 'flow', title: 'Flow', category: 'Programación', description: 'Menos ruido. Más foco. Tu trabajo, en un solo lugar.', tags: ['React', 'TypeScript', 'UI/UX'], year: '2025', art: 'dashboard', detail: 'Un concepto de aplicación para organizar proyectos y tareas con una interfaz clara. La propuesta reúne tableros, actividad y prioridades para hacer más fácil el trabajo diario.' },
-  { id: 'ember', title: 'Ember', category: 'Videojuegos', description: 'Un pequeño héroe en un mundo que se apaga.', tags: ['Godot', '2D', 'Pixel art'], year: '2024', art: 'pixel', detail: 'Un concepto de plataformas en pixel art sobre una pequeña criatura que lleva luz a un mundo olvidado. La exploración, los saltos y una atmósfera cálida guían la experiencia.' },
-  { id: 'nexus', title: 'Nexus', category: 'Programación', description: 'Una API pensada para conectar ideas y herramientas.', tags: ['TypeScript', 'Node.js', 'API'], year: '2024', art: 'code', detail: 'Un concepto de API modular para conectar aplicaciones. Su diseño prioriza contratos claros, respuestas consistentes y una documentación fácil de seguir.' },
+  { id: 'ember', title: 'Ember', category: 'Videojuegos', description: 'Un pequeño héroe en un mundo que se apaga.', tags: [], year: '2024', art: 'pixel', detail: 'Un concepto de plataformas en pixel art sobre una pequeña criatura que lleva luz a un mundo olvidado. La exploración, los saltos y una atmósfera cálida guían la experiencia.' },
+  { id: 'nexus', title: 'Nexus', category: 'Programación', description: 'Una API pensada para conectar ideas y herramientas.', tags: [], year: '2024', art: 'code', detail: 'Un concepto de API modular para conectar aplicaciones. Su diseño prioriza contratos claros, respuestas consistentes y una documentación fácil de seguir.' },
 ]
 function Arrow() { return <svg className="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg> }
-const tags = [...new Set(projects.flatMap(p => p.tags))]
+
 
 function Art({ kind, title }: { kind: string; title: string }) {
   return <div className={`art art-${kind}`} role="img" aria-label={`Ilustración de ${title}`}>
@@ -34,7 +36,7 @@ function App() {
   const [route, setRoute] = useState(window.location.hash)
   const [category, setCategory] = useState<Category>('Todos')
   const [language, setLanguage] = useState<Language>(navigator.language === "en" ? 'EN' : navigator.language === "es" ? 'ES' : 'EN')
-  const [selectedTags, setSelectedTags] = useState<string[]>([])
+  const [selectedTags, setSelectedTags] = useState<Tag[]>([])
   const [lightbox, setLightbox] = useState(false)
   const { t, i18n} = useTranslation()
 
@@ -77,11 +79,11 @@ function App() {
         <button className="contact-nav" onClick={() => goSection('contacto')}>{t("contact")} <span><Arrow /></span></button>
         </nav>
     </header>
-    {unknown ? <main className="detail"> {/* Pagina de proyecto no encontrado */}
-      <p className="eyebrow">404 / PROYECTO NO ENCONTRADO</p>
-      <h1>Esta idea aún no existe.</h1>
-      <button className="primary" onClick={home}>Volver al portfolio ↗</button>
-    </main> : project ? <main className="detail"> {/* Pagina de proyecto existente */}
+    {unknown ? <main className="detail">                                                              {/* Pagina de proyecto no encontrado */}
+      <p className="eyebrow">{t("notfound")}</p>
+      <h1>{t("notfound-desc")}</h1>
+      <button className="primary" onClick={home}>{t("notfound-back")}</button>
+    </main> : project ? <main className="detail">                                                     {/* Pagina de proyecto existente */}
       <button className="back" onClick={() => goSection('proyectos')}>← Volver a proyectos</button>
       <div className="detail-heading">
         <div>
@@ -130,8 +132,8 @@ function App() {
         <small>SIGUIENTE PROYECTO</small>
         <span>{projects[(projects.indexOf(project) + 1) % projects.length].title} ↗</span>
       </a>
-    </main> : <main> {/* Pagina principal */}
-      <section className="hero"> {/* Encabezado pagina principal */}
+    </main> : <main>                                                                                      {/* Pagina principal */}
+      <section className="hero">                                                                          {/* Encabezado pagina principal */}
         <div id="wrapper">
           <div className="hero-copy">
             <p className="eyebrow"><span className="status-dot" /> {t('eyebrow')}</p>
@@ -150,30 +152,33 @@ function App() {
         <span>{t('hero-bottom')}</span>
         <button onClick={() => goSection('proyectos')}>{t('hero-next')} <span>↓</span></button>
       </div>
-      <section id="proyectos" className="projects-section"> {/* Lista de proyectos */}
+      <section id="proyectos" className="projects-section">                                                         {/* Lista de proyectos */}
         <div className="section-heading">
           <div>
-            <p className="eyebrow">01 / TRABAJO SELECCIONADO</p>
-            <h2>De la idea a la realidad<span>.</span></h2>
+            <p className="eyebrow">{t('project-section')}</p>
+            <h2><span>{(language === 'ES' ? '¿' : '')}</span>{t('project-sectitle')}<span>?</span></h2>
           </div>
-          <p>Una selección de mundos, herramientas<br />y cosas que me gusta construir.</p>
+          <p className="projects-desc">{category === 'Todos' ? t('project-gendesc') : category === 'Videojuegos' ? t('project-gamedesc') : t('project-codedesc')}</p>
         </div>
         <div className="filter-bar">
           <div className="segmented" role="group" aria-label="Tipo de proyecto">
             <div className="segment-indicator" style={{ transform: `translateX(${(['Todos', 'Videojuegos', 'Programación'] as Category[]).indexOf(category) * 100}%)` }} />
-            {(['Todos', 'Videojuegos', 'Programación'] as Category[]).map(c => <button key={c} aria-pressed={category === c} onClick={() => setCategory(c)}>{c === 'Todos' ? '▦' : c === 'Videojuegos' ? '⊕' : '⌘'} {c}</button>)}
+            {(['Todos', 'Videojuegos', 'Programación'] as Category[]).map(c => <button key={c} aria-pressed={category === c} onClick={() => setCategory(c)}>{c === 'Todos' ? t('project-filter-all') : c === 'Videojuegos' ? t('project-filter-games') : t('project-filter-code')}</button>)}
           </div>
-          <span className="project-count">{String(filtered.length).padStart(2, '0')} proyectos</span>
+          <span className="project-count">{String(filtered.length).padStart(2, '0')} {t('project-count')}</span>
         </div>
         <div className="filter-tags">
-          <span>FILTRAR POR</span>
+          <span>{t('project-filter-tags')}</span>
           {tags.map(t => <button key={t} aria-pressed={selectedTags.includes(t)} className={selectedTags.includes(t) ? 'active' : ''} onClick={() => setSelectedTags(prev => prev.includes(t) ? prev.filter(x => x !== t) : [...prev, t])}>{t}</button>)}{selectedTags.length > 0 && <button className="clear" onClick={() => setSelectedTags([])}>Limpiar ×</button>}
         </div>
         <div className="project-grid">
         {filtered.map((p, i) => <a className="project-card" key={p.id} href={`#/proyecto/${p.id}`}>
           <div className="card-image">
             <Art kind={p.art} title={p.title} />
-            <span className="card-category">{p.category === 'Videojuegos' ? '⊕' : '⌘'} {p.category}</span>
+            <span className="card-category">{p.category}</span>
+            <span className="featured-tag">
+              <span className="star" aria-hidden="true" />
+              </span>
             <span className="card-open"><Arrow /></span>
           </div>
           <div className="card-top">
@@ -190,7 +195,7 @@ function App() {
         <p className="sample-label">SELECCIÓN DE EJEMPLO · UN ESPACIO PARA TUS PRÓXIMAS IDEAS</p>
       </section> 
       <section id="sobre-mi" className="about"> {/* Sobre mi */}
-        <p className="eyebrow">02 / DETRÁS DEL CÓDIGO</p>
+        <p className="eyebrow">{t('about-title')}</p>
         <div>
           <h2>La curiosidad es<br />mi punto de partida<span>.</span></h2>
           <div>
