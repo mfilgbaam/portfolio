@@ -3,20 +3,22 @@ import './App.css'
 import './i18n'
 import { useTranslation } from 'react-i18next'
 import PatternWaves from './PatternWaves'
+import pfimagen from './assets/profile.webp'
 
 type Category = 'Todos' | 'Videojuegos' | 'Programación'
 type Language = 'EN' | 'ES'
 const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', 'Node.js'] as const
 type Tag = typeof tags[number]
-type Project = { id: string; title: string; category: Exclude<Category, 'Todos'>; description: string; tags: Tag[]; year: string; art: string; detail: string; images?: { src: string; alt: string }[]; video?: string }
+type Project = { id: string; title: string; category: Category; description: string; tags: Tag[]; year: string; art: string; detail: string; images?: { src: string; alt: string }[]; video?: string; featured?: boolean }
 const projects: Project[] = [
-  { id: 'orbital', title: 'Orbital', category: 'Videojuegos', description: 'Una aventura espacial donde cada órbita cuenta.', tags: [], year: '2025', art: 'space', detail: 'Un concepto de exploración espacial centrado en el movimiento y el descubrimiento. El jugador navega entre pequeños mundos, encuentra nuevas rutas y aprende a utilizar la gravedad a su favor.' },
+  { id: 'orbital', title: 'Orbital', category: 'Videojuegos', description: 'Una aventura espacial donde cada órbita cuenta.', tags: [], year: '2025', art: 'space', detail: 'Un concepto de exploración espacial centrado en el movimiento y el descubrimiento. El jugador navega entre pequeños mundos, encuentra nuevas rutas y aprende a utilizar la gravedad a su favor.', featured: true },
   { id: 'flow', title: 'Flow', category: 'Programación', description: 'Menos ruido. Más foco. Tu trabajo, en un solo lugar.', tags: ['React', 'TypeScript', 'UI/UX'], year: '2025', art: 'dashboard', detail: 'Un concepto de aplicación para organizar proyectos y tareas con una interfaz clara. La propuesta reúne tableros, actividad y prioridades para hacer más fácil el trabajo diario.' },
-  { id: 'ember', title: 'Ember', category: 'Videojuegos', description: 'Un pequeño héroe en un mundo que se apaga.', tags: [], year: '2024', art: 'pixel', detail: 'Un concepto de plataformas en pixel art sobre una pequeña criatura que lleva luz a un mundo olvidado. La exploración, los saltos y una atmósfera cálida guían la experiencia.' },
-  { id: 'nexus', title: 'Nexus', category: 'Programación', description: 'Una API pensada para conectar ideas y herramientas.', tags: [], year: '2024', art: 'code', detail: 'Un concepto de API modular para conectar aplicaciones. Su diseño prioriza contratos claros, respuestas consistentes y una documentación fácil de seguir.' },
+  { id: 'ember', title: 'Ember', category: 'Todos', description: 'Un pequeño héroe en un mundo que se apaga.', tags: [], year: '2024', art: 'pixel', detail: 'Un concepto de plataformas en pixel art sobre una pequeña criatura que lleva luz a un mundo olvidado. La exploración, los saltos y una atmósfera cálida guían la experiencia.' },
+  { id: 'nexus', title: 'Nexus', category: 'Programación', description: 'Una API pensada para conectar ideas y herramientas.', tags: [], year: '2024', art: 'code', detail: 'Un concepto de API modular para conectar aplicaciones. Su diseño prioriza contratos claros, respuestas consistentes y una documentación fácil de seguir.', featured: true },
 ]
 function Arrow() { return <svg className="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg> }
 
+function ConditionalInterrogation({ l }: { l: Language }){return <span>{(l === 'ES' ? '¿' : '')}</span>}
 
 function Art({ kind, title }: { kind: string; title: string }) {
   return <div className={`art art-${kind}`} role="img" aria-label={`Ilustración de ${title}`}>
@@ -59,9 +61,13 @@ function App() {
   useEffect(() => {
     i18n.changeLanguage(navigator.language)
   }, [])
+
+  useEffect(() => { // Ordenar proyectos por destacados y año
+    projects.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || parseInt(b.year) - parseInt(a.year))
+    }, [projects])
   const project = projects.find(p => route === `#/proyecto/${p.id}`)
   const unknown = route.startsWith('#/proyecto/') && !project
-  const filtered = projects.filter(p => (category === 'Todos' || p.category === category) && selectedTags.every(t => p.tags.includes(t)))
+  const filtered = projects.filter(p => (category === 'Todos' || p.category === category || p.category === 'Todos') && selectedTags.every(t => p.tags.includes(t)))
   const home = () => { window.location.hash = ''; window.scrollTo({ top: 0, behavior: 'smooth' }) }
   const goSection = (id: string) => { if (project || unknown) { window.location.hash = ''; setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 0) } else document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }) }
   
@@ -156,7 +162,7 @@ function App() {
         <div className="section-heading">
           <div>
             <p className="eyebrow">{t('project-section')}</p>
-            <h2><span>{(language === 'ES' ? '¿' : '')}</span>{t('project-sectitle')}<span>?</span></h2>
+            <h2><ConditionalInterrogation l={language}/>{t('project-sectitle')}<span>?</span></h2>
           </div>
           <p className="projects-desc">{category === 'Todos' ? t('project-gendesc') : category === 'Videojuegos' ? t('project-gamedesc') : t('project-codedesc')}</p>
         </div>
@@ -171,52 +177,55 @@ function App() {
           <span>{t('project-filter-tags')}</span>
           {tags.map(t => <button key={t} aria-pressed={selectedTags.includes(t)} className={selectedTags.includes(t) ? 'active' : ''} onClick={() => setSelectedTags(prev => prev.includes(t) ? prev.filter(x => x !== t) : [...prev, t])}>{t}</button>)}{selectedTags.length > 0 && <button className="clear" onClick={() => setSelectedTags([])}>Limpiar ×</button>}
         </div>
-        <div className="project-grid">
-        {filtered.map((p, i) => <a className="project-card" key={p.id} href={`#/proyecto/${p.id}`}>
+        <div className="project-grid">{filtered.map((p) => <a className="project-card" key={p.id} href={`#/proyecto/${p.id}`}>
           <div className="card-image">
             <Art kind={p.art} title={p.title} />
-            <span className="card-category">{p.category}</span>
-            <span className="featured-tag">
-              <span className="star" aria-hidden="true" />
-              </span>
+            <span className="card-category">{p.category === 'Todos' ? t('project-filter-alltag') : p.category}</span>
+            {p.featured ?
+            (<><span className="featured-tag">
+                <span className="star" aria-hidden="true" />
+                {t('featured')}
+              </span></>) : null}
             <span className="card-open"><Arrow /></span>
           </div>
           <div className="card-top">
-            <h3>{p.title}<span> <Arrow /></span></h3>
-            <span>{p.year}</span>
+            <h3>{p.title}<span></span></h3>
+            <p className="card-year">{p.year}</p>
           </div>
           <p>{p.description}</p>
-          <div className="card-tags">{p.tags.map(t => <span key={t}>{t}</span>)}<span className="card-number">/ 0{i + 1}</span></div></a>)}</div>
+        </a>)}</div>
         {!filtered.length && <div className="empty">
-            <h3>Ningún proyecto con esta combinación.</h3>
-            <p>Prueba con menos tags para descubrir otras ideas.</p>
-            <button onClick={() => { setSelectedTags([]); setCategory('Todos') }}>Ver todos los proyectos ↗</button>
+            <h3>{t('no-combination-title')}</h3>
+            <p>{t('no-combination-desc')}</p>
+            <button onClick={() => { setSelectedTags([]); setCategory('Todos') }}>{t('no-combination-button')}</button>
           </div>}
-        <p className="sample-label">SELECCIÓN DE EJEMPLO · UN ESPACIO PARA TUS PRÓXIMAS IDEAS</p>
-      </section> 
-      <section id="sobre-mi" className="about"> {/* Sobre mi */}
-        <p className="eyebrow">{t('about-title')}</p>
+      </section>
+      <section id="sobre-mi" className="about">                                                   {/* Sobre mi */}
+        <p className="eyebrow">{t('about-section')}</p>
         <div>
-          <h2>La curiosidad es<br />mi punto de partida<span>.</span></h2>
-          <div>
-            <p>Me interesa lo que pasa cuando la tecnología y la creatividad se encuentran. Desde una mecánica de juego hasta una interfaz, busco crear experiencias que se sientan bien.</p>
-            <p>Este es mi espacio para experimentar, aprender y compartir lo que construyo.</p>
-            <div className="about-tags">
-              <span>⌘ Desarrollo</span>
-              <span>⊕ Videojuegos</span>
-              <span>✦ Creatividad</span>
+            <div>
+            <h2 className="about-header">{t('about-title1')} {t('about-title2')}<span>.</span></h2>
+            <p className="about-description">{t('about-desc1')} {t('about-desc2')} {t('about-desc3')} {t('about-desc4')}</p>
+            <strong className="about-description">{t('about-desc-me')}</strong>
             </div>
-          </div>
+            <img className="profile-image" src={pfimagen} alt="Descripción de la imagen" loading="lazy"/>
+          
         </div>
       </section>
       <section id="contacto" className="contact"> {/* Contacto */}
-        <p className="eyebrow">03 / LA PRÓXIMA IDEA</p>
-        <h2>¿Construimos algo<br /><em>interesante?</em> <span><Arrow /></span></h2>
-        <p>Las buenas historias empiezan con una conversación.</p>
+        <p className="eyebrow">{t('contact-section')}</p>
+        <h2><ConditionalInterrogation l={language}/>{t('contact-title')}<span>?</span></h2>
+        <div>
+          <div className="contact-links">
+            <a href="tel:+34665516462">{t('contact-phone')}(+34) 665 51 64 62</a>
+            <a href="mailto:m.filgueirasbaamonde@gmail.com">{t('contact-email')}m.filgueirasbaamonde@gmail.com</a>
+          </div>
+          <p className="song">Hey, I just met you<br/>and this is crazy<br/>but here's my number<br/>so call me, maybe</p>
+        </div>
         <a href="https://github.com/mfilgbaam" target="_blank" rel="noreferrer">Encuéntrame en GitHub <Arrow /></a>
       </section>
     </main>}
-    <footer> {/* Pie de página */}
+    <footer>                                                          {/* Pie de página */}
       <button className="brand" onClick={home}>m<span>.</span></button>
       <p>Hecho con intención. Y con React + TypeScript.</p>
       <span>© {new Date().getFullYear()} · Portfolio</span>
