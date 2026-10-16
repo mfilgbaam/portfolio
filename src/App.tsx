@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Component, useEffect, useState } from 'react'
 import './App.css'
 import './i18n'
 import { useTranslation } from 'react-i18next'
@@ -9,7 +9,7 @@ type Category = 'Todos' | 'Videojuegos' | 'Programación'
 type Language = 'EN' | 'ES'
 const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', 'Node.js'] as const
 type Tag = typeof tags[number]
-type Project = { id: string; title: string; category: Category; description: string; tags: Tag[]; year: string; art: string; detail: string; images?: { src: string; alt: string }[]; video?: string; featured?: boolean }
+type Project = { id: string; title: string; category: Category; description: string; tags: Tag[]; year: string; art: string; detail: string; page?: Component ;images?: { src: string; alt: string }[]; video?: string; featured?: boolean }
 const projects: Project[] = [
   { id: 'orbital', title: 'Orbital', category: 'Videojuegos', description: 'Una aventura espacial donde cada órbita cuenta.', tags: [], year: '2025', art: 'space', detail: 'Un concepto de exploración espacial centrado en el movimiento y el descubrimiento. El jugador navega entre pequeños mundos, encuentra nuevas rutas y aprende a utilizar la gravedad a su favor.', featured: true },
   { id: 'flow', title: 'Flow', category: 'Programación', description: 'Menos ruido. Más foco. Tu trabajo, en un solo lugar.', tags: ['React', 'TypeScript', 'UI/UX'], year: '2025', art: 'dashboard', detail: 'Un concepto de aplicación para organizar proyectos y tareas con una interfaz clara. La propuesta reúne tableros, actividad y prioridades para hacer más fácil el trabajo diario.' },
