@@ -31,14 +31,16 @@
     "about-title2": "y hacerlas realidad",
     "about-desc1": "Cantante famoso, futbolista profesional y dueño de una multinacional, son algunas de las cosas que no soy.",
     "about-desc2": "Lo que si que soy es un desarrollador todoterreno, sin miedo a enfrentarme a problemas nuevos y con capacidad para crear un proyecto desde cero o adaptarme a uno ya existente.",
-    "about-desc3": "Graduado en ingeniería informática, con un Máster en diseño, desarrollo y comercialización de videojuegos,",
-    "about-desc4": "desde siempre he tenido ideas de proyectos que me gustaría crear, y ahora tengo la capacidad de hacerlos realidad. Desde una mecánica de juego hasta una interfaz, busco crear experiencias que se vean y se sientan bien.",
+    "about-desc3": "Graduado en Ingeniería Informática, con un Máster en Diseño, Desarrollo y Comercialización de Videojuegos.",
+    "about-desc4": "Desde siempre he tenido ideas de proyectos que me gustaría crear, y ahora tengo la capacidad de hacerlos realidad. Desde una mecánica de juego hasta una interfaz, busco crear experiencias que se vean y se sientan bien.",
     "about-desc-me": "Y sí, el loco de la foto soy yo. En realidad si que canto pero no se me dá tan bien como programar.",
     "contact-section": "03 / CONTACTO",
     "contact-title": "Quieres trabajar conmigo",
     "contact-phone": "Teléfono: ",
     "contact-email": "Correo electrónico: ",
     "contact-github": "Encuéntrame en GitHub",
-    "contact-itchio": "Y también en Itch.io"
+    "contact-itchio": "Y también en Itch.io",
+    "contact-linkedin": "Y en LinkedIn",
+    "footer-text": "Diseñado y desarrollado por Marcos Filgueiras Baamonde"
 
 }

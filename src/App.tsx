@@ -1,20 +1,21 @@
-import { Component, useEffect, useState } from 'react'
+import { type ComponentType, useEffect, useState } from 'react'
 import './App.css'
 import './i18n'
 import { useTranslation } from 'react-i18next'
 import PatternWaves from './PatternWaves'
 import pfimagen from './assets/profile.webp'
+import OrbitalPage from './projects'
 
 type Category = 'Todos' | 'Videojuegos' | 'Programación'
 type Language = 'EN' | 'ES'
 const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', 'Node.js'] as const
 type Tag = typeof tags[number]
-type Project = { id: string; title: string; category: Category; description: string; tags: Tag[]; year: string; art: string; detail: string; page?: Component ;images?: { src: string; alt: string }[]; video?: string; featured?: boolean }
+type Project = { id: string; title: string; category: Category; description: string; tags: Tag[]; year: string; art: string; detail: string; page: ComponentType ;images?: { src: string; alt: string }[]; video?: string; featured?: boolean }
 const projects: Project[] = [
-  { id: 'orbital', title: 'Orbital', category: 'Videojuegos', description: 'Una aventura espacial donde cada órbita cuenta.', tags: [], year: '2025', art: 'space', detail: 'Un concepto de exploración espacial centrado en el movimiento y el descubrimiento. El jugador navega entre pequeños mundos, encuentra nuevas rutas y aprende a utilizar la gravedad a su favor.', featured: true },
-  { id: 'flow', title: 'Flow', category: 'Programación', description: 'Menos ruido. Más foco. Tu trabajo, en un solo lugar.', tags: ['React', 'TypeScript', 'UI/UX'], year: '2025', art: 'dashboard', detail: 'Un concepto de aplicación para organizar proyectos y tareas con una interfaz clara. La propuesta reúne tableros, actividad y prioridades para hacer más fácil el trabajo diario.' },
-  { id: 'ember', title: 'Ember', category: 'Todos', description: 'Un pequeño héroe en un mundo que se apaga.', tags: [], year: '2024', art: 'pixel', detail: 'Un concepto de plataformas en pixel art sobre una pequeña criatura que lleva luz a un mundo olvidado. La exploración, los saltos y una atmósfera cálida guían la experiencia.' },
-  { id: 'nexus', title: 'Nexus', category: 'Programación', description: 'Una API pensada para conectar ideas y herramientas.', tags: [], year: '2024', art: 'code', detail: 'Un concepto de API modular para conectar aplicaciones. Su diseño prioriza contratos claros, respuestas consistentes y una documentación fácil de seguir.', featured: true },
+  { id: 'orbital', title: 'Orbital', category: 'Videojuegos', description: 'Una aventura espacial donde cada órbita cuenta.', tags: [], year: '2025', art: 'space', detail: 'Un concepto de exploración espacial centrado en el movimiento y el descubrimiento. El jugador navega entre pequeños mundos, encuentra nuevas rutas y aprende a utilizar la gravedad a su favor.', page: OrbitalPage, featured: true },
+  { id: 'flow', title: 'Flow', category: 'Programación', description: 'Menos ruido. Más foco. Tu trabajo, en un solo lugar.', tags: ['React', 'TypeScript', 'UI/UX'], year: '2025', art: 'dashboard', detail: 'Un concepto de aplicación para organizar proyectos y tareas con una interfaz clara. La propuesta reúne tableros, actividad y prioridades para hacer más fácil el trabajo diario.', page: OrbitalPage },
+  { id: 'ember', title: 'Ember', category: 'Todos', description: 'Un pequeño héroe en un mundo que se apaga.', tags: [], year: '2024', art: 'pixel', detail: 'Un concepto de plataformas en pixel art sobre una pequeña criatura que lleva luz a un mundo olvidado. La exploración, los saltos y una atmósfera cálida guían la experiencia.',page: OrbitalPage },
+  { id: 'nexus', title: 'Nexus', category: 'Programación', description: 'Una API pensada para conectar ideas y herramientas.', tags: [], year: '2024', art: 'code', detail: 'Un concepto de API modular para conectar aplicaciones. Su diseño prioriza contratos claros, respuestas consistentes y una documentación fácil de seguir.',page: OrbitalPage, featured: true },
 ]
 function Arrow() { return <svg className="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg> }
 
@@ -66,6 +67,7 @@ function App() {
     projects.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || parseInt(b.year) - parseInt(a.year))
     }, [projects])
   const project = projects.find(p => route === `#/proyecto/${p.id}`)
+  const ProjectPage = project?.page
   const unknown = route.startsWith('#/proyecto/') && !project
   const filtered = projects.filter(p => (category === 'Todos' || p.category === category || p.category === 'Todos') && selectedTags.every(t => p.tags.includes(t)))
   const home = () => { window.location.hash = ''; window.scrollTo({ top: 0, behavior: 'smooth' }) }
@@ -91,6 +93,7 @@ function App() {
       <button className="primary" onClick={home}>{t("notfound-back")}</button>
     </main> : project ? <main className="detail">                                                     {/* Pagina de proyecto existente */}
       <button className="back" onClick={() => goSection('proyectos')}>← Volver a proyectos</button>
+      {ProjectPage ? <ProjectPage /> : null}
       <div className="detail-heading">
         <div>
           <p className="eyebrow">{project.category} / {project.year}</p>
@@ -158,7 +161,7 @@ function App() {
         <span>{t('hero-bottom')}</span>
         <button onClick={() => goSection('proyectos')}>{t('hero-next')} <span>↓</span></button>
       </div>
-      <section id="proyectos" className="projects-section">                                                         {/* Lista de proyectos */}
+      <section id="prprojects-sectionoyectos" className="">                                                         {/* Lista de proyectos */}
         <div className="section-heading">
           <div>
             <p className="eyebrow">{t('project-section')}</p>
@@ -205,7 +208,7 @@ function App() {
         <div>
             <div>
             <h2 className="about-header">{t('about-title1')} {t('about-title2')}<span>.</span></h2>
-            <p className="about-description">{t('about-desc1')} {t('about-desc2')} {t('about-desc3')} {t('about-desc4')}</p>
+            <p className="about-description">{t('about-desc1')} {t('about-desc2')}<br/> {t('about-desc3')} {t('about-desc4')}</p>
             <strong className="about-description">{t('about-desc-me')}</strong>
             </div>
             <img className="profile-image" src={pfimagen} alt="Descripción de la imagen" loading="lazy"/>
@@ -225,12 +228,13 @@ function App() {
         <div>
         <a href="https://github.com/mfilgbaam" target="_blank" rel="noreferrer">{t('contact-github')} <Arrow /></a>
         <a href="https://shadowlinkv5.itch.io/" target="_blank" rel="noreferrer">{t('contact-itchio')} <Arrow /></a>
+        <a href="https://www.linkedin.com/in/marcos-filgueiras-baamonde-a70bab1b0" target="_blank" rel="noreferrer">{t('contact-linkedin')} <Arrow /></a>
         </div>
       </section>
     </main>}
     <footer>                                                          {/* Pie de página */}
       <button className="brand" onClick={home}>m<span>.</span></button>
-      <p>Hecho con intención. Y con React + TypeScript.</p>
+      <p>{t('footer-text')}</p>
       <span>© {new Date().getFullYear()} · Portfolio</span>
       <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Volver arriba">↑</button>
     </footer>

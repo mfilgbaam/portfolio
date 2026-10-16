@@ -31,7 +31,7 @@
     "about-title2": "and making them real", 
     "about-desc1": "Famous singer, professional footballer and owner of a multinational company, I am none of those.",
     "about-desc2": "What I am is a jack-of-all-trades developer, not afraid to face new problems and with the ability to create a project from scratch or adapt to an existing one.",
-    "about-desc3": "With a Bachelor's degree in Computer Engineering, and a Master's degree in Game Design, Development and Marketing,",
+    "about-desc3": "With a Bachelor's Degree in Computer Engineering, and a Master's degree in Game Design, Development and Marketing.",
     "about-desc4": "I always had ideas of projects I would like to create, and now I am able to make them real. From a game mechanic to an interface, I seek to create experiences that look and feel good.",
     "about-desc-me": "And yep, the crazy guy in the photo is me. I do sing, but not as well as I code.",
     "contact-section": "03 / CONTACT",
@@ -39,5 +39,7 @@
     "contact-phone": "Phone: ",
     "contact-email": "Email: ",
     "contact-github": "Find me on GitHub",
-    "contact-itchio": "And also on Itch.io"
+    "contact-itchio": "And also on Itch.io",
+    "contact-linkedin": "And on LinkedIn",
+    "footer-text": "Designed and developed by Marcos Filgueiras Baamonde"
 }
