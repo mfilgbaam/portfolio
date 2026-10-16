@@ -13,7 +13,8 @@
 .status-dot{height:6px;width:6px;border-radius:100%;background:var(--orange);box-shadow:0 0 10px #ff794855}
 .hero h1{font-size:70px;line-height:1.04;font-weight:500;letter-spacing:-4px;margin:27px 0 24px}
 .hero h1>span,h2>span,.detail h1>span{color:var(--orange)}em{font-style:normal;color:var(--orange)}
-.intro{font-size:14px;line-height:1.8;width: 350px ;color:#a5a5a9; text-align: justify;}
+.intro{font-size:14px;line-height:1.8;width: 350px ;color:#c6c6c9; text-align: justify; margin-right: 50px;}
+@media(max-width:640px){.intro{display: inline-block; background-color: #0e0d0db9;}}
 .primary{background:var(--orange);color:#161311;padding:15px 20px;border-radius:5px;font-size:12px;font-weight:700;margin-top:27px;display:inline-flex;gap:45px;align-items:center;transition:background .2s}
 .primary:hover{background:#ff9b73}
 .primary span{font-size:21px}
@@ -128,14 +129,19 @@
 .contact{border-top:1px solid var(--line);padding:64px 0 75px;position:relative}
 .contact>div{
   display: flex;
-  align-items: center;
   gap: 30px;
+}
+@media (max-width: 640px) {
+  .contact-info{
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
 }
 .contact h2{font-size:36px;font-weight:500;letter-spacing:-2px;line-height:1.15;margin:25px 0 20px}
 .contact h2>span{color:var(--orange);position:relative}
 .contact>p:not(.eyebrow){font-size:13px;color:#969aa3}
-.contact>a{display:inline-block;margin-top:25px;border-bottom:1px solid var(--orange);padding-bottom:8px;font-size:13px}
-.contact>a:hover{color:var(--orange)}footer{display:flex;align-items:center;gap:30px;border-top:1px solid var(--line);padding-top:24px;padding-bottom:24px}footer 
+.contact>div>a{display:inline-block;margin-top:25px;border-bottom:1px solid var(--orange);padding-bottom:8px;font-size:13px}
+.contact>div>a:hover{color:var(--orange)}footer{display:flex;align-items:center;gap:30px;border-top:1px solid var(--line);padding-top:24px;padding-bottom:24px}footer 
 .brand{font-size:30px}footer p{font-size:10px;color:#747780}
 footer>span{margin-left:auto;font-size:9px;color:#747780}
 footer>button:last-child{border:1px solid #363840;border-radius:4px;width:30px;height:30px}
@@ -200,7 +206,7 @@ footer>button:last-child{border:1px solid #363840;border-radius:4px;width:30px;h
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
-  margin-top: 24px;
+  margin-top: 10px;
   margin-right: 24px;
   white-space: nowrap;
 }
@@ -254,7 +260,7 @@ footer>button:last-child{border:1px solid #363840;border-radius:4px;width:30px;h
 
 
 @media(min-width:1400px){.hero{min-height:690px}.hero h1{font-size:80px}.hero-visual{height:520px}.sculpture{width:330px;height:330px}.sculpture-core{inset:120px}}
-@media(max-width:900px){.header,main,footer{padding-left:28px;padding-right:28px}
+@media(max-width:900px){.header,main,footer{padding-left:28px;padding-right:28px; margin-inline: auto;padding-inline: 20px;}
 .hero h1{font-size:57px}
 .hero{min-height:580px}
 .hero-visual{height:390px}
@@ -286,7 +292,6 @@ footer>button:last-child{border:1px solid #363840;border-radius:4px;width:30px;h
 .hero h1{font-size:64px;line-height:1.02}
 .hero .eyebrow{font-size:8px;letter-spacing:1px}
 .hero-caption{font-size:7px}
-.intro{font-size:13px}
 .hero-visual{height:350px;margin-top:5px}
 .sculpture{width:245px;height:245px}
 .sculpture-core{inset:88px}

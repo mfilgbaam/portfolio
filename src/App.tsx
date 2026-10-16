@@ -215,14 +215,17 @@ function App() {
       <section id="contacto" className="contact"> {/* Contacto */}
         <p className="eyebrow">{t('contact-section')}</p>
         <h2><ConditionalInterrogation l={language}/>{t('contact-title')}<span>?</span></h2>
-        <div>
+        <div className="contact-info">
           <div className="contact-links">
             <a href="tel:+34665516462">{t('contact-phone')}(+34) 665 51 64 62</a>
             <a href="mailto:m.filgueirasbaamonde@gmail.com">{t('contact-email')}m.filgueirasbaamonde@gmail.com</a>
           </div>
           <p className="song">Hey, I just met you<br/>and this is crazy<br/>but here's my number<br/>so call me, maybe</p>
         </div>
-        <a href="https://github.com/mfilgbaam" target="_blank" rel="noreferrer">Encuéntrame en GitHub <Arrow /></a>
+        <div>
+        <a href="https://github.com/mfilgbaam" target="_blank" rel="noreferrer">{t('contact-github')} <Arrow /></a>
+        <a href="https://shadowlinkv5.itch.io/" target="_blank" rel="noreferrer">{t('contact-itchio')} <Arrow /></a>
+        </div>
       </section>
     </main>}
     <footer>                                                          {/* Pie de página */}
