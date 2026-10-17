@@ -7,7 +7,7 @@ import pfimagen from './assets/profile.webp'
 import github from './assets/github.webp'
 import linkedin from './assets/linkedin.webp'
 import itchio from './assets/itchio.webp'
-import OrbitalPage from './projects'
+import OrbitalPage from './Projects'
 
 type Category = 'Todos' | 'Videojuegos' | 'Programación'
 type Language = 'EN' | 'ES'

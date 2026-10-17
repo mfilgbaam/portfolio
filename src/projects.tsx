@@ -1,69 +1,7 @@
-import { useState, type ReactNode } from 'react'
+import ProjectLayout from './ProjectUtils'
+import { FullImage, FullVideo, HalfImage, HalfVideo } from './ProjectUtils'
 
-type Section = {
-  id: string
-  label: string
-}
-
-function Sidebar({sections} : {sections: Section[]}) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <>
-      <button
-        className={`sidebar-toggle ${isOpen ? "open" : ""}`}
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
-        aria-expanded={isOpen}
-        aria-controls="main-sidebar"
-      >
-      </button>
-
-      <aside
-        id="main-sidebar"
-        className={`sidebar ${isOpen ? "open" : ""}`}
-        aria-hidden={!isOpen}
-        inert={!isOpen}
-      >
-
-        <nav className="sidebar-nav">
-          {sections.map(section => (
-            <button
-              key={section.id}
-              onClick={() =>
-                document.getElementById(section.id)?.scrollIntoView({
-                  behavior: 'smooth',
-                })
-              }
-            >
-              {section.label}
-            </button>
-          ))}
-        </nav>
-      </aside>
-    </>
-  );
-}
-
-
-
-type ProjectLayoutProps = {
-  sections: Section[]
-  children: ReactNode
-}
-
-export function ProjectLayout({
-  sections,
-  children,
-}: ProjectLayoutProps) {
-  return (
-    <div className="project-layout">
-      <Sidebar sections={sections}/>
-
-      <div className="project-content">{children}</div>
-    </div>
-  )
-}
+import placeholder from './assets/placeholder.webp'
 
 export default function OrbitalPage() {
   return (
@@ -77,6 +15,10 @@ export default function OrbitalPage() {
       <section id="resumen">
         <h1>Orbital</h1>
         <p>Una aventura espacial.</p>
+        <FullImage image={placeholder} desc=''/>
+        <FullVideo video='/portfolio/media/orbital.mp4' />
+        <HalfImage image={placeholder} textleft={true} text='Tetxo' desc=''/>
+        <HalfVideo video={placeholder} textleft={true} text='Tetxo'/>
       </section>
 
       <section id="mecanicas">
