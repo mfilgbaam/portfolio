@@ -4,6 +4,9 @@ import './i18n'
 import { useTranslation } from 'react-i18next'
 import PatternWaves from './PatternWaves'
 import pfimagen from './assets/profile.webp'
+import github from './assets/github.webp'
+import linkedin from './assets/linkedin.webp'
+import itchio from './assets/itchio.webp'
 import OrbitalPage from './projects'
 
 type Category = 'Todos' | 'Videojuegos' | 'Programación'
@@ -30,6 +33,10 @@ function Art({ kind, title }: { kind: string; title: string }) {
   </div>
 }
 
+
+function ContactLogo({ src }: { src: string; }) {
+  return <img className="contact-logo" src={src} alt="Descripción" loading="lazy"/>
+}
 function App() {
 
     const handlechangeLanguage = (lng: string) => {
@@ -226,9 +233,12 @@ function App() {
           <p className="song">Hey, I just met you<br/>and this is crazy<br/>but here's my number<br/>so call me, maybe</p>
         </div>
         <div>
-        <a href="https://github.com/mfilgbaam" target="_blank" rel="noreferrer">{t('contact-github')} <Arrow /></a>
-        <a href="https://shadowlinkv5.itch.io/" target="_blank" rel="noreferrer">{t('contact-itchio')} <Arrow /></a>
-        <a href="https://www.linkedin.com/in/marcos-filgueiras-baamonde-a70bab1b0" target="_blank" rel="noreferrer">{t('contact-linkedin')} <Arrow /></a>
+          
+          <a href="https://github.com/mfilgbaam" target="_blank" rel="noreferrer"><ContactLogo src={github} />{t('contact-github')} <Arrow /></a>
+          
+          <a href="https://shadowlinkv5.itch.io/" target="_blank" rel="noreferrer"><ContactLogo src={itchio} />{t('contact-itchio')} <Arrow /></a>
+          
+          <a href="https://www.linkedin.com/in/marcos-filgueiras-baamonde-a70bab1b0" target="_blank" rel="noreferrer"><ContactLogo src={linkedin} />{t('contact-linkedin')} <Arrow /></a>
         </div>
       </section>
     </main>}

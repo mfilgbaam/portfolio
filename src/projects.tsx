@@ -1,23 +1,32 @@
-import type { ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 
 type Section = {
   id: string
   label: string
 }
 
-type ProjectLayoutProps = {
-  sections: Section[]
-  children: ReactNode
-}
+function Sidebar({sections} : {sections: Section[]}) {
+  const [isOpen, setIsOpen] = useState(false);
 
-export function ProjectLayout({
-  sections,
-  children,
-}: ProjectLayoutProps) {
   return (
-    <div className="project-layout">
-      <aside className="project-sidebar">
-        <nav aria-label="Secciones del proyecto">
+    <>
+      <button
+        className={`sidebar-toggle ${isOpen ? "open" : ""}`}
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+        aria-expanded={isOpen}
+        aria-controls="main-sidebar"
+      >
+      </button>
+
+      <aside
+        id="main-sidebar"
+        className={`sidebar ${isOpen ? "open" : ""}`}
+        aria-hidden={!isOpen}
+        inert={!isOpen}
+      >
+
+        <nav className="sidebar-nav">
           {sections.map(section => (
             <button
               key={section.id}
@@ -32,6 +41,24 @@ export function ProjectLayout({
           ))}
         </nav>
       </aside>
+    </>
+  );
+}
+
+
+
+type ProjectLayoutProps = {
+  sections: Section[]
+  children: ReactNode
+}
+
+export function ProjectLayout({
+  sections,
+  children,
+}: ProjectLayoutProps) {
+  return (
+    <div className="project-layout">
+      <Sidebar sections={sections}/>
 
       <div className="project-content">{children}</div>
     </div>
