@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react'
+import { useState, type ComponentType, type ReactNode } from 'react'
 
 type Section = {
   id: string
@@ -111,3 +111,21 @@ export function HalfVideo({video, textleft, text}: {video: string, textleft: boo
   )
 }
 
+export function ProjectDesc({title, desc, Media}: {title: string, desc: string, Media: ComponentType}){
+  return(
+    <div className="half-content">
+      <div className="project-basics">
+        <ProjectTitle title={title}/>
+        <p>{desc}</p>
+      </div>
+      <Media/>
+    </div>
+  )
+}
+
+
+export function ProjectTitle({title}: {title: string}){
+  return(
+    <h1 className='project-title'>{title}<span>.</span></h1>
+  )
+}

@@ -15,7 +15,7 @@ const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', '
 type Tag = typeof tags[number]
 type Project = { id: string; title: string; category: Category; description: string; tags: Tag[]; year: string; art: string; detail: string; page: ComponentType ;images?: { src: string; alt: string }[]; video?: string; featured?: boolean }
 const projects: Project[] = [
-  { id: 'orbital', title: 'Orbital', category: 'Videojuegos', description: 'Una aventura espacial donde cada órbita cuenta.', tags: [], year: '2025', art: 'space', detail: 'Un concepto de exploración espacial centrado en el movimiento y el descubrimiento. El jugador navega entre pequeños mundos, encuentra nuevas rutas y aprende a utilizar la gravedad a su favor.', page: OrbitalPage, featured: true },
+  { id: 'orbital', title: 'Orbital', category: 'Videojuegos', description: 'Una aventura espacial donde cada órbita cuenta.', tags: ['Unreal Engine', 'C++'], year: '2025', art: 'space', detail: 'Un concepto de exploración espacial centrado en el movimiento y el descubrimiento. El jugador navega entre pequeños mundos, encuentra nuevas rutas y aprende a utilizar la gravedad a su favor.', page: OrbitalPage, featured: true },
   { id: 'flow', title: 'Flow', category: 'Programación', description: 'Menos ruido. Más foco. Tu trabajo, en un solo lugar.', tags: ['React', 'TypeScript', 'UI/UX'], year: '2025', art: 'dashboard', detail: 'Un concepto de aplicación para organizar proyectos y tareas con una interfaz clara. La propuesta reúne tableros, actividad y prioridades para hacer más fácil el trabajo diario.', page: OrbitalPage },
   { id: 'ember', title: 'Ember', category: 'Todos', description: 'Un pequeño héroe en un mundo que se apaga.', tags: [], year: '2024', art: 'pixel', detail: 'Un concepto de plataformas en pixel art sobre una pequeña criatura que lleva luz a un mundo olvidado. La exploración, los saltos y una atmósfera cálida guían la experiencia.',page: OrbitalPage },
   { id: 'nexus', title: 'Nexus', category: 'Programación', description: 'Una API pensada para conectar ideas y herramientas.', tags: [], year: '2024', art: 'code', detail: 'Un concepto de API modular para conectar aplicaciones. Su diseño prioriza contratos claros, respuestas consistentes y una documentación fácil de seguir.',page: OrbitalPage, featured: true },
@@ -37,6 +37,7 @@ function Art({ kind, title }: { kind: string; title: string }) {
 function ContactLogo({ src }: { src: string; }) {
   return <img className="contact-logo" src={src} alt="Descripción" loading="lazy"/>
 }
+
 function App() {
 
     const handlechangeLanguage = (lng: string) => {
@@ -99,7 +100,7 @@ function App() {
       <h1>{t("notfound-desc")}</h1>
       <button className="primary" onClick={home}>{t("notfound-back")}</button>
     </main> : project ? <main className="detail">                                                     {/* Pagina de proyecto existente */}
-      <button className="back" onClick={() => goSection('proyectos')}>← Volver a proyectos</button>
+      <button className="back" onClick={() => goSection('proyectos')}>← {t("back")}</button>
       {ProjectPage ? <ProjectPage /> : null}
       <div className="detail-heading">
         <div>
@@ -144,10 +145,7 @@ function App() {
             <small>Añade tu vídeo a este proyecto</small>
           </div>}
       </div>
-      <a className="next-project" href={`#/proyecto/${projects[(projects.indexOf(project) + 1) % projects.length].id}`}>
-        <small>SIGUIENTE PROYECTO</small>
-        <span>{projects[(projects.indexOf(project) + 1) % projects.length].title} ↗</span>
-      </a>
+    <button className="back" onClick={() => goSection('proyectos')}>← {t("back")}</button>
     </main> : <main>                                                                                      {/* Pagina principal */}
       <section className="hero">                                                                          {/* Encabezado pagina principal */}
         <div id="wrapper">
@@ -168,7 +166,7 @@ function App() {
         <span>{t('hero-bottom')}</span>
         <button onClick={() => goSection('proyectos')}>{t('hero-next')} <span>↓</span></button>
       </div>
-      <section id="prprojects-sectionoyectos" className="">                                                         {/* Lista de proyectos */}
+      <section id="proyectos" className="projects-section">                                                         {/* Lista de proyectos */}
         <div className="section-heading">
           <div>
             <p className="eyebrow">{t('project-section')}</p>
@@ -190,7 +188,7 @@ function App() {
         <div className="project-grid">{filtered.map((p) => <a className="project-card" key={p.id} href={`#/proyecto/${p.id}`}>
           <div className="card-image">
             <Art kind={p.art} title={p.title} />
-            <span className="card-category">{p.category === 'Todos' ? t('project-filter-alltag') : p.category}</span>
+            <span className="card-category">{p.category === 'Todos' ? t('project-filter-alltag') : p.category === 'Videojuegos' ? t('project-filter-games') : t('project-filter-code')}</span>
             {p.featured ?
             (<><span className="featured-tag">
                 <span className="star" aria-hidden="true" />

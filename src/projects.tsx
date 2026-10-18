@@ -1,7 +1,9 @@
 import ProjectLayout from './ProjectUtils'
-import { FullImage, FullVideo, HalfImage, HalfVideo } from './ProjectUtils'
+import { FullImage, FullVideo, HalfImage, HalfVideo, ProjectDesc } from './ProjectUtils'
+import './i18n'
 
 import placeholder from './assets/placeholder.webp'
+import { t } from 'i18next'
 
 export default function OrbitalPage() {
   return (
@@ -13,8 +15,9 @@ export default function OrbitalPage() {
       ]}
     >
       <section id="resumen">
-        <h1>Orbital</h1>
-        <p>Una aventura espacial.</p>
+        <ProjectDesc title='Orbital' desc={t("lorem-ipsum")} Media={() => <FullImage image={placeholder} desc=''/>}/>
+        <ProjectDesc title='Orbital' desc={t("lorem-ipsum")} Media={() => <FullVideo video='/portfolio/media/orbital.mp4' />}/>
+        <HalfImage image={placeholder} textleft={true} text='' desc=''/>
         <FullImage image={placeholder} desc=''/>
         <FullVideo video='/portfolio/media/orbital.mp4' />
         <HalfImage image={placeholder} textleft={true} text='Tetxo' desc=''/>

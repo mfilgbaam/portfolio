@@ -151,7 +151,8 @@ footer>button:last-child{border:1px solid #363840;border-radius:4px;width:30px;h
 .empty p{margin:15px;color:var(--muted);font-size:13px}
 .empty button{color:var(--orange);padding:10px}
 .detail{padding-top:40px;padding-bottom:60px}
-.back{font-size:12px;color:var(--muted);padding:0}
+.back{font-size:16px;color:var(--muted);padding:0}
+.back:hover{color:var(--orange)}
 .detail-heading{display:flex;align-items:end;justify-content:space-between;margin:45px 0 35px}
 .detail h1{font-size:80px;letter-spacing:-4px;margin:14px 0}
 .detail-heading p:not(.eyebrow){font-size:16px;color:var(--muted)}
@@ -495,12 +496,12 @@ footer>button:last-child{margin-left:auto}
   object-fit: contain;
   box-sizing: border-box;
   border-radius: 15px;
-  margin-top: 100px;}
+  margin-top: 20px;}
 
 .video-full{
   width: 100%;
   height: auto;
-  margin-top: 100px;
+  margin-top: 20px;
   }
 
 .image-half{width: 50%;
@@ -521,6 +522,14 @@ footer>button:last-child{margin-left:auto}
   margin-top: 100px;
   }
 
+  .project-basics{
+  flex-direction: column;
+  align-items: top;
+  margin-top: 10px;
+  max-width: 50%;
+  text-align: justify;
+}
+
 
 
 @media (max-width: 768px) {
@@ -537,12 +546,19 @@ footer>button:last-child{margin-left:auto}
     width: 100%;
   }
 
+  .project-basics{
+    max-width: 100%;
+  }
+
 }
+
 
 .half-text{
   flex: 1;
   min-width: 0;
 }
+
+.project-title{font-size:80px;letter-spacing:-4px;margin:14px 0}
 
 
 
