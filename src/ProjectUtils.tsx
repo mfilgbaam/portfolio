@@ -111,21 +111,42 @@ export function HalfVideo({video, textleft, text}: {video: string, textleft: boo
   )
 }
 
-export function ProjectDesc({title, desc, Media}: {title: string, desc: string, Media: ComponentType}){
+export function ProjectDesc({title, desc, Media, links}: {title: string, desc: string, Media: ComponentType, links:Link[]}){
   return(
     <div className="half-content">
       <div className="project-basics">
         <ProjectTitle title={title}/>
         <p>{desc}</p>
+        <div className="page-links">
+        {links.map(l => <ProjectLink link={l.link} image={l.image} text={l.text}/>)}
+        </div>
       </div>
       <Media/>
     </div>
   )
 }
 
+export type Link = {
+  link : string
+  image : string
+  text: string
+}
+
 
 export function ProjectTitle({title}: {title: string}){
   return(
     <h1 className='project-title'>{title}<span>.</span></h1>
+  )
+}
+
+export function Arrow() { return <svg className="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg> }
+
+function ContactLogo({ src }: { src: string; }) {
+  return <img className="contact-logo" src={src} alt="Descripción" loading="lazy"/>
+}
+
+export function ProjectLink({link, image, text}: {link: string, image: string, text: string}){
+  return(
+    <a className="page-link" href={link} target="_blank" rel="noreferrer"><ContactLogo src={image} />{text} <Arrow /></a>
   )
 }

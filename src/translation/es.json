@@ -39,10 +39,19 @@
     "contact-phone": "Teléfono: ",
     "contact-email": "Correo electrónico: ",
     "contact-github": "Encuéntrame en GitHub",
-    "contact-itchio": "Y también en Itch.io",
+    "contact-itchio": "Y también en itch.io",
     "contact-linkedin": "Y en LinkedIn",
     "footer-text": "Diseñado y desarrollado por Marcos Filgueiras Baamonde",
 
-    "back": "Volver a proyectos"
+    "back": "Volver a proyectos",
+    "github-link": "Github",
+    "itchio-link": "itch.io",
+
+    "intro-nav": "Introducción",
+    "whati-nav": "Que construí",
+    "myrole-nav": "Mi rol en el proyecto",
+
+    "neboas-title":"Neboa's Hut",
+    "neboas-card":"Videojuego narrativo sobre una bruja con una tienda de pociones clandestina"
 
 }

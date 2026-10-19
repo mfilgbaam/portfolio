@@ -1,42 +1,31 @@
 import { type ComponentType, useEffect, useState } from 'react'
 import './App.css'
 import './i18n'
+import { t } from 'i18next'
 import { useTranslation } from 'react-i18next'
 import PatternWaves from './PatternWaves'
 import pfimagen from './assets/profile.webp'
 import github from './assets/github.webp'
 import linkedin from './assets/linkedin.webp'
 import itchio from './assets/itchio.webp'
+import neboas from './assets/neboasmain.webp'
 import OrbitalPage from './Projects'
+import {NeboasPage} from './Projects'
+import {ProjectLink, Arrow} from './ProjectUtils'
+
 
 type Category = 'Todos' | 'Videojuegos' | 'Programación'
 type Language = 'EN' | 'ES'
 const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', 'Node.js'] as const
 type Tag = typeof tags[number]
-type Project = { id: string; title: string; category: Category; description: string; tags: Tag[]; year: string; art: string; detail: string; page: ComponentType ;images?: { src: string; alt: string }[]; video?: string; featured?: boolean }
+type Project = { id: string; title: string; category: Category; description: string; tags: Tag[]; year: string; art: string; page: ComponentType ;images?: { src: string; alt: string }[]; video?: string; featured?: boolean }
 const projects: Project[] = [
-  { id: 'orbital', title: 'Orbital', category: 'Videojuegos', description: 'Una aventura espacial donde cada órbita cuenta.', tags: ['Unreal Engine', 'C++'], year: '2025', art: 'space', detail: 'Un concepto de exploración espacial centrado en el movimiento y el descubrimiento. El jugador navega entre pequeños mundos, encuentra nuevas rutas y aprende a utilizar la gravedad a su favor.', page: OrbitalPage, featured: true },
-  { id: 'flow', title: 'Flow', category: 'Programación', description: 'Menos ruido. Más foco. Tu trabajo, en un solo lugar.', tags: ['React', 'TypeScript', 'UI/UX'], year: '2025', art: 'dashboard', detail: 'Un concepto de aplicación para organizar proyectos y tareas con una interfaz clara. La propuesta reúne tableros, actividad y prioridades para hacer más fácil el trabajo diario.', page: OrbitalPage },
-  { id: 'ember', title: 'Ember', category: 'Todos', description: 'Un pequeño héroe en un mundo que se apaga.', tags: [], year: '2024', art: 'pixel', detail: 'Un concepto de plataformas en pixel art sobre una pequeña criatura que lleva luz a un mundo olvidado. La exploración, los saltos y una atmósfera cálida guían la experiencia.',page: OrbitalPage },
-  { id: 'nexus', title: 'Nexus', category: 'Programación', description: 'Una API pensada para conectar ideas y herramientas.', tags: [], year: '2024', art: 'code', detail: 'Un concepto de API modular para conectar aplicaciones. Su diseño prioriza contratos claros, respuestas consistentes y una documentación fácil de seguir.',page: OrbitalPage, featured: true },
+  { id: 'orbital', title: 'Orbital', category: 'Videojuegos', description: 'Una aventura espacial donde cada órbita cuenta.', tags: ['Unreal Engine', 'C++'], year: '2025', art: 'space', page: OrbitalPage, featured: true },
+  { id: 'neboas', title: t("neboas-title"), category: 'Videojuegos', description: t("neboas-card"), tags: ['Unreal Engine', 'C++', 'UI/UX'], year: '2026', art: neboas, page: NeboasPage, featured: true },
 ]
-function Arrow() { return <svg className="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg> }
-
+  
 function ConditionalInterrogation({ l }: { l: Language }){return <span>{(l === 'ES' ? '¿' : '')}</span>}
 
-function Art({ kind, title }: { kind: string; title: string }) {
-  return <div className={`art art-${kind}`} role="img" aria-label={`Ilustración de ${title}`}>
-    {kind === 'space' && <><div className="stars" /><div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="planet" /><span className="art-word">ORBITAL<span>BEYOND THE KNOWN</span></span><span className="coordinate">SECTOR 07 / 042.8</span></>}
-    {kind === 'dashboard' && <div className="mock-app"><div className="mock-sidebar"><b>◈ flow</b><span>▦ Overview</span><span>▤ Projects</span><span>◷ Activity</span><span>⚙ Settings</span></div><div className="mock-content"><small>WORKSPACE</small><h3>Good morning, Alex <span>✦</span></h3><div className="mock-stats"><div>Projects<b>12 <i>↗</i></b></div><div>In progress<b>04</b></div><div>Completed<b>28</b></div></div><h4>Your projects <span>+ New project</span></h4><div className="mock-row"><i />Website redesign<span>In progress</span></div><div className="mock-row"><i />Mobile application<span>Planning</span></div><div className="mock-row"><i />Design system<span>Review</span></div></div></div>}
-    {kind === 'pixel' && <><div className="pixel-moon" /><div className="mountains" /><div className="pixel-ground" /><div className="pixel-person">✦</div><span className="pixel-title">EMBER<small>A LITTLE LIGHT IN THE DARK</small></span></>}
-    {kind === 'code' && <div className="code-window"><div className="window-dots">● ● ● <span>nexus / routes.ts</span></div><pre><span>// Ideas, connected.</span>{'\n'}<em>import</em> {'{ Router }'} <em>from</em> <i>'nexus'</i>{'\n\n'}<em>const</em> api = <b>Router</b>(){'\n\n'}api.<b>get</b>(<i>'/projects'</i>, <em>async</em> () =&gt; {'{\n'}{'  '}<em>return</em> {'{'}{'\n'}{'    '}status: <i>'connected'</i>,{'\n'}{'    '}possibilities: <b>Infinity</b>{'\n  }\n})'}</pre><div className="code-status">● All systems connected <span>TypeScript</span></div></div>}
-  </div>
-}
-
-
-function ContactLogo({ src }: { src: string; }) {
-  return <img className="contact-logo" src={src} alt="Descripción" loading="lazy"/>
-}
 
 function App() {
 
@@ -101,36 +90,9 @@ function App() {
       <button className="primary" onClick={home}>{t("notfound-back")}</button>
     </main> : project ? <main className="detail">                                                     {/* Pagina de proyecto existente */}
       <button className="back" onClick={() => goSection('proyectos')}>← {t("back")}</button>
+      <div className="tag-list">{project.tags.map(t => <span key={t}>{t}</span>)}</div>
       {ProjectPage ? <ProjectPage /> : null}
-      <div className="detail-heading">
-        <div>
-          <p className="eyebrow">{project.category} / {project.year}</p>
-          <h1>{project.title}<span>.</span></h1>
-          <p>{project.description}</p>
-        </div>
-        <div className="tag-list">{project.tags.map(t => <span key={t}>{t}</span>)}</div>
-      </div>
-      <Art kind={project.art} title={project.title} />
-      <div className="detail-copy">
-        <h2>Detrás de la idea</h2>
-        <div>
-          <p>{project.detail}</p>
-          <p className="sample-note">Proyecto de ejemplo · Las ilustraciones son conceptuales. Sustituye este contenido por tu trabajo y tus recursos.</p>
-        </div>
-      </div>
-      <div className="gallery-heading">
-        <h2>Una mirada más cerca<span>.</span></h2>
-        <span>GALERÍA / 01</span>
-      </div>
-      {project.images?.map(image => 
-        <figure className="real-image" key={image.src}>
-          <img src={image.src} alt={image.alt} loading="lazy" />
-          <figcaption>{image.alt}</figcaption>
-        </figure>)}
-      <button className="gallery-image" onClick={() => setLightbox(true)} aria-label={`Ampliar imagen de ${project.title}`}>
-        <Art kind={project.art} title={project.title} />
-        <span>Ampliar imagen <Arrow /></span>
-      </button>
+      
       <div className="video-block">
         <div>
           <p className="eyebrow">EN MOVIMIENTO</p>
@@ -187,7 +149,7 @@ function App() {
         </div>
         <div className="project-grid">{filtered.map((p) => <a className="project-card" key={p.id} href={`#/proyecto/${p.id}`}>
           <div className="card-image">
-            <Art kind={p.art} title={p.title} />
+            <img className='image-art' src={p.art} alt='' loading="lazy"/>
             <span className="card-category">{p.category === 'Todos' ? t('project-filter-alltag') : p.category === 'Videojuegos' ? t('project-filter-games') : t('project-filter-code')}</span>
             {p.featured ?
             (<><span className="featured-tag">
@@ -198,9 +160,12 @@ function App() {
           </div>
           <div className="card-top">
             <h3>{p.title}<span></span></h3>
+            
             <p className="card-year">{p.year}</p>
           </div>
           <p>{p.description}</p>
+          <div className="card-tags">{p.tags.map(t => <span key={t}>{t}</span>)}</div>
+          
         </a>)}</div>
         {!filtered.length && <div className="empty">
             <h3>{t('no-combination-title')}</h3>
@@ -230,13 +195,13 @@ function App() {
           </div>
           <p className="song">Hey, I just met you<br/>and this is crazy<br/>but here's my number<br/>so call me, maybe</p>
         </div>
-        <div>
+        <div className="page-links">
+        
+          <ProjectLink link="https://github.com/mfilgbaam" image={github} text={t('contact-github')}/>
+         
+          <ProjectLink link="https://shadowlinkv5.itch.io/" image={itchio} text={t('contact-itchio')}/>
           
-          <a href="https://github.com/mfilgbaam" target="_blank" rel="noreferrer"><ContactLogo src={github} />{t('contact-github')} <Arrow /></a>
-          
-          <a href="https://shadowlinkv5.itch.io/" target="_blank" rel="noreferrer"><ContactLogo src={itchio} />{t('contact-itchio')} <Arrow /></a>
-          
-          <a href="https://www.linkedin.com/in/marcos-filgueiras-baamonde-a70bab1b0" target="_blank" rel="noreferrer"><ContactLogo src={linkedin} />{t('contact-linkedin')} <Arrow /></a>
+          <ProjectLink link="https://www.linkedin.com/in/marcos-filgueiras-baamonde-a70bab1b0" image={linkedin} text={t('contact-linkedin')}/>
         </div>
       </section>
     </main>}
@@ -246,7 +211,6 @@ function App() {
       <span>© {new Date().getFullYear()} · Portfolio</span>
       <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Volver arriba">↑</button>
     </footer>
-    {lightbox && project && <div className="lightbox" role="dialog" aria-modal="true" aria-label={`Imagen de ${project.title}`} onClick={() => setLightbox(false)}><button autoFocus onClick={() => setLightbox(false)} aria-label="Cerrar imagen">Cerrar ×</button><Art kind={project.art} title={project.title} /></div>}
   </>
 }
 export default App

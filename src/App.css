@@ -58,10 +58,14 @@
 .filter-tags .clear{color:var(--orange);border:0}
 .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px 27px}
 .card-image{position:relative;border-radius:7px;overflow:hidden;border:1px solid #313239;box-shadow: 0 8px 24px rgba(10, 10, 10, 0.12);transition: box-shadow .3s ease}
-
 .art{height:285px;position:relative;overflow:hidden;isolation:isolate;}
-.card-image .art{transition:transform .7s}
-.project-card:hover .card-image .art{transform:scale(1.035)}
+.card-image .image-art{transition:transform .7s}
+.image-art{max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: 100%;
+  border-radius: 15px;}
+.project-card:hover .card-image .image-art{transform:scale(1.035)}
 .project-card:hover .card-image,.project-card:focus-visible .card-image {box-shadow:0 8px 28px rgba(255, 194, 172, 0.2);}
 @media (prefers-reduced-motion: reduce) {.card-image {transition: none;}}
 .card-category{position:absolute;top:16px;left:16px;font-size:12px;padding:6px 10px;background:#0d121bbb;border:1px solid #ffffff25;border-radius:4px;backdrop-filter:blur(10px)}
@@ -71,9 +75,6 @@
 .card-top h3 span{font-size:18px;color:#727780;margin-left:5px}
 .card-top>span{font:9px monospace;color:#777a82}
 .project-card>p{font-size:14px;color:#93969e}
-.card-tags{display:flex;gap:7px;margin-top:15px;align-items:center}
-.card-tags>span{font-size:8px;border:1px solid #303238;padding:4px 8px;border-radius:3px;color:#9a9da5}
-.card-tags>.card-number{margin-left:auto;border:0;color:#5c6068;font:9px monospace}
 .sample-label{font-size:8px;letter-spacing:1.2px;color:#676b74;margin-top:30px;text-align:right}
 .art-space{background:radial-gradient(ellipse at 70% 10%,#264375,#111d33 42%,#060e1b)}
 .stars{position:absolute;inset:0;background-image:radial-gradient(#c3d6ff 1px,transparent 1px),radial-gradient(#849bce 1px,transparent 1px);background-size:69px 57px,103px 91px;background-position:12px 18px,40px 34px;opacity:.6}
@@ -131,6 +132,12 @@
   display: flex;
   gap: 30px;
 }
+.page-links{
+  display: flex;
+  gap: 30px;
+}
+.page-link{display:inline-block;margin-top:25px;border-bottom:1px solid var(--orange);padding-bottom:8px;font-size:13px}
+.page-link:hover{color:var(--orange)}
 @media (max-width: 640px) {
   .contact-info{
     flex-direction: column-reverse;
@@ -140,8 +147,6 @@
 .contact h2{font-size:36px;font-weight:500;letter-spacing:-2px;line-height:1.15;margin:25px 0 20px}
 .contact h2>span{color:var(--orange);position:relative}
 .contact>p:not(.eyebrow){font-size:13px;color:#969aa3}
-.contact>div>a{display:inline-block;margin-top:25px;border-bottom:1px solid var(--orange);padding-bottom:8px;font-size:13px}
-.contact>div>a:hover{color:var(--orange)}
 footer{display:flex;align-items:center;gap:30px;border-top:1px solid var(--line);padding-top:24px;padding-bottom:24px}
 footer .brand{font-size:30px}
 footer p{font-size:12px;color:#747780}
@@ -156,8 +161,10 @@ footer>button:last-child{border:1px solid #363840;border-radius:4px;width:30px;h
 .detail-heading{display:flex;align-items:end;justify-content:space-between;margin:45px 0 35px}
 .detail h1{font-size:80px;letter-spacing:-4px;margin:14px 0}
 .detail-heading p:not(.eyebrow){font-size:16px;color:var(--muted)}
-.tag-list{display:flex;gap:8px;flex-wrap:wrap}
+.tag-list{display:flex;float: right;gap:8px;flex-wrap:wrap;align-items: right; margin-top:20px;margin-right: 10px;}
 .tag-list span{border:1px solid var(--line);border-radius:4px;padding:8px 12px;font-size:11px}
+.card-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top: 15px;align-items: end}
+.card-tags span{border:1px solid var(--line);border-radius:4px;padding:6px 8px;font-size:11px}
 .detail>.art{height:480px;border-radius:8px}.detail>.art .planet{width:310px;height:310px;top:70px}
 .detail>.art .art-word{font-size:60px;top:190px;left:65px}
 .detail>.art .orbit{width:540px;height:160px;top:140px}
@@ -339,7 +346,6 @@ footer>button:last-child{margin-left:auto}
 .detail-heading{display:block;margin:30px 0 25px}
 .detail h1{font-size:62px}
 .detail-heading p:not(.eyebrow){font-size:13px;line-height:1.7}
-.tag-list{margin-top:20px}
 .detail>.art{height:300px}
 .detail>.art .art-word{font-size:35px;left:25px;top:130px}
 .detail>.art .planet{width:200px;height:200px;top:50px}
@@ -516,10 +522,10 @@ footer>button:last-child{margin-left:auto}
 
 .half-content{
   display: flex;
-  align-items: center;
+  align-items: top;
   gap: 30px;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 20px;
   }
 
   .project-basics{
@@ -559,6 +565,8 @@ footer>button:last-child{margin-left:auto}
 }
 
 .project-title{font-size:80px;letter-spacing:-4px;margin:14px 0}
+
+.project-sectitle{font-size:40px;margin-top: 20px;}
 
 
 
