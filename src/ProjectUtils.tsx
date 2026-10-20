@@ -80,13 +80,13 @@ export function FullImage({image, desc}: {image: string, desc: string}){
   )
 }
 
-export function HalfImage({image, textleft, text, desc}: {image: string,textleft: boolean,text: string, desc: string})
+export function HalfImage({image, textleft, texts, desc}: {image: string,textleft: boolean,texts: string[], desc: string})
 {
   return(
     <div className="half-content">
-      {textleft && <p className="half-text">{text}</p>}
+      {textleft && <TextsParagraph texts={texts}/>}
       <img className="image-half" src={image} alt={desc} loading="lazy"/>
-      {!textleft && <p className="half-text">{text}</p>}
+      {!textleft && <TextsParagraph texts={texts}/>}
     </div>
   )
 }
@@ -99,24 +99,32 @@ export function FullVideo({video}: {video: string}){
   )
 }
 
-export function HalfVideo({video, textleft, text}: {video: string, textleft: boolean,text: string}){
+function TextsParagraph({texts}: {texts: string[]}){
   return(
-    <div className="half-content">
-      {textleft && <p className="half-text">{text}</p>}
-      <video className="video-half" controls playsInline autoPlay muted loop >
-        <source src={video} type="video/mp4" />
-      </video>
-      {!textleft && <p className="half-text">{text}</p>}
+    <div>
+    {texts.map(t => <><p className="half-text">{t}</p><br /></>)}
     </div>
   )
 }
 
-export function ProjectDesc({title, desc, Media, links}: {title: string, desc: string, Media: ComponentType, links:Link[]}){
+export function HalfVideo({video, textleft, texts}: {video: string, textleft: boolean,texts: string[]}){
+  return(
+    <div className="half-content">
+      {textleft && <TextsParagraph texts={texts}/>}
+      <video className="video-half" controls playsInline autoPlay muted loop >
+        <source src={video} type="video/mp4" />
+      </video>
+      {!textleft && <TextsParagraph texts={texts}/>}
+    </div>
+  )
+}
+
+export function ProjectDesc({title, desc, Media, links}: {title: string, desc: string[], Media: ComponentType, links:Link[]}){
   return(
     <div className="half-content">
       <div className="project-basics">
         <ProjectTitle title={title}/>
-        <p>{desc}</p>
+        <TextsParagraph texts={desc}/>
         <div className="page-links">
         {links.map(l => <ProjectLink link={l.link} image={l.image} text={l.text}/>)}
         </div>

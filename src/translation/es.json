@@ -49,9 +49,28 @@
 
     "intro-nav": "Introducción",
     "whati-nav": "Que construí",
-    "myrole-nav": "Mi rol en el proyecto",
+    "myrole-nav": "Mi Rol",
 
     "neboas-title":"Neboa's Hut",
-    "neboas-card":"Videojuego narrativo sobre una bruja con una tienda de pociones clandestina"
-
+    "neboas-card":"Videojuego narrativo acerca de una bruja con una tienda de pociones clandestina",
+    "neboas-intro": "Neboa's Hut es un videojuego casual con un gran énfasis en la narrativa y los diálogos. En él, asumes el papel de una bruja que gestiona una tienda clandestina de pociones; esto implica hablar con los clientes, recolectar ingredientes y preparar los brebajes para su venta." ,
+    "neboas-intro2": "El juego gira en torno a conseguir el dinero suficiente para pagar los impuestos que se exigen periódicamente, procurando al mismo tiempo no levantar sospechas para evitar ser descubierta por la Inquisición. Por tanto, según la situación, el jugador deberá decidir si vender un remedio eficaz o intentar pasar desapercibido.",
+    "neboas-role":  "Este proyecto fue realizado en colaboración con otros miembros de Conxuro Studio, mis funciones fueron dentro del area de diseño y de desarrollo técnico en Unreal Engine, incluyendo:",
+    "neboas-role-en1": "Dirección del departamento de diseño y el flujo de trabajo dentro de este.",
+    "neboas-role-en2": "Diseño de jugabilidad base y sistema de pociones.",
+    "neboas-role-en3": "Diseño de UI y UX.",
+    "neboas-role-en4": "Programación de controles y sistema de movimiento del jugador.",
+    "neboas-role-en5": "Programación de minijuegos.",
+    "neboas-role-en6": "Programación de UI.",
+    "neboas-role-en7": "Tecnical art - optimizaciones, materiales y efectos visuales.",
+    "neboas-uxdesign": "Diseño UX",
+    "neboas-potdesign": "Diseño del sistema de pociones",
+    "neboas-uidesign": "Diseño UI",
+    "featured-progr": "Contribuciones desctacadas - Programación",
+    "neboas-design1": "Neboa's Hut se diseñó alrededor de la accesibilidad para los jugadores, ya que su diseño base fomenta una jugabilidad calmada y ausente de mecánicas complejas. Por esto, decidí amplificar esta característica al diseñar el resto de sistemas del juego. Por ejemplo, se puede disfrutar completamente de la experiencia utilizando unicamente el puntero del ratón, de esta manera hasta los jugadores menos experimentados pueden disfrutar del juego sin necesidad de aprenderse asignaciones de teclas. Pese a esto, también se diseñaron atajos del teclado y tipos de controles alternativos para permitir al jugador como quiere disfrutar de la experiencia.",
+    "neboas-design2": "En el diseño del sistema de pociones también tuve muy en cuenta el género del juego. Ya que pese a que internamente funciona con un sistema de valores numéricos, al jugador este se le presenta de forma narrativa con descripciónes dentro del libro de la protagonista.",
+    "neboas-design3": "Por otra parte, me quise alejar de cualquier sistema con recetas predefinidas, dandole libertad al jugador para experimentar y tener distintas maneras de obtener la misma poción.",
+    "neboas-design4": "Para amplificar más la inmersión del jugador decidií implementar ciertos minijuegos interactivos a realizar durante la preparación de pociones, como encender el fuego o machacar los ingredientes utilizando un mortero. Para seguir con los criterios de accesibilidad establecidos, estos minijuegos se diseñaron como experiencias interactivas sin dificultad real ni tiempo límite.",
+    "neboas-design5": "La interfáz del menú del juego contiene tanto las opciones clásicas de los menús de los videojuegos como las descripciónes "
+    
 }

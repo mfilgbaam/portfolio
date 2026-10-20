@@ -536,6 +536,13 @@ footer>button:last-child{margin-left:auto}
   text-align: justify;
 }
 
+.project-text{
+  flex: 1;
+  margin-top: 10px;
+  font-size: 16px;
+  max-width: 90%;
+  text-align: justify;
+}
 
 
 @media (max-width: 768px) {
@@ -556,17 +563,23 @@ footer>button:last-child{margin-left:auto}
     max-width: 100%;
   }
 
+  .project-text{
+    max-width: 100%;
+  }
+
 }
 
 
 .half-text{
   flex: 1;
   min-width: 0;
+  text-align: justify;
 }
 
 .project-title{font-size:80px;letter-spacing:-4px;margin:14px 0}
 
 .project-sectitle{font-size:40px;margin-top: 20px;}
+
 
 
 

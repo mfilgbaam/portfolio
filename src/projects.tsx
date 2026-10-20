@@ -24,13 +24,13 @@ export default function OrbitalPage() {
       ]}
     >
       <section id="resumen">
-        <ProjectDesc title='Orbital' desc={t("lorem-ipsum")} Media={() => <FullImage image={placeholder} desc=''/> } links={Links}/>
-        <ProjectDesc title='Orbital' desc={t("lorem-ipsum")} Media={() => <FullVideo video='/portfolio/media/orbital.mp4' />} links={Links}/>
-        <HalfImage image={placeholder} textleft={true} text='' desc=''/>
+        <ProjectDesc title='Orbital' desc={[t("lorem-ipsum")]} Media={() => <FullImage image={placeholder} desc=''/> } links={Links}/>
+        <ProjectDesc title='Orbital' desc={[t("lorem-ipsum")]} Media={() => <FullVideo video='/portfolio/media/orbital.mp4' />} links={Links}/>
+        <HalfImage image={placeholder} textleft={true} texts={['']} desc=''/>
         <FullImage image={placeholder} desc=''/>
         <FullVideo video='/portfolio/media/orbital.mp4' />
-        <HalfImage image={placeholder} textleft={true} text='Tetxo' desc=''/>
-        <HalfVideo video={placeholder} textleft={true} text='Tetxo'/>
+        <HalfImage image={placeholder} textleft={true} texts={['Tetxo']} desc=''/>
+        <HalfVideo video={placeholder} textleft={true} texts={["Tetxo"]}/>
       </section>
 
       <section id="mecanicas">
@@ -56,15 +56,42 @@ export function NeboasPage(){
       sections={[
         { id: 'intro', label: t("intro-nav") },
         { id: 'mirol', label: t("myrole-nav") },
-        { id: 'gameplay', label: 'Gameplay' },
+        { id: 'uxdesign', label: t("neboas-uxdesign") },
+        { id: 'potdesign', label: t("neboas-potdesign") },
+        { id: 'uidesign', label: t("neboas-uidesign") },
       ]}
     >
         <section id="intro">
-            <ProjectDesc title="Neboa's Hut" desc={t("lorem-ipsum")} Media={() => <FullImage image={neboasmain} desc=''/> } links={Links}/>
+            <ProjectDesc title="Neboa's Hut" desc={[t("neboas-intro"), t("neboas-intro2")]} Media={() => <FullImage image={neboasmain} desc=''/> } links={Links}/>
         </section>
         <section id="mirol">
             <h2 className='project-sectitle'>{t("myrole-nav")}</h2>
-            <p>Mi rol</p>
+            <p className="project-text">{t("neboas-role")}</p>
+            <ul>
+                <li>{t("neboas-role-en1")}</li>
+                <li>{t("neboas-role-en2")}</li>
+                <li>{t("neboas-role-en3")}</li>
+                <li>{t("neboas-role-en4")}</li>
+                <li>{t("neboas-role-en5")}</li>
+                <li>{t("neboas-role-en6")}</li>
+                <li>{t("neboas-role-en7")}</li>
+            </ul>
+        </section>
+        <section id='uxdesign'>
+          <h2 className='project-sectitle'>{t("neboas-uxdesign")}</h2>
+          <p className="project-text">{t("neboas-design1")}</p>
+          
+          
+        </section>
+        <section id='potdesign'>
+          <h2 className='project-sectitle'>{t("neboas-potdesign")}</h2>
+          <HalfImage image={placeholder} textleft={false} texts={[t("neboas-design2")]} desc=''/>
+          <HalfImage image={placeholder} textleft={true} texts={[t("neboas-design3"),t("neboas-design4") ]} desc=''/>
+        </section>
+        <section id='uidesign'>
+          <h2 className='project-sectitle'>{t("neboas-uidesign")}</h2>
+          <HalfImage image={placeholder} textleft={false} texts={[t("neboas-design5")]} desc=''/>
+          
         </section>
     </ProjectLayout>
     )

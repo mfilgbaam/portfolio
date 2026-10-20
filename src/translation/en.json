@@ -50,8 +50,25 @@
 
     "intro-nav": "Introduction",
     "whati-nav": "What I built",
-    "myrole-nav": "My role",
+    "myrole-nav": "My Role",
 
     "neboas-title":"Neboa's Hut",
-    "neboas-card": "A narrative game about a witch with a clandestine potion shop"
+    "neboas-card": "A narrative game about a witch with a clandestine potion shop",
+    "neboas-intro": "Neboa's Hut is a casual, crafting video game with a strong focus on narrative and dialogue. You play as a witch trying to manage a clandestine potion shop, this means talking with customers, gathering ingredients, and preparing the potions to be sold.",
+    "neboas-intro2": "The gameplay revolves around earning enough money to pay the taxes that are periodically demanded and trying no to raise too much suspicion so that the Inquisition doesn't discover you. Therefore, depending on the situation, the player must decide whether to sell an effective remedy or try to remain undetected.",
+    "neboas-role":  "This project was carried out in collaboration with other members of Conxuro Studio; my roles fell within the areas of design and technical development in Unreal Engine, including:",
+    "neboas-role-en1": "Management of the design department as lead and the workflow within it.",
+    "neboas-role-en2": "Core gameplay design and potion system.",
+    "neboas-role-en3": "UI and UX design.",
+    "neboas-role-en4": "Controls and player movement system programming.",
+    "neboas-role-en5": "Minigames programming.",
+    "neboas-role-en6": "UI programming.",
+    "neboas-role-en7": "Tecnical art - optimizations, materials, and VFX.",
+    "neboas-uxdesign": "UX Design",
+    "neboas-potdesign": "Potion System Design ",
+    "neboas-uidesign": "UI Design",
+    "neboas-design1":"Neboa's Hut was designed with player accessibility in mind; its core design fosters a calm gameplay experience, free from complex mechanics. I chose to lean into this aspect when developing the game's other systems. For instance, the entire experience can be enjoyed using only the mouse cursor, allowing even less experienced players to engage with the game without needing to memorize key bindings. That said, keyboard shortcuts and alternative control schemes were also included, giving players the freedom to choose how they wish to experience the game.",
+    "neboas-design2":"When designing the potion system, I took the game's genre very much into account. Although it functions internally using a system of numerical values, it is presented to the player in a narrative way, through descriptions found within the protagonist's book.",
+    "neboas-design3":"Furthermore, I wanted to move away from any system based on predefined recipes, giving the player the freedom to experiment and discover various ways to create the same potion.",
+    "neboas-design4": "To further enhance player immersion, I decided to incorporate interactive minigames to be performed during the potion-making process, such as lighting the fire or crushing ingredients inside a mortar. In keeping with the established accessibility criteria, these minigames were designed as interactive experiences with no actual difficulty or time limits."
 }
