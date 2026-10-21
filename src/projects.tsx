@@ -7,7 +7,8 @@ import { t } from 'i18next'
 
 import github from './assets/github.webp'
 import itchio from './assets/itchio.webp'
-import neboasmain from './assets/neboasmain.webp'
+import neboasflujo from './assets/flujoneboas.webp'
+import neboasintro from './assets/neboasintro.mp4'
 
 export default function OrbitalPage() {
 
@@ -62,7 +63,7 @@ export function NeboasPage(){
       ]}
     >
         <section id="intro">
-            <ProjectDesc title="Neboa's Hut" desc={[t("neboas-intro"), t("neboas-intro2")]} Media={() => <FullImage image={neboasmain} desc=''/> } links={Links}/>
+            <ProjectDesc title="Neboa's Hut" desc={[t("neboas-intro"), t("neboas-intro2")]} Media={() => <FullVideo video={neboasintro} /> } links={Links}/>
         </section>
         <section id="mirol">
             <h2 className='project-sectitle'>{t("myrole-nav")}</h2>
@@ -90,7 +91,7 @@ export function NeboasPage(){
         </section>
         <section id='uidesign'>
           <h2 className='project-sectitle'>{t("neboas-uidesign")}</h2>
-          <HalfImage image={placeholder} textleft={false} texts={[t("neboas-design5")]} desc=''/>
+          <HalfImage image={neboasflujo} textleft={false} texts={[t("neboas-design5"),t("neboas-design6")]} desc=''/>
           
         </section>
     </ProjectLayout>

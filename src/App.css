@@ -505,9 +505,13 @@ footer>button:last-child{margin-left:auto}
   margin-top: 20px;}
 
 .video-full{
+  display: block;
+  max-width: 100%;
   width: 100%;
   height: auto;
   margin-top: 20px;
+  box-sizing: border-box;
+  object-fit: contain;
   }
 
 .image-half{width: 50%;
@@ -526,6 +530,11 @@ footer>button:last-child{margin-left:auto}
   gap: 30px;
   width: 100%;
   margin-top: 20px;
+  }
+
+  .half-content>*{
+    flex: 1 1 0;
+    min-width: 0;
   }
 
   .project-basics{
