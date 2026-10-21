@@ -93,21 +93,7 @@ function App() {
       <div className="tag-list">{project.tags.map(t => <span key={t}>{t}</span>)}</div>
       {ProjectPage ? <ProjectPage /> : null}
       
-      <div className="video-block">
-        <div>
-          <p className="eyebrow">EN MOVIMIENTO</p>
-          <h2>El proyecto en acción</h2>
-          <p>Espacio preparado para un vídeo de gameplay o una demostración.</p>
-        </div>
-        {project.video ? 
-          <video className="project-video" src={project.video} controls preload="metadata" aria-label={`Demostración de ${project.title}`} /> : 
-          <div className="video-placeholder">
-            <span>▷</span>
-            <p>Vídeo pendiente</p>
-            <small>Añade tu vídeo a este proyecto</small>
-          </div>}
-      </div>
-    <button className="back" onClick={() => goSection('proyectos')}>← {t("back")}</button>
+    <button className="back" style={{ marginTop: '50px' }} onClick={() => goSection('proyectos')}>← {t("back")}</button>
     </main> : <main>                                                                                      {/* Pagina principal */}
       <section className="hero">                                                                          {/* Encabezado pagina principal */}
         <div id="wrapper">
