@@ -64,7 +64,7 @@
     "neboas-role-en6": "Programación de UI.",
     "neboas-role-en7": "Tecnical art - optimizaciones, materiales y efectos visuales.",
     "neboas-uxdesign": "Diseño UX",
-    "neboas-potdesign": "Diseño del sistema de pociones",
+    "neboas-potdesign": "Diseño del sistema de pociones.",
     "neboas-uidesign": "Diseño UI",
     "neboas-menucurve": "Problema técnico - Curvatura del menú", 
     "neboas-optimizations": "Optimizaciones",
@@ -78,6 +78,18 @@
     "neboas-curve2": "Para solucionar este problema creé un material de postprocesado que modificase la posición vertical de los elementos situados sobre el libro en función de su coordenada vertical. Para ajustar facilmente este efecto, la cantidad de desplazamiento viene dada por un curve asset.",
     "neboas-curve3": "El único inconveniente de esta aproximación es que las colisiones de los elementos interactuables no ven modificada su posición. Para solventar esto utilicé botones customizados que ejecutan una función que revierte las transformaciones aplicadas para su parte visual. De esta manera se puede modificar la posición de la colisión manteniedo fija su representación visual en el canvas.",
     "neboas-opt1": "Debido al elevado coste gráfico de Unreal Engine 5, realicé diversas optimizaciones para mejorar el rendimiento del proyecto. Decidí prescindir de sistemas como Lumen y Nanite, sustituyéndolos por alternativas menos exigentes, como iluminación estática, reflejos en espacio de pantalla y LOD tradicionales. También limité el número de luces por habitación, simplifiqué las geometrías y optimicé los materiales mediante material instances, reduciendo las draw calls y utilizando shaders de baja complejidad. Además, ajusté la resolución de las texturas según su tamaño en pantalla, consiguiendo reducir en un 50 % el consumo de memoria.",
-    "neboas-opt2": "Por otro lado, implementé level streaming para cargar únicamente las habitaciones necesarias y sus zonas contiguas, evitando el consumo innecesario de recursos y las transiciones visuales bruscas. También desarrollé soluciones para gestionar las referencias y el comportamiento de los objetos al descargar niveles. Finalmente, simplifiqué las colisiones utilizando formas geométricas básicas y eliminé aquellas que no eran necesarias para el gameplay, mejorando así el rendimiento general del proyecto."
+    "neboas-opt2": "Por otro lado, implementé level streaming para cargar únicamente las habitaciones necesarias y sus zonas contiguas, evitando el consumo innecesario de recursos y las transiciones visuales bruscas. También desarrollé soluciones para gestionar las referencias y el comportamiento de los objetos al descargar niveles. Finalmente, simplifiqué las colisiones utilizando formas geométricas básicas y eliminé aquellas que no eran necesarias para el gameplay, mejorando así el rendimiento general del proyecto.",
+
+    "bathroom-title": "There's no Bathroom in this Dungeon",
+    "bathroom-card": "Encuentra el baño de tu propia mazmorra antes de que te cagues.",
+    "bathroom-intro1": "Este juego invierte los roles habituales de los dungeon crawler, esta vez tu eres el jefe final que acaba de terminar de construir su propia mazmorra y espera a que los aventureros vengan a conquistarla. Sin embargo, has olvidado hacer un baño y necesitas usarlo con urgencia.",
+    "bathroom-intro2": " Por ello, ahora debes recorrer toda tu mazmorra en sentido inverso para llegar al baño más cercano, que se encuentra en el exterior. Durante el trayecto, tendrás que esquivar tus propias trampas, encontrar el camino correcto y derrotar a oleadas de aventureros que exploran la mazmorra.",
+    "bathroom-role": "Para este proyecto individual me encargé personalmente de las partes de diseño, programación y creación de la banda sonora, mientras que los modelos provienen de librerías de uso público. Entre el trabajo que realicé se encuentra:",
+    "bathroom-role-en1": "Diseño de jugabilidad, niveles y UI.",
+    "bathroom-role-en2": "Programación del sistema de movimiento y combate.",
+    "bathroom-role-en3": "Programación de animaciones.",
+    "bathroom-role-en4": "Programación de la IA de los enemigos.",
+    "bathroom-role-en5": "Programación de UI.",
+    "bathroom-role-en6": "Creación de VFX."
     
 }

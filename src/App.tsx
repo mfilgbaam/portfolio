@@ -12,13 +12,14 @@ import neboas from './assets/neboasmain.webp'
 import petanca from './assets/petanca.webp'
 import asteroids from './assets/Asteroids.webp'
 import volcano from './assets/volcanogame.webp'
-import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage} from './Projects'
+import bathroom from './assets/Portada TNBITD.webp'
+import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage, BathroomPage} from './Projects'
 import {ProjectLink, Arrow} from './ProjectUtils'
 
 
 type Category = 'Todos' | 'Videojuegos' | 'Programación'
 type Language = 'EN' | 'ES'
-const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', 'Node.js', 'OpenGL', 'Engine Tools'] as const
+const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', 'Node.js', 'OpenGL', 'Engine Tools', 'VFX', 'Game AI'] as const
 type Tag = typeof tags[number]
 type Project = { id: string; title: string; category: Category; description: string; tags: Tag[]; year: string; art: string; page: ComponentType ;images?: { src: string; alt: string }[]; video?: string; featured?: boolean }
 
@@ -27,7 +28,8 @@ const projects: Project[] = [
   { id: 'neboas', title: t("neboas-title"), category: 'Videojuegos', description: t("neboas-card"), tags: ['Unreal Engine', 'C++', 'UI/UX'], year: '2026', art: neboas, page: NeboasPage, featured: true },
   { id: 'petanca', title: "Petanca OpenGL", category: 'Todos', description: t("neboas-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: petanca, page: PetancaPage, featured: true },
   { id: 'asteroids', title: "Asteroids OpenGL", category: 'Todos', description: t("neboas-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: asteroids, page: AsteroidsPage, featured: false },
-    { id: 'volcano', title: "Volcano Game OpenGL", category: 'Todos', description: t("neboas-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: volcano, page: VolcanoPage, featured: false },
+  { id: 'volcano', title: "Volcano Game OpenGL", category: 'Todos', description: t("neboas-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: volcano, page: VolcanoPage, featured: false },
+  { id: 'bathroom', title: t("bathroom-title"), category: 'Videojuegos', description: t("bathroom-card"), tags: ['Unreal Engine', 'C++', 'UI/UX', 'VFX', 'Game AI'], year: '2026', art: bathroom, page: BathroomPage, featured: true },
 ]
 projects.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || parseInt(b.year) - parseInt(a.year))
     

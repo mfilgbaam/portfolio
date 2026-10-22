@@ -1,8 +1,8 @@
 import ProjectLayout from './ProjectUtils'
-import { FullImage, FullVideo, HalfImage, HalfVideo, ProjectDesc, type Link } from './ProjectUtils'
+import {FullVideo, HalfImage, HalfVideo, YoutubeVideo, ProjectDesc, type Link } from './ProjectUtils'
 import './i18n'
 
-import placeholder from './assets/placeholder.webp'
+
 import { t } from 'i18next'
 
 import github from './assets/github.webp'
@@ -142,6 +142,40 @@ export function VolcanoPage(){
       <section id="intro">
             <ProjectDesc title="Neboa's Hut" desc={[t("neboas-intro"), t("neboas-intro2")]} Media={() => <FullVideo video={volcan} /> } links={Links}/>
         </section>
+    </ProjectLayout>
+  )
+} 
+
+export function BathroomPage(){
+  const Links: Link[] = [
+          {link : "https://shadowlinkv5.itch.io/there-is-no-bathroom-in-this-dungeon", image : itchio, text: t("itchio-link") },
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'mirol', label: t("myrole-nav") },
+        { id: 'uxdesign', label: t("neboas-uxdesign") },
+        { id: 'potdesign', label: t("neboas-potdesign") },
+        { id: 'uidesign', label: t("neboas-uidesign") },
+      ]}
+    >
+      <section id="intro">
+        <ProjectDesc title={t("bathroom-title")} desc={[t("bathroom-intro1"),t("bathroom-intro2")]} Media={() => <YoutubeVideo id="u7VQM7oTTeQ" /> } links={Links}/>
+      </section>
+      <section id="mirol">
+            <h2 className='project-sectitle'>{t("myrole-nav")}</h2>
+            <p className="project-text">{t("bathroom-role")}</p>
+            <ul>
+                <li>{t("bathroom-role-en1")}</li>
+                <li>{t("bathroom-role-en2")}</li>
+                <li>{t("bathroom-role-en3")}</li>
+                <li>{t("bathroom-role-en4")}</li>
+                <li>{t("bathroom-role-en5")}</li>
+                <li>{t("bathroom-role-en6")}</li>
+            </ul>
+      </section>
+
     </ProjectLayout>
   )
 } 

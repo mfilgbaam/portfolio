@@ -1,4 +1,5 @@
 import { useState, type ComponentType, type ReactNode } from 'react'
+import YouTube from "react-youtube"
 
 type Section = {
   id: string
@@ -156,5 +157,12 @@ function ContactLogo({ src }: { src: string; }) {
 export function ProjectLink({link, image, text}: {link: string, image: string, text: string}){
   return(
     <a className="page-link" href={link} target="_blank" rel="noreferrer"><ContactLogo src={image} />{text} <Arrow /></a>
+  )
+}
+
+export function YoutubeVideo({id}: {id: string}){
+
+  return(
+    <YouTube videoId={id} id="video"/>
   )
 }

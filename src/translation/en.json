@@ -53,7 +53,7 @@
     "myrole-nav": "My Role",
 
     "neboas-title":"Neboa's Hut",
-    "neboas-card": "A narrative game about a witch with a clandestine potion shop",
+    "neboas-card": "A narrative game about a witch with a clandestine potion shop.",
     "neboas-intro": "Neboa's Hut is a casual, crafting video game with a strong focus on narrative and dialogue. You play as a witch trying to manage a clandestine potion shop, this means talking with customers, gathering ingredients, and preparing the potions to be sold.",
     "neboas-intro2": "The gameplay revolves around earning enough money to pay the taxes that are periodically demanded and trying no to raise too much suspicion so that the Inquisition doesn't discover you. Therefore, depending on the situation, the player must decide whether to sell an effective remedy or try to remain undetected.",
     "neboas-role":  "This project was carried out in collaboration with other members of Conxuro Studio; my roles fell within the areas of design and technical development in Unreal Engine, including:",
@@ -79,5 +79,17 @@
     "neboas-curve2": "To solve this problem, I created a post-processing material that modifies the vertical position of elements located above the book based on their vertical coordinate. To easily adjust this effect, the amount of displacement is determined by a curve asset.",
     "neboas-curve3": "The only drawback of this approach is that the collision boundaries of interactive elements do not get their positions updated. To address this, I used custom buttons that trigger a function to reverse the transformations applied to the element's visual representation. This allows the position of the collision boundary to be modified while keeping its visual representation fixed on the canvas.",
     "neboas-opt1": "Due to the high graphical cost of Unreal Engine 5, I implemented several optimizations to improve the project's performance. I opted to forgo systems like Lumen and Nanite, replacing them with less demanding alternatives such as static lighting, screen-space reflections, and traditional LODs. I also limited the number of lights per room, simplified geometries, and optimized materials using material instances—thereby reducing draw calls and employing low-complexity shaders. Furthermore, I adjusted texture resolutions based on their size on screen, which resulted in a 50% reduction in memory usage.",
-    "neboas-opt2": "Additionally, I implemented level streaming to load only the necessary rooms and their adjacent areas, avoiding unnecessary resource consumption and jarring visual transitions. I also developed solutions for managing object references and behavior during level unloading. Finally, I simplified collisions by using basic geometric shapes and removed those not required for gameplay, thereby improving the project's overall performance."
+    "neboas-opt2": "Additionally, I implemented level streaming to load only the necessary rooms and their adjacent areas, avoiding unnecessary resource consumption and jarring visual transitions. I also developed solutions for managing object references and behavior during level unloading. Finally, I simplified collisions by using basic geometric shapes and removed those not required for gameplay, thereby improving the project's overall performance.",
+
+    "bathroom-title": "There's no Bathroom in this Dungeon",
+    "bathroom-card": "Find the bathroom in your own dungeon before you shit yourself.",
+    "bathroom-intro1": "This game reverses the traditional dungeon crawler roles, this time you're the final boss who has just finished building his own dungeon and is waiting for adventurers to conquer it. However, you've forgotten to build a bathroom and you urgently need to use it.",
+    "bathroom-intro2": "So you now have to traverse your entire dungeon in backwards to reach the nearest bathroom, which is located outside. Along the way, you'll have to dodge your own traps, find the correct path, and defeat waves of adventurers exploring the dungeon.",
+    "bathroom-role": "For this individual project, I personally handled the design, programming, and creation of the soundtrack, while the models were sourced from public-domain libraries. My contributions include:",
+    "bathroom-role-en1": "Gameplay, level and UI design",
+    "bathroom-role-en2": "Combat and movement systems programming.",
+    "bathroom-role-en3": "Animation programming.",
+    "bathroom-role-en4": "Enemy AI programming.",
+    "bathroom-role-en5": "UI programming.",
+    "bathroom-role-en6": "VFX Creation."
 }
