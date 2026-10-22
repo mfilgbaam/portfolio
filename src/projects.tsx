@@ -91,14 +91,14 @@ export function PetancaPage(){
       <ProjectLayout
       sections={[
         { id: 'intro', label: t("intro-nav") },
-        { id: 'mirol', label: t("myrole-nav") },
+        { id: 'whatbuilt', label: t("whatbuilt-nav") },
         { id: 'uxdesign', label: t("neboas-uxdesign") },
         { id: 'potdesign', label: t("neboas-potdesign") },
         { id: 'uidesign', label: t("neboas-uidesign") },
       ]}
     >
       <section id="intro">
-            <ProjectDesc title="Neboa's Hut" desc={[t("neboas-intro"), t("neboas-intro2")]} Media={() => <FullVideo video={petanca} /> } links={Links}/>
+            <ProjectDesc title={t("petanca-title")} desc={[t("neboas-intro"), t("neboas-intro2")]} Media={() => <FullVideo video={petanca} /> } links={Links}/>
         </section>
     </ProjectLayout>
   )

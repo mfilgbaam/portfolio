@@ -51,6 +51,7 @@
     "intro-nav": "Introduction",
     "whati-nav": "What I built",
     "myrole-nav": "My Role",
+    "whatbuilt-nav": "what did I built",
 
     "neboas-title":"Neboa's Hut",
     "neboas-card": "A narrative game about a witch with a clandestine potion shop.",
@@ -91,5 +92,8 @@
     "bathroom-role-en3": "Animation programming.",
     "bathroom-role-en4": "Enemy AI programming.",
     "bathroom-role-en5": "UI programming.",
-    "bathroom-role-en6": "VFX Creation."
+    "bathroom-role-en6": "VFX Creation.",
+
+    "petanca-title": "Petanque OpenGL",
+    "petanca-card": "The petanque game made in OpenGL"
 }

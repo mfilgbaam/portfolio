@@ -50,6 +50,7 @@
     "intro-nav": "Introducción",
     "whati-nav": "Que construí",
     "myrole-nav": "Mi Rol",
+    "whatbuilt-nav": "Que construí",
 
     "neboas-title":"Neboa's Hut",
     "neboas-card":"Videojuego narrativo acerca de una bruja con una tienda de pociones clandestina",
@@ -90,6 +91,9 @@
     "bathroom-role-en3": "Programación de animaciones.",
     "bathroom-role-en4": "Programación de la IA de los enemigos.",
     "bathroom-role-en5": "Programación de UI.",
-    "bathroom-role-en6": "Creación de VFX."
+    "bathroom-role-en6": "Creación de VFX.",
+
+    "petanca-title": "Petanca OpenGL",
+    "petanca-card": "El juego de la petanca hecho en OpenGL"
     
 }

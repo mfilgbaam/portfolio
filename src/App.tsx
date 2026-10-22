@@ -13,7 +13,7 @@ import petanca from './assets/petanca.webp'
 import asteroids from './assets/Asteroids.webp'
 import volcano from './assets/volcanogame.webp'
 import bathroom from './assets/Portada TNBITD.webp'
-import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage, BathroomPage} from './Projects'
+import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage, BathroomPage} from './projects'
 import {ProjectLink, Arrow} from './ProjectUtils'
 
 
@@ -26,7 +26,7 @@ type Project = { id: string; title: string; category: Category; description: str
 function getProjects(){
 const projects: Project[] = [
   { id: 'neboas', title: t("neboas-title"), category: 'Videojuegos', description: t("neboas-card"), tags: ['Unreal Engine', 'C++', 'UI/UX'], year: '2026', art: neboas, page: NeboasPage, featured: true },
-  { id: 'petanca', title: "Petanca OpenGL", category: 'Todos', description: t("neboas-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: petanca, page: PetancaPage, featured: true },
+  { id: 'petanca', title: t("petanca-title"), category: 'Todos', description: t("petanca-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: petanca, page: PetancaPage, featured: true },
   { id: 'asteroids', title: "Asteroids OpenGL", category: 'Todos', description: t("neboas-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: asteroids, page: AsteroidsPage, featured: false },
   { id: 'volcano', title: "Volcano Game OpenGL", category: 'Todos', description: t("neboas-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: volcano, page: VolcanoPage, featured: false },
   { id: 'bathroom', title: t("bathroom-title"), category: 'Videojuegos', description: t("bathroom-card"), tags: ['Unreal Engine', 'C++', 'UI/UX', 'VFX', 'Game AI'], year: '2026', art: bathroom, page: BathroomPage, featured: true },
