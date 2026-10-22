@@ -9,20 +9,30 @@ import github from './assets/github.webp'
 import linkedin from './assets/linkedin.webp'
 import itchio from './assets/itchio.webp'
 import neboas from './assets/neboasmain.webp'
-import OrbitalPage from './Projects'
-import {NeboasPage} from './Projects'
+import petanca from './assets/petanca.webp'
+import asteroids from './assets/Asteroids.webp'
+import volcano from './assets/volcanogame.webp'
+import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage} from './Projects'
 import {ProjectLink, Arrow} from './ProjectUtils'
 
 
 type Category = 'Todos' | 'Videojuegos' | 'Programación'
 type Language = 'EN' | 'ES'
-const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', 'Node.js'] as const
+const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', 'Node.js', 'OpenGL', 'Engine Tools'] as const
 type Tag = typeof tags[number]
 type Project = { id: string; title: string; category: Category; description: string; tags: Tag[]; year: string; art: string; page: ComponentType ;images?: { src: string; alt: string }[]; video?: string; featured?: boolean }
+
+function getProjects(){
 const projects: Project[] = [
-  { id: 'orbital', title: 'Orbital', category: 'Videojuegos', description: 'Una aventura espacial donde cada órbita cuenta.', tags: ['Unreal Engine', 'C++'], year: '2025', art: 'space', page: OrbitalPage, featured: true },
   { id: 'neboas', title: t("neboas-title"), category: 'Videojuegos', description: t("neboas-card"), tags: ['Unreal Engine', 'C++', 'UI/UX'], year: '2026', art: neboas, page: NeboasPage, featured: true },
+  { id: 'petanca', title: "Petanca OpenGL", category: 'Todos', description: t("neboas-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: petanca, page: PetancaPage, featured: true },
+  { id: 'asteroids', title: "Asteroids OpenGL", category: 'Todos', description: t("neboas-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: asteroids, page: AsteroidsPage, featured: false },
+    { id: 'volcano', title: "Volcano Game OpenGL", category: 'Todos', description: t("neboas-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: volcano, page: VolcanoPage, featured: false },
 ]
+projects.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || parseInt(b.year) - parseInt(a.year))
+    
+return projects
+}
   
 function ConditionalInterrogation({ l }: { l: Language }){return <span>{(l === 'ES' ? '¿' : '')}</span>}
 
@@ -60,13 +70,11 @@ function App() {
     i18n.changeLanguage(navigator.language)
   }, [])
 
-  useEffect(() => { // Ordenar proyectos por destacados y año
-    projects.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || parseInt(b.year) - parseInt(a.year))
-    }, [projects])
-  const project = projects.find(p => route === `#/proyecto/${p.id}`)
+  
+  const project = getProjects().find(p => route === `#/proyecto/${p.id}`)
   const ProjectPage = project?.page
   const unknown = route.startsWith('#/proyecto/') && !project
-  const filtered = projects.filter(p => (category === 'Todos' || p.category === category || p.category === 'Todos') && selectedTags.every(t => p.tags.includes(t)))
+  const filtered = getProjects().filter(p => (category === 'Todos' || p.category === category || p.category === 'Todos') && selectedTags.every(t => p.tags.includes(t)))
   const home = () => { window.location.hash = ''; window.scrollTo({ top: 0, behavior: 'smooth' }) }
   const goSection = (id: string) => { if (project || unknown) { window.location.hash = ''; setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 0) } else document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }) }
   

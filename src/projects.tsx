@@ -9,43 +9,16 @@ import github from './assets/github.webp'
 import itchio from './assets/itchio.webp'
 import neboasflujo from './assets/flujoneboas.webp'
 import neboasintro from './assets/neboasintro.mp4'
+import petanca from './assets/PetancaOpenGL.mp4'
+import asteroids from './assets/AsteroidOpenGL.mp4'
+import volcan from './assets/VolcanoGame.mp4'
+import descripcionlibro from './assets/descripcionlibro.webp'
+import mortero from './assets/morteroweb.mp4'
+import menulibro from './assets/menulibro.mp4'
+import colisioneslibro from './assets/colisioneslibro.mp4'
+import optimizations from './assets/optimizations.webp'
 
-export default function OrbitalPage() {
 
-    const Links: Link[] = [
-        {link : "", image : github, text: t("github-link") },
-        {link : "", image : itchio, text: t("itchio-link") }
-    ]
-  return (
-    <ProjectLayout
-      sections={[
-        { id: 'resumen', label: 'Resumen' },
-        { id: 'mecanicas', label: 'Mecánicas' },
-        { id: 'gameplay', label: 'Gameplay' },
-      ]}
-    >
-      <section id="resumen">
-        <ProjectDesc title='Orbital' desc={[t("lorem-ipsum")]} Media={() => <FullImage image={placeholder} desc=''/> } links={Links}/>
-        <ProjectDesc title='Orbital' desc={[t("lorem-ipsum")]} Media={() => <FullVideo video='/portfolio/media/orbital.mp4' />} links={Links}/>
-        <HalfImage image={placeholder} textleft={true} texts={['']} desc=''/>
-        <FullImage image={placeholder} desc=''/>
-        <FullVideo video='/portfolio/media/orbital.mp4' />
-        <HalfImage image={placeholder} textleft={true} texts={['Tetxo']} desc=''/>
-        <HalfVideo video={placeholder} textleft={true} texts={["Tetxo"]}/>
-      </section>
-
-      <section id="mecanicas">
-        <h2>Mecánicas</h2>
-        <p>Exploración y movimiento orbital.</p>
-      </section>
-
-      <section id="gameplay">
-        <h2>Gameplay</h2>
-        <video src="/portfolio/media/orbital.mp4" controls />
-      </section>
-    </ProjectLayout>
-  )
-}
 
 export function NeboasPage(){
     const Links: Link[] = [
@@ -60,6 +33,8 @@ export function NeboasPage(){
         { id: 'uxdesign', label: t("neboas-uxdesign") },
         { id: 'potdesign', label: t("neboas-potdesign") },
         { id: 'uidesign', label: t("neboas-uidesign") },
+        { id: 'menucurve', label: t("neboas-menucurve") },
+        { id: 'optimizations', label: t("neboas-optimizations") },
       ]}
     >
         <section id="intro">
@@ -86,14 +61,87 @@ export function NeboasPage(){
         </section>
         <section id='potdesign'>
           <h2 className='project-sectitle'>{t("neboas-potdesign")}</h2>
-          <HalfImage image={placeholder} textleft={false} texts={[t("neboas-design2")]} desc=''/>
-          <HalfImage image={placeholder} textleft={true} texts={[t("neboas-design3"),t("neboas-design4") ]} desc=''/>
+          <HalfImage image={descripcionlibro} textleft={false} texts={[t("neboas-design2")]} desc=''/>
+          <HalfVideo video={mortero} textleft={true} texts={[t("neboas-design3"),t("neboas-design4") ]}/>
         </section>
         <section id='uidesign'>
           <h2 className='project-sectitle'>{t("neboas-uidesign")}</h2>
           <HalfImage image={neboasflujo} textleft={false} texts={[t("neboas-design5"),t("neboas-design6")]} desc=''/>
           
         </section>
+        <section id='menucurve'>
+          <h2 className='project-sectitle'>{t("neboas-menucurve")}</h2>
+          <HalfVideo video={menulibro} textleft={true} texts={[t("neboas-curve1"),t("neboas-curve2") ]}/>
+          <HalfVideo video={colisioneslibro} textleft={false} texts={[t("neboas-curve3") ]}/>
+        </section>
+        <section id='optimizations'>
+          <h2 className='project-sectitle'>{t("neboas-optimizations")}</h2>
+          <HalfImage image={optimizations} textleft={true} texts={[t("neboas-opt1"),t("neboas-opt2")]} desc=''/>
+        </section>
+
     </ProjectLayout>
     )
 }
+
+export function PetancaPage(){
+  const Links: Link[] = [
+          {link : "https://github.com/mfilgbaam/PetancaOpenGL", image : github, text: t("github-link") },
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'mirol', label: t("myrole-nav") },
+        { id: 'uxdesign', label: t("neboas-uxdesign") },
+        { id: 'potdesign', label: t("neboas-potdesign") },
+        { id: 'uidesign', label: t("neboas-uidesign") },
+      ]}
+    >
+      <section id="intro">
+            <ProjectDesc title="Neboa's Hut" desc={[t("neboas-intro"), t("neboas-intro2")]} Media={() => <FullVideo video={petanca} /> } links={Links}/>
+        </section>
+    </ProjectLayout>
+  )
+} 
+
+export function AsteroidsPage(){
+  const Links: Link[] = [
+          {link : "https://github.com/mfilgbaam/AsteroidsOpenGL", image : github, text: t("github-link") },
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'mirol', label: t("myrole-nav") },
+        { id: 'uxdesign', label: t("neboas-uxdesign") },
+        { id: 'potdesign', label: t("neboas-potdesign") },
+        { id: 'uidesign', label: t("neboas-uidesign") },
+      ]}
+    >
+      <section id="intro">
+            <ProjectDesc title="Neboa's Hut" desc={[t("neboas-intro"), t("neboas-intro2")]} Media={() => <FullVideo video={asteroids} /> } links={Links}/>
+        </section>
+    </ProjectLayout>
+  )
+} 
+
+export function VolcanoPage(){
+  const Links: Link[] = [
+          {link : "https://github.com/mfilgbaam/VolcanoGameOpenGL", image : github, text: t("github-link") },
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'mirol', label: t("myrole-nav") },
+        { id: 'uxdesign', label: t("neboas-uxdesign") },
+        { id: 'potdesign', label: t("neboas-potdesign") },
+        { id: 'uidesign', label: t("neboas-uidesign") },
+      ]}
+    >
+      <section id="intro">
+            <ProjectDesc title="Neboa's Hut" desc={[t("neboas-intro"), t("neboas-intro2")]} Media={() => <FullVideo video={volcan} /> } links={Links}/>
+        </section>
+    </ProjectLayout>
+  )
+} 
