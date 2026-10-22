@@ -13,7 +13,7 @@ import petanca from './assets/petanca.webp'
 import asteroids from './assets/Asteroids.webp'
 import volcano from './assets/volcanogame.webp'
 import bathroom from './assets/Portada TNBITD.webp'
-import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage, BathroomPage} from './projects'
+import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage, BathroomPage} from './Projects'
 import {ProjectLink, Arrow} from './ProjectUtils'
 
 
