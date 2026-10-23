@@ -120,6 +120,25 @@
     "petanca-what3": "Turn-based system suitable for two players, with final scoring.",
     "petanca-objective": "Delve into the fundamentals of computer graphics and video game development by creating an interactive 3D experience, applying concepts from mathematics, algorithms, and software architecture.",
     
+    "asteroids-title": "Asteroids OpenGL",
+    "asteroids-card": "A simple recreation of the classic Asteroids, made in OpenGL.",
+    "asteroids-desc1": "A 2D arcade video game inspired by the classic *Asteroids*, developed using C++ and OpenGL. The player controls a spacecraft that must dodge and destroy asteroids while attempting to survive for as long as possible.",
+    "asteroids-desc2": "The project focuses on implementing classic arcade-style game mechanics, combining graphical programming, vector mathematics, and real-time object management.",    
+    "asteroids-what1": "2D rendering of the spacecraft, asteroids, and projectiles using OpenGL.",
+    "asteroids-what2": "Movement using vectors to control the position, velocity, and rotation of objects.",
+    "asteroids-what3": "Collision detection between projectiles, asteroids, and the spacecraft.",
+    "asteroids-what4": "Entity management for the dynamic creation, updating, and deletion of asteroids and projectiles.",
+    "asteroids-objective": "Apply the fundamentals of graphics programming and video game logic by developing a 2D arcade game, with a focus on the use of OpenGL, geometric transformations, and real-time entity management.",
+
+    "volcano-title": "Volcano Game OpenGL",
+    "volcano-card": "First-person interactive experience created in OpenGL.",
+    "volcano-desc1": "A first-person narrative video game about someone who returns to their town after work, only to find it evacuated due to a volcanic eruption.",
+    "volcano-what1": "Rendering of imported models and textures in OpenGL.",
+    "volcano-what2": "Landscape creation using math functions in the vertex shader.",
+    "volcano-what3": "Character collisions with the environment.",
+    "volcano-what4": "Game event management.",
+    "volcano-what5": "Text interfaces in OpenGL.",
+    "volcano-objective": "Delve into the foundations of 3D engines, such as importing models from external software, creating more complex collision systems, and managing events.",
 
     "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam."
 }

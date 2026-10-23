@@ -139,19 +139,20 @@ export function AsteroidsPage(){
       ]}
     >
       <section id="intro">
-            <ProjectDesc title={t("petanca-title")} desc={[t("petanca-desc1"), t("petanca-desc2")]} Media={() => <FullVideo video={petanca} /> } links={Links}/>
+            <ProjectDesc title={t("asteroids-title")} desc={[t("asteroids-desc1"), t("asteroids-desc2")]} Media={() => <FullVideo video={asteroids} /> } links={Links}/>
       </section>
       <section id="whatbuilt">
         <h2 className='project-sectitle'>{t("whatbuilt-nav")}</h2>
         <ul>    
-            <li>{t("petanca-what1")}</li>
-            <li>{t("petanca-what2")}</li>
-            <li>{t("petanca-what3")}</li>
+            <li>{t("asteroids-what1")}</li>
+            <li>{t("asteroids-what2")}</li>
+            <li>{t("asteroids-what3")}</li>
+            <li>{t("asteroids-what4")}</li>
         </ul>
       </section>
       <section id="objective">
         <h2 className='project-sectitle'>{t("objective-nav")}</h2>
-        <p className="project-text">{t("petanca-objective")}</p>
+        <p className="project-text">{t("asteroids-objective")}</p>
       </section>
     </ProjectLayout>
   )
@@ -170,19 +171,21 @@ export function VolcanoPage(){
       ]}
     >
       <section id="intro">
-            <ProjectDesc title={t("petanca-title")} desc={[t("petanca-desc1"), t("petanca-desc2")]} Media={() => <FullVideo video={petanca} /> } links={Links}/>
+            <ProjectDesc title={t("volcano-title")} desc={[t("volcano-desc1")]} Media={() => <FullVideo video={volcan} /> } links={Links}/>
       </section>
       <section id="whatbuilt">
         <h2 className='project-sectitle'>{t("whatbuilt-nav")}</h2>
         <ul>    
-            <li>{t("petanca-what1")}</li>
-            <li>{t("petanca-what2")}</li>
-            <li>{t("petanca-what3")}</li>
+            <li>{t("volcano-what1")}</li>
+            <li>{t("volcano-what2")}</li>
+            <li>{t("volcano-what3")}</li>
+            <li>{t("volcano-what4")}</li>
+            <li>{t("volcano-what5")}</li>
         </ul>
       </section>
       <section id="objective">
         <h2 className='project-sectitle'>{t("objective-nav")}</h2>
-        <p className="project-text">{t("petanca-objective")}</p>
+        <p className="project-text">{t("volcano-objective")}</p>
       </section>
     </ProjectLayout>
   )

@@ -26,9 +26,9 @@ type Project = { id: string; title: string; category: Category; description: str
 function getProjects(){
 const projects: Project[] = [
   { id: 'neboas', title: t("neboas-title"), category: 'Videojuegos', description: t("neboas-card"), tags: ['Unreal Engine', 'C++', 'UI/UX'], year: '2026', art: neboas, page: NeboasPage, featured: true },
-  { id: 'petanca', title: t("petanca-title"), category: 'Todos', description: t("petanca-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: petanca, page: PetancaPage, featured: true },
-  { id: 'asteroids', title: "Asteroids OpenGL", category: 'Todos', description: t("neboas-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: asteroids, page: AsteroidsPage, featured: false },
-  { id: 'volcano', title: "Volcano Game OpenGL", category: 'Todos', description: t("neboas-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: volcano, page: VolcanoPage, featured: false },
+  { id: 'petanca', title: t("petanca-title"), category: 'Todos', description: t("petanca-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: petanca, page: PetancaPage, featured: false },
+  { id: 'asteroids', title: t("asteroids-title"), category: 'Todos', description: t("asteroids-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: asteroids, page: AsteroidsPage, featured: false },
+  { id: 'volcano', title: t("volcano-title"), category: 'Todos', description: t("volcano-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: volcano, page: VolcanoPage, featured: false },
   { id: 'bathroom', title: t("bathroom-title"), category: 'Videojuegos', description: t("bathroom-card"), tags: ['Unreal Engine', 'C++', 'UI/UX', 'VFX', 'Game AI', 'Technical Art'], year: '2026', art: bathroom, page: BathroomPage, featured: true },
 ]
 projects.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || parseInt(b.year) - parseInt(a.year))

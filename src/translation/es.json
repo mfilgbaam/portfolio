@@ -112,7 +112,7 @@
     
 
     "petanca-title": "Petanca OpenGL",
-    "petanca-card": "El juego de la petanca hecho en OpenGL",
+    "petanca-card": "El juego de la petanca hecho en OpenGL.",
     "petanca-desc1": "Videojuego de petanca en 3D desarrollado en C++ utilizando OpenGL, que recrea la experiencia de este juego tradicional en un entorno virtual interactivo.",
     "petanca-desc2": "El proyecto combina programación gráfica, matemáticas tridimensionales y lógica de juego para representar un escenario en tiempo real con un motor de juego ad-hoc.",
     "petanca-what1": "Sistema de representación 3D para la escena, que representa las bolas con profundidad y permite desplazar la cámara.",
@@ -122,7 +122,23 @@
     
     "asteroids-title": "Asteroids OpenGL",
     "asteroids-card": "Una recreación simple del clásico asteroids hecha en OpenGL.",
-    "asteroids-desc1": "",
+    "asteroids-desc1": "Videojuego arcade en 2D inspirado en el clásico Asteroids, desarrollado utilizando C++ y OpenGL. El jugador controla una nave espacial que debe esquivar y destruir asteroides mientras intenta sobrevivir el mayor tiempo posible.",
+    "asteroids-desc2": "El proyecto se centra en la implementación de mecánicas clásicas de videojuegos arcade, combinando programación gráfica, matemáticas vectoriales y gestión de objetos en tiempo real.",
+    "asteroids-what1": "Renderizado 2D para la representación de la nave, los asteroides y los proyectiles mediante OpenGL.",
+    "asteroids-what2": "Movimiento mediante el uso de vectores para controlar la posición, velocidad y rotación de los objetos.",
+    "asteroids-what3": "Detección de colisiones entre proyectiles, asteroides y la nave.",
+    "asteroids-what4": "Gestión de entidades para la creación, actualización y eliminación dinámica de asteroides y proyectiles.",
+    "asteroids-objective": "Aplicar los fundamentos de la programación gráfica y la lógica de videojuegos mediante el desarrollo de un arcade 2D, profundizando en el uso de OpenGL, las transformaciones geométricas y la gestión de entidades en tiempo real.",
 
-    "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam.",
+    "volcano-title": "Volcano Game OpenGL",
+    "volcano-card": "Experiencia interactiva en primera persona hecha en OpenGL.",
+    "volcano-desc1": "Videojuego narrativo en primera persona acerca de una persona que regresa a su pueblo despues del trabajo y se lo encuentra evacuado debido a un volcan que entro en erupción",
+    "volcano-what1": "Renderizado de modelos y texturas importados en OpenGL.",
+    "volcano-what2": "Creación de un landscape utilizando funciones matemáticas en el vertex shader.",
+    "volcano-what3": "Cálculo de colisiones del personaje con el entorno.",
+    "volcano-what4": "Gestión de eventos de juego.",
+    "volcano-what5": "Interfaces de texto en OpenGL.",
+    "volcano-objective": "Profundizar en las bases de los motores 3D, como la importación de modelos de softwares externos, la creación de sistemas de colisiones más complejos y la gestión de eventos.",
+
+    "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam."
 }
