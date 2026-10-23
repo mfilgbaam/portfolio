@@ -92,6 +92,23 @@
     "bathroom-role-en4": "Programación de la IA de los enemigos.",
     "bathroom-role-en5": "Programación de UI.",
     "bathroom-role-en6": "Creación de VFX.",
+    "bathroom-role-en7": "Programación de audio",
+    "bathroom-character": "Movimiento del personaje",
+    "bathroom-enemyai": "IA de los enemigos",
+    "bathroom-ui": "UI",
+    "bathroom-level": "Niveles",
+    "bathroom-vfx": "VFX",
+    "bathroom-char1": "Las animaciones están programadas utilizando una máquina de estados dentro de un animation blueprint. También configuré que la cabeza gire levemente en la dirección de la cámara.",
+    "bathroom-char2": "Para el movimiento de la capa, ajusté el rig del modelo para poder añadirle un cloth simulation.",
+    "bathroom-ia1": "Los enemigos implementan una IA my completa, pero limitada, para mantener una dificultad baja para el jugador. Estos pueden patrullar, investigar una zona ante un estímulo, perseguir al jugador si lo ven y buscar cobertura si no pueden alcanzarlo. Para esto último se utiliza un sistema de EQS para buscar un punto óptimo cercano.",
+    "bathroom-ia2": "Las patrullas las hice de forma modular en el behavior tree, de forma que se puedan definir distintos comportamientos e integrarse sin tener que duplicar toda la lógica.",
+    "bathroom-ia3": "También implementé un sistema de cobardía: al recibir cierta cantidad de daño los enemigos se asustan de tu poder y intentan escaparse y ocultarse en lugar de intentar atacarte.",
+    "bathroom-ui1": "Programé la compatibilidad con mando para los menús utilizando el plugin de CommonUI. Con este plugin también pude configurar de forma sencilla los cambios de las imágenes de los keybinds que se muestran al jugador.",
+    "bathroom-ui2": "El menú interactua con un sistema de inventario desde el que se puede recoger o tirar objetos, leer sus descripciones y utilizar objetos consumibles. Este inventario está limitado a seis huecos para que el jugador tenga que decidir que objetos quiere llevar.",
+    "bathroom-ui3": "El menú principal está integrado en el entorno como un 3D widget, de esta manera al comenzar la partida comienza directamente la cinemática inicial de forma natural.",
+    "bathroom-lvl1": "El mapa del juego es un conjunto de salas conectadas por corredores anchos que conforman la mazmorra. Este se diseñó para permitir que el jugador explore sin que llegue a perderse demasiado: hay bifurcaciones, tesoros escondidos, plataformas y puzzles.",
+    "bathroom-lvl2": "Para su creación armé un set de pasillos modulares que encajan como piezas, de esta manera me fue más sencillo montar los escenarios. También separé el mapa en tres zonas unidas por pasillos de carga, así utilizando el sistema de level streaming puedo descargar las zonas en las que no se encuentra el jugador.",
+    
 
     "petanca-title": "Petanca OpenGL",
     "petanca-card": "El juego de la petanca hecho en OpenGL"

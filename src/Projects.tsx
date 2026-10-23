@@ -1,4 +1,4 @@
-import ProjectLayout from './ProjectUtils'
+import ProjectLayout, { FullImage } from './ProjectUtils'
 import {FullVideo, HalfImage, HalfVideo, YoutubeVideo, ProjectDesc, type Link } from './ProjectUtils'
 import './i18n'
 
@@ -17,6 +17,18 @@ import mortero from './assets/morteroweb.mp4'
 import menulibro from './assets/menulibro.mp4'
 import colisioneslibro from './assets/colisioneslibro.mp4'
 import optimizations from './assets/optimizations.webp'
+import charmovement from './assets/bathroom movement.mp4'
+import enemyia from './assets/bathroomenemies.mp4'
+import inventory from './assets/inventory.webp'
+import mainmenu from './assets/mainmenu.mp4'
+import pieces from './assets/map pieces.webp'
+import throne from './assets/throne.webp'
+import bigroom from './assets/bigroom.webp'
+import flooded from './assets/flooded.webp'
+import shoot from './assets/bathroomshoot.mp4'
+import ult from './assets/bathroomult.mp4'
+
+
 
 
 
@@ -155,9 +167,10 @@ export function BathroomPage(){
       sections={[
         { id: 'intro', label: t("intro-nav") },
         { id: 'mirol', label: t("myrole-nav") },
-        { id: 'uxdesign', label: t("neboas-uxdesign") },
-        { id: 'potdesign', label: t("neboas-potdesign") },
-        { id: 'uidesign', label: t("neboas-uidesign") },
+        { id: 'character', label: t("bathroom-character") },
+        { id: 'enemyia', label: t("bathroom-enemyai") },
+        { id: 'ui', label: t("bathroom-ui") },
+        { id: 'level', label: t("bathroom-level") },
       ]}
     >
       <section id="intro">
@@ -175,6 +188,33 @@ export function BathroomPage(){
                 <li>{t("bathroom-role-en6")}</li>
             </ul>
       </section>
+      <section id="character">
+        <h2 className='project-sectitle'>{t("bathroom-character")}</h2>
+        <HalfVideo video={charmovement} textleft={false} texts={[t("bathroom-char1"),t("bathroom-char2") ]}/>
+      </section>
+      <section id="enemyia">
+        <h2 className='project-sectitle'>{t("bathroom-enemyai")}</h2>
+        <HalfVideo video={enemyia} textleft={true} texts={[t("bathroom-ia1"),t("bathroom-ia2"),t("bathroom-ia3"), ]}/>
+      </section>
+      <section id="ui">
+        <h2 className='project-sectitle'>{t("bathroom-ui")}</h2>
+        <p className="project-text">{t("bathroom-ui1")}</p>
+        <HalfImage image={inventory} textleft={false} texts={[ t("bathroom-ui2")]} desc={''}/>
+        <HalfVideo video={mainmenu} textleft={true} texts={[t("bathroom-ui3") ]}/>
+      </section>
+      <section id="level">
+        <h2 className='project-sectitle'>{t("bathroom-level")}</h2>
+        <HalfImage image={pieces} textleft={false} texts={[ t("bathroom-lvl1"), t("bathroom-lvl2")]} desc={''}/>
+        <FullImage image={throne} desc=''/>
+        <FullImage image={bigroom} desc=''/>
+        <FullImage image={flooded} desc=''/>
+      </section>
+      <section id="vfx">
+        <h2 className='project-sectitle'>{t("bathroom-vfx")}</h2>
+        <FullVideo video={shoot}/>
+        <FullVideo video={ult}/>
+      </section>
+      
 
     </ProjectLayout>
   )
