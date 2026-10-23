@@ -104,14 +104,24 @@ export function PetancaPage(){
       sections={[
         { id: 'intro', label: t("intro-nav") },
         { id: 'whatbuilt', label: t("whatbuilt-nav") },
-        { id: 'uxdesign', label: t("neboas-uxdesign") },
-        { id: 'potdesign', label: t("neboas-potdesign") },
-        { id: 'uidesign', label: t("neboas-uidesign") },
+        { id: 'objective', label: t("objective-nav") },
       ]}
     >
       <section id="intro">
-            <ProjectDesc title={t("petanca-title")} desc={[t("neboas-intro"), t("neboas-intro2")]} Media={() => <FullVideo video={petanca} /> } links={Links}/>
-        </section>
+            <ProjectDesc title={t("petanca-title")} desc={[t("petanca-desc1"), t("petanca-desc2")]} Media={() => <FullVideo video={petanca} /> } links={Links}/>
+      </section>
+      <section id="whatbuilt">
+        <h2 className='project-sectitle'>{t("whatbuilt-nav")}</h2>
+        <ul>    
+            <li>{t("petanca-what1")}</li>
+            <li>{t("petanca-what2")}</li>
+            <li>{t("petanca-what3")}</li>
+        </ul>
+      </section>
+      <section id="objective">
+        <h2 className='project-sectitle'>{t("objective-nav")}</h2>
+        <p className="project-text">{t("petanca-objective")}</p>
+      </section>
     </ProjectLayout>
   )
 } 
@@ -124,15 +134,25 @@ export function AsteroidsPage(){
       <ProjectLayout
       sections={[
         { id: 'intro', label: t("intro-nav") },
-        { id: 'mirol', label: t("myrole-nav") },
-        { id: 'uxdesign', label: t("neboas-uxdesign") },
-        { id: 'potdesign', label: t("neboas-potdesign") },
-        { id: 'uidesign', label: t("neboas-uidesign") },
+        { id: 'whatbuilt', label: t("whatbuilt-nav") },
+        { id: 'objective', label: t("objective-nav") },
       ]}
     >
       <section id="intro">
-            <ProjectDesc title="Neboa's Hut" desc={[t("neboas-intro"), t("neboas-intro2")]} Media={() => <FullVideo video={asteroids} /> } links={Links}/>
-        </section>
+            <ProjectDesc title={t("petanca-title")} desc={[t("petanca-desc1"), t("petanca-desc2")]} Media={() => <FullVideo video={petanca} /> } links={Links}/>
+      </section>
+      <section id="whatbuilt">
+        <h2 className='project-sectitle'>{t("whatbuilt-nav")}</h2>
+        <ul>    
+            <li>{t("petanca-what1")}</li>
+            <li>{t("petanca-what2")}</li>
+            <li>{t("petanca-what3")}</li>
+        </ul>
+      </section>
+      <section id="objective">
+        <h2 className='project-sectitle'>{t("objective-nav")}</h2>
+        <p className="project-text">{t("petanca-objective")}</p>
+      </section>
     </ProjectLayout>
   )
 } 
@@ -145,15 +165,25 @@ export function VolcanoPage(){
       <ProjectLayout
       sections={[
         { id: 'intro', label: t("intro-nav") },
-        { id: 'mirol', label: t("myrole-nav") },
-        { id: 'uxdesign', label: t("neboas-uxdesign") },
-        { id: 'potdesign', label: t("neboas-potdesign") },
-        { id: 'uidesign', label: t("neboas-uidesign") },
+        { id: 'whatbuilt', label: t("whatbuilt-nav") },
+        { id: 'objective', label: t("objective-nav") },
       ]}
     >
       <section id="intro">
-            <ProjectDesc title="Neboa's Hut" desc={[t("neboas-intro"), t("neboas-intro2")]} Media={() => <FullVideo video={volcan} /> } links={Links}/>
-        </section>
+            <ProjectDesc title={t("petanca-title")} desc={[t("petanca-desc1"), t("petanca-desc2")]} Media={() => <FullVideo video={petanca} /> } links={Links}/>
+      </section>
+      <section id="whatbuilt">
+        <h2 className='project-sectitle'>{t("whatbuilt-nav")}</h2>
+        <ul>    
+            <li>{t("petanca-what1")}</li>
+            <li>{t("petanca-what2")}</li>
+            <li>{t("petanca-what3")}</li>
+        </ul>
+      </section>
+      <section id="objective">
+        <h2 className='project-sectitle'>{t("objective-nav")}</h2>
+        <p className="project-text">{t("petanca-objective")}</p>
+      </section>
     </ProjectLayout>
   )
 } 

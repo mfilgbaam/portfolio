@@ -51,9 +51,10 @@
     "whati-nav": "Que construí",
     "myrole-nav": "Mi Rol",
     "whatbuilt-nav": "Que construí",
+    "objective-nav": "Objetivo del proyecto",
 
     "neboas-title":"Neboa's Hut",
-    "neboas-card":"Videojuego narrativo acerca de una bruja con una tienda de pociones clandestina",
+    "neboas-card":"Videojuego narrativo acerca de una bruja con una tienda de pociones clandestina.",
     "neboas-intro": "Neboa's Hut es un videojuego casual con un gran énfasis en la narrativa y los diálogos. En él, asumes el papel de una bruja que gestiona una tienda clandestina de pociones; esto implica hablar con los clientes, recolectar ingredientes y preparar los brebajes para su venta." ,
     "neboas-intro2": "El juego gira en torno a conseguir el dinero suficiente para pagar los impuestos que se exigen periódicamente, procurando al mismo tiempo no levantar sospechas para evitar ser descubierta por la Inquisición. Por tanto, según la situación, el jugador deberá decidir si vender un remedio eficaz o intentar pasar desapercibido.",
     "neboas-role":  "Este proyecto fue realizado en colaboración con otros miembros de Conxuro Studio, mis funciones fueron dentro del area de diseño y de desarrollo técnico en Unreal Engine, incluyendo:",
@@ -111,6 +112,17 @@
     
 
     "petanca-title": "Petanca OpenGL",
-    "petanca-card": "El juego de la petanca hecho en OpenGL"
+    "petanca-card": "El juego de la petanca hecho en OpenGL",
+    "petanca-desc1": "Videojuego de petanca en 3D desarrollado en C++ utilizando OpenGL, que recrea la experiencia de este juego tradicional en un entorno virtual interactivo.",
+    "petanca-desc2": "El proyecto combina programación gráfica, matemáticas tridimensionales y lógica de juego para representar un escenario en tiempo real con un motor de juego ad-hoc.",
+    "petanca-what1": "Sistema de representación 3D para la escena, que representa las bolas con profundidad y permite desplazar la cámara.",
+    "petanca-what2": "Sistema de físicas y colisión para las bolas.",
+    "petanca-what3": "Sistema de turnos apto para dos jugadores y con puntuación final.",
+    "petanca-objective": "Profundizar en los fundamentos de la programación gráfica y el desarrollo de videojuegos mediante la creación de una experiencia interactiva en 3D, aplicando conceptos de matemáticas, algoritmos y arquitectura de software.",
     
+    "asteroids-title": "Asteroids OpenGL",
+    "asteroids-card": "Una recreación simple del clásico asteroids hecha en OpenGL.",
+    "asteroids-desc1": "",
+
+    "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam.",
 }

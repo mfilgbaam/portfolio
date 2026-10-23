@@ -44,14 +44,14 @@
     "footer-text": "Designed and developed by Marcos Filgueiras Baamonde",
 
     "back": "Back to projects",
-    "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam.",
     "github-link": "Github",
     "itchio-link": "itch.io",
 
     "intro-nav": "Introduction",
     "whati-nav": "What I built",
     "myrole-nav": "My Role",
-    "whatbuilt-nav": "what did I built",
+    "whatbuilt-nav": "What did I built",
+    "objective-nav": "Project objective",
 
     "neboas-title":"Neboa's Hut",
     "neboas-card": "A narrative game about a witch with a clandestine potion shop.",
@@ -112,5 +112,14 @@
     
 
     "petanca-title": "Petanque OpenGL",
-    "petanca-card": "The petanque game made in OpenGL"
+    "petanca-card": "The petanque game made in OpenGL.",
+    "petanca-desc1": "A 3D petanque video game developed in C++ using OpenGL, which recreates the experience of this traditional game in an interactive virtual environment.",
+    "petanca-desc2": "The project combines graphical programming, three-dimensional mathematics, and game logic to render a scene in real time using a custom-built game engine.",
+    "petanca-what1": "3D representation system for the scene, which renders the balls with depth and allows for camera movement.",
+    "petanca-what2": "Physics and collision system for the balls.",
+    "petanca-what3": "Turn-based system suitable for two players, with final scoring.",
+    "petanca-objective": "Delve into the fundamentals of computer graphics and video game development by creating an interactive 3D experience, applying concepts from mathematics, algorithms, and software architecture.",
+    
+
+    "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam."
 }
