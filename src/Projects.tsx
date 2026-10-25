@@ -7,6 +7,7 @@ import { t } from 'i18next'
 
 import github from './assets/github.webp'
 import itchio from './assets/itchio.webp'
+import doc from './assets/docicon.webp'
 import neboasflujo from './assets/flujoneboas.webp'
 import neboasintro from './assets/neboasintro.mp4'
 import petanca from './assets/PetancaOpenGL.mp4'
@@ -27,6 +28,7 @@ import bigroom from './assets/bigroom.webp'
 import flooded from './assets/flooded.webp'
 import shoot from './assets/bathroomshoot.mp4'
 import ult from './assets/bathroomult.mp4'
+import molevideo from './assets/molevideo.mp4'
 
 
 
@@ -249,6 +251,42 @@ export function BathroomPage(){
       </section>
       
 
+    </ProjectLayout>
+  )
+} 
+
+export function MolePage(){
+  const Links: Link[] = [
+          {link : "http://hdl.handle.net/2183/39634", image : doc, text: t("doc-link") },
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'whatbuilt', label: t("whatbuilt-nav") },
+        { id: 'objective', label: t("objective-nav") },
+      ]}
+    >
+      <section id="intro">
+            <ProjectDesc title={t("mole-title")} desc={[t("mole-desc1"),t("mole-desc2"),t("mole-desc3")]} Media={() => <FullVideo video={molevideo} /> } links={Links}/>
+      </section>
+      <section id="whatbuilt">
+        <h2 className='project-sectitle'>{t("whatbuilt-nav")}</h2>
+        <ul>    
+            <li>{t("mole-what1")}</li>
+            <li>{t("mole-what2")}</li>
+            <li>{t("mole-what3")}</li>
+            <li>{t("mole-what4")}</li>
+            <li>{t("mole-what5")}</li>
+            <li>{t("mole-what6")}</li>
+            <li>{t("mole-what7")}</li>
+            <li>{t("mole-what8")}</li>
+        </ul>
+      </section>
+      <section id="objective">
+        <h2 className='project-sectitle'>{t("objective-nav")}</h2>
+        <p className="project-text">{t("mole-objective")}</p>
+      </section>
     </ProjectLayout>
   )
 } 

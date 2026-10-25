@@ -13,13 +13,14 @@ import petanca from './assets/petanca.webp'
 import asteroids from './assets/Asteroids.webp'
 import volcano from './assets/volcanogame.webp'
 import bathroom from './assets/Portada TNBITD.webp'
-import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage, BathroomPage} from './Projects'
+import moleimage from './assets/moleicon.webp'
+import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage, BathroomPage, MolePage} from './Projects'
 import {ProjectLink, Arrow} from './ProjectUtils'
 
 
 type Category = 'Todos' | 'Videojuegos' | 'Programación'
 type Language = 'EN' | 'ES'
-const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', 'Node.js', 'OpenGL', 'Engine Tools', 'VFX', 'Game AI', 'Technical Art'] as const
+const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', 'Node.js', 'OpenGL', 'Engine Tools', 'VFX', 'Game AI', 'Technical Art', 'Kotlin', 'Python', 'Android Studio'] as const
 type Tag = typeof tags[number]
 type Project = { id: string; title: string; category: Category; description: string; tags: Tag[]; year: string; art: string; page: ComponentType ;images?: { src: string; alt: string }[]; video?: string; featured?: boolean }
 
@@ -30,6 +31,7 @@ const projects: Project[] = [
   { id: 'asteroids', title: t("asteroids-title"), category: 'Todos', description: t("asteroids-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: asteroids, page: AsteroidsPage, featured: false },
   { id: 'volcano', title: t("volcano-title"), category: 'Todos', description: t("volcano-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: volcano, page: VolcanoPage, featured: false },
   { id: 'bathroom', title: t("bathroom-title"), category: 'Videojuegos', description: t("bathroom-card"), tags: ['Unreal Engine', 'C++', 'UI/UX', 'VFX', 'Game AI', 'Technical Art'], year: '2026', art: bathroom, page: BathroomPage, featured: true },
+  { id: 'mole', title: t("mole-title"), category: 'Programación', description: t("mole-card"), tags: ['Kotlin', 'Python', 'Android Studio'], year: '2024', art: moleimage, page: MolePage, featured: false },
 ]
 projects.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || parseInt(b.year) - parseInt(a.year))
     

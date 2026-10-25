@@ -46,6 +46,7 @@
     "back": "Volver a proyectos",
     "github-link": "Github",
     "itchio-link": "itch.io",
+    "doc-link": "Trabajo completo",
 
     "intro-nav": "Introducción",
     "whati-nav": "Que construí",
@@ -139,6 +140,21 @@
     "volcano-what4": "Gestión de eventos de juego.",
     "volcano-what5": "Interfaces de texto en OpenGL.",
     "volcano-objective": "Profundizar en las bases de los motores 3D, como la importación de modelos de softwares externos, la creación de sistemas de colisiones más complejos y la gestión de eventos.",
+
+    "mole-title": "Mole Scanner",
+    "mole-card": "Aplicación android para la detección y clasificación automática de los niveles de riesgo de imágenes dermatoscopicas.",
+    "mole-desc1": "Desarrollo de un sistema inteligente para la detección, segmentación y clasificación automática de lesiones cutáneas mediante técnicas de Deep Learning y visión por computador.",
+    "mole-desc2": "El proyecto combina modelos de redes neuronales convolucionales con una aplicación móvil Android, permitiendo analizar imágenes dermatoscópicas, identificar las regiones afectadas y clasificar diferentes tipos de lesiones según su categoría de riesgo.",
+    "mole-desc3": "Este prototipo fue elaborado en colaboración con el Grupo Varpa de la Universidad de La Coruña (UDC) como trabajo de fin de grado para la titulación de Ingeniería Informática.",
+    "mole-what1": "Procesamiento de imágenes: preparación y tratamiento de imágenes médicas procedentes del conjunto de datos ISIC.",
+    "mole-what2": "Segmentación automática: implementación y entrenamiento de redes neuronales U-Net para identificar y delimitar lesiones cutáneas.",
+    "mole-what3": "Clasificación mediante IA: desarrollo de modelos basados en DenseNet y ResNet para clasificar lesiones en 3 y 8 categorías.",
+    "mole-what4": "Optimización de modelos: aplicación de técnicas de Transfer Learning y Data Augmentation para mejorar el rendimiento y reducir el impacto del desequilibrio entre clases.",
+    "mole-what5": "Evaluación de resultados: análisis del rendimiento mediante métricas de precisión, sensibilidad, Dice, Jaccard y matrices de confusión.",
+    "mole-what6": "Desarrollo de aplicación Android: diseño e implementación de una interfaz en Kotlin para cargar imágenes, ejecutar análisis y visualizar resultados.",
+    "mole-what7": "Integración de modelos de IA: incorporación de scripts Python en Android mediante Chaquopy, utilizando corrutinas para ejecutar los análisis sin bloquear la interfaz.",
+    "mole-what8": "Autenticación y almacenamiento: integración de Firebase Authentication, gestión de archivos locales y exportación de resultados en PDF.",
+    "mole-objective": "Desarrollar una herramienta de apoyo al diagnóstico médico que facilite la detección temprana de lesiones cutáneas potencialmente malignas, automatizando el análisis de imágenes dermatoscópicas y proporcionando resultados accesibles desde dispositivos móviles.",
 
     "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam."
 }

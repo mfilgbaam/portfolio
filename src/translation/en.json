@@ -46,6 +46,7 @@
     "back": "Back to projects",
     "github-link": "Github",
     "itchio-link": "itch.io",
+    "doc-link": "Full paper",
 
     "intro-nav": "Introduction",
     "whati-nav": "What I built",
@@ -139,6 +140,21 @@
     "volcano-what4": "Game event management.",
     "volcano-what5": "Text interfaces in OpenGL.",
     "volcano-objective": "Delve into the foundations of 3D engines, such as importing models from external software, creating more complex collision systems, and managing events.",
+
+    "mole-title": "Mole Scanner",
+    "mole-card": "Android application for the automatic detection and classification of risk levels in dermatoscopic images.",
+    "mole-desc1": "Development of an intelligent system for the automatic detection, segmentation, and classification of skin lesions using deep learning and computer vision techniques.",
+    "mole-desc2": "The project combines convolutional neural network models with an Android mobile application, enabling the analysis of dermatoscopic images, the identification of affected regions, and the classification of various types of lesions according to their risk category.",
+    "mole-desc3": "This prototype was developed in collaboration with the Varpa Group at the University of A Coruña (UDC) as a final-year project for a degree in Informatics Engineering.",
+    "mole-what1": "Image processing: preparation and treatment of medical images from the ISIC dataset.",
+    "mole-what2": "Automatic segmentation: implementation and training of U-Net neural networks to identify and delineate skin lesions.",
+    "mole-what3": "AI-based classification: development of models based on DenseNet and ResNet to classify lesions into 3 and 8 categories.",
+    "mole-what4": "Model optimization: application of transfer learning and data augmentation techniques to improve performance and reduce the impact of class imbalance.",
+    "mole-what5": "Evaluation of results: performance analysis using precision, sensitivity, Dice, and Jaccard metrics, as well as confusion matrices.",
+    "mole-what6": "Android application development: design and implementation of an interface in Kotlin for loading images, performing analysis, and visualizing results.",
+    "mole-what7": "Integration of AI models: incorporating Python scripts into Android via Chaquopy, using coroutines to execute analyses without blocking the interface.",
+    "mole-what8": "Authentication and storage: integration of Firebase Authentication, local file management, and export of results as PDF.",
+    "mole-objective": "Develop a medical diagnostic support tool that facilitates the early detection of potentially malignant skin lesions by automating the analysis of dermatoscopic images and providing results accessible via mobile devices.",
 
     "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam."
 }
