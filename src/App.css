@@ -59,12 +59,12 @@
 .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px 27px}
 .card-image{position:relative;border-radius:7px;overflow:hidden;border:1px solid #313239;box-shadow: 0 8px 24px rgba(10, 10, 10, 0.12);transition: box-shadow .3s ease}
 .art{height:285px;position:relative;overflow:hidden;isolation:isolate;}
-.card-image .image-art{transition:transform .7s}
+.card-image .image-art{transition:transform .7s;margin-bottom: -5px}
 .image-art{max-width: 100%;
   max-height: 100%;
   width: auto;
-  height: 100%;
-  border-radius: 15px;}
+  height: auto;
+  border-radius: 7px;}
 .project-card:hover .card-image .image-art{transform:scale(1.035)}
 .project-card:hover .card-image,.project-card:focus-visible .card-image {box-shadow:0 8px 28px rgba(255, 194, 172, 0.2);}
 @media (prefers-reduced-motion: reduce) {.card-image {transition: none;}}

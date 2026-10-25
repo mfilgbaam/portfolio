@@ -163,6 +163,6 @@ export function ProjectLink({link, image, text}: {link: string, image: string, t
 export function YoutubeVideo({id}: {id: string}){
 
   return(
-    <YouTube videoId={id} id="video"/>
+    <YouTube className="video-full" videoId={id} id="video"/>
   )
 }

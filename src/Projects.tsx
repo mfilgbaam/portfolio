@@ -29,6 +29,7 @@ import flooded from './assets/flooded.webp'
 import shoot from './assets/bathroomshoot.mp4'
 import ult from './assets/bathroomult.mp4'
 import molevideo from './assets/molevideo.mp4'
+import portfolioimage from './assets/Portfolio-web.webp'
 
 
 
@@ -286,6 +287,38 @@ export function MolePage(){
       <section id="objective">
         <h2 className='project-sectitle'>{t("objective-nav")}</h2>
         <p className="project-text">{t("mole-objective")}</p>
+      </section>
+    </ProjectLayout>
+  )
+} 
+
+export function PortfolioPage(){
+  const Links: Link[] = [
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'whatbuilt', label: t("whatbuilt-nav") },
+        { id: 'objective', label: t("objective-nav") },
+      ]}
+    >
+      <section id="intro">
+            <ProjectDesc title={t("portfolio-title")} desc={[t("portfolio-desc1")]} Media={() => <FullImage image={portfolioimage} desc='' /> } links={Links}/>
+      </section>
+      <section id="whatbuilt">
+        <h2 className='project-sectitle'>{t("whatbuilt-nav")}</h2>
+        <ul>    
+            <li>{t("portfolio-what1")}</li>
+            <li>{t("portfolio-what2")}</li>
+            <li>{t("portfolio-what3")}</li>
+            <li>{t("portfolio-what4")}</li>
+        </ul>
+      </section>
+      <section id="objective">
+        <h2 className='project-sectitle'>{t("objective-nav")}</h2>
+        <p className="project-text">{t("portfolio-objective")}</p>
+        <p className="project-text">{t("portfolio-objetcive2")}</p>
       </section>
     </ProjectLayout>
   )

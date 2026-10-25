@@ -14,7 +14,8 @@ import asteroids from './assets/Asteroids.webp'
 import volcano from './assets/volcanogame.webp'
 import bathroom from './assets/Portada TNBITD.webp'
 import moleimage from './assets/moleicon.webp'
-import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage, BathroomPage, MolePage} from './Projects'
+import portfolioimage from './assets/Portfolio-web.webp'
+import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage, BathroomPage, MolePage, PortfolioPage} from './Projects'
 import {ProjectLink, Arrow} from './ProjectUtils'
 
 
@@ -30,8 +31,9 @@ const projects: Project[] = [
   { id: 'petanca', title: t("petanca-title"), category: 'Todos', description: t("petanca-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: petanca, page: PetancaPage, featured: false },
   { id: 'asteroids', title: t("asteroids-title"), category: 'Todos', description: t("asteroids-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: asteroids, page: AsteroidsPage, featured: false },
   { id: 'volcano', title: t("volcano-title"), category: 'Todos', description: t("volcano-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: volcano, page: VolcanoPage, featured: false },
-  { id: 'bathroom', title: t("bathroom-title"), category: 'Videojuegos', description: t("bathroom-card"), tags: ['Unreal Engine', 'C++', 'UI/UX', 'VFX', 'Game AI', 'Technical Art'], year: '2026', art: bathroom, page: BathroomPage, featured: true },
-  { id: 'mole', title: t("mole-title"), category: 'Programación', description: t("mole-card"), tags: ['Kotlin', 'Python', 'Android Studio'], year: '2024', art: moleimage, page: MolePage, featured: false },
+  { id: 'bathroom', title: t("bathroom-title"), category: 'Videojuegos', description: t("bathroom-card"), tags: ['Unreal Engine', 'C++', 'UI/UX', 'VFX', 'Game AI', 'Technical Art'], year: '2026', art: bathroom, page: BathroomPage, featured: false },
+  { id: 'mole', title: t("mole-title"), category: 'Programación', description: t("mole-card"), tags: ['Kotlin', 'Python', 'Android Studio'], year: '2024', art: moleimage, page: MolePage, featured: true },
+    { id: 'portfolio', title: t("portfolio-title"), category: 'Programación', description: t("portfolio-card"), tags: [ 'React', 'TypeScript', 'Node.js'], year: '2026', art: portfolioimage, page: PortfolioPage, featured: true },
 ]
 projects.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || parseInt(b.year) - parseInt(a.year))
     

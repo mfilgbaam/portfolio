@@ -156,5 +156,15 @@
     "mole-what8": "Autenticación y almacenamiento: integración de Firebase Authentication, gestión de archivos locales y exportación de resultados en PDF.",
     "mole-objective": "Desarrollar una herramienta de apoyo al diagnóstico médico que facilite la detección temprana de lesiones cutáneas potencialmente malignas, automatizando el análisis de imágenes dermatoscópicas y proporcionando resultados accesibles desde dispositivos móviles.",
 
+    "portfolio-title": "Portfolio Web",
+    "portfolio-card": "Portfolio web hecho con React y Typescript",
+    "portfolio-desc1": "Portfolio personal desarrollado con React y TypeScript para presentar proyectos de videojuegos y programación. Incluye una portada interactiva y un catálogo con filtros por categoría y tecnologías, desde el que se puede acceder a una página detallada de cada proyecto.",
+    "portfolio-what1": "Creación de una interfaz adaptable a escritorio y móvil.",
+    "portfolio-what2": "Creación de páginas de proyecto con descripciones, galerías y soporte para vídeos.",
+    "portfolio-what3": "Estructura modular y escalable, que permite añadir y modificar proyectos con facilidad.",
+    "portfolio-what4": "Soporte para traducciones con i18next.",
+    "portfolio-objective": "El objetivo de este proyecto no fue construir algo novedoso o de una complejidad técnica elevada, sino construir un producto que cumpliese su función. Elaborando una solución que cumpliese los requisitos que pedia el proyecto.",
+    "portfolio-objetcive2": "También poner a prueba mi habilidad para adaptarme a una nueva tecnología. Ya que sin tener experiencia previa en el desarrollo web conseguí en menos de una semana armar toda la estructura del proyecto.",
+
     "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam."
 }
