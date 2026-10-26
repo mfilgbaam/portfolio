@@ -157,14 +157,20 @@
     "mole-objective": "Develop a medical diagnostic support tool that facilitates the early detection of potentially malignant skin lesions by automating the analysis of dermatoscopic images and providing results accessible via mobile devices.",
 
     "portfolio-title": "Portfolio Web",
-    "portfolio-card": "Web portfolio made with React & Typescript",
+    "portfolio-card": "Web portfolio made with React & Typescript.",
     "portfolio-desc1": "Personal portfolio developed with React and TypeScript to showcase video game and programming projects. It features an interactive landing page and a catalog with filters by category and technology, providing access to a detailed page for each project.",
+    "portfolio-desc2": "I would put a link, but you are already looking at the project.",
     "portfolio-what1": "Creating an interface adaptable to desktop and mobile.",
     "portfolio-what2": "Creation of project pages with descriptions, galleries, and video support.",
     "portfolio-what3": "Modular and scalable structure that allows for the easy addition and modification of projects.",
     "portfolio-what4": "Support for translations using i18next.",
     "portfolio-objective": "The goal of this project was not to build something novel or highly complex from a technical standpoint, but rather to create a product that fulfilled its intended function Developing a solution that met the requirements specified for the project.",
     "portfolio-objetcive2": "It also put my ability to adapt to new technology to the test; despite having no prior experience in web development, I managed to build the entire project structure in less than a week.",
+
+    "mages-title": "Mages of Wilorth",
+    "mages-card": "Face waves of enemies in this first person magical shooter.",
+    "mages-desc1": "This is a first-person shooter in which you face waves of enemies, either alone or with friends, using elemental magic weapons. It features a retro, pixelated art style designed to evoke a PS1 aesthetic.",
+    "mages-desc2": "This project is still in development, and my contribution was part of my collaboration with Reckless Monster Studio.",
 
     "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam."
 }

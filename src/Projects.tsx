@@ -304,10 +304,42 @@ export function PortfolioPage(){
       ]}
     >
       <section id="intro">
-            <ProjectDesc title={t("portfolio-title")} desc={[t("portfolio-desc1")]} Media={() => <FullImage image={portfolioimage} desc='' /> } links={Links}/>
+            <ProjectDesc title={t("portfolio-title")} desc={[t("portfolio-desc1"), t("portfolio-desc2")]} Media={() => <FullImage image={portfolioimage} desc='' /> } links={Links}/>
       </section>
       <section id="whatbuilt">
         <h2 className='project-sectitle'>{t("whatbuilt-nav")}</h2>
+        <ul>    
+            <li>{t("portfolio-what1")}</li>
+            <li>{t("portfolio-what2")}</li>
+            <li>{t("portfolio-what3")}</li>
+            <li>{t("portfolio-what4")}</li>
+        </ul>
+      </section>
+      <section id="objective">
+        <h2 className='project-sectitle'>{t("objective-nav")}</h2>
+        <p className="project-text">{t("portfolio-objective")}</p>
+        <p className="project-text">{t("portfolio-objetcive2")}</p>
+      </section>
+    </ProjectLayout>
+  )
+} 
+
+export function MagesPage(){
+  const Links: Link[] = [
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'role', label: t("myrole-nav") },
+        { id: 'objective', label: t("objective-nav") },
+      ]}
+    >
+      <section id="intro">
+            <ProjectDesc title={t("mages-title")} desc={[t("mages-desc1"), t("mages-desc2")]} Media={() => <FullImage image={portfolioimage} desc='' /> } links={Links}/>
+      </section>
+      <section id="role">
+        <h2 className='project-sectitle'>{t("myrole-nav")}</h2>
         <ul>    
             <li>{t("portfolio-what1")}</li>
             <li>{t("portfolio-what2")}</li>

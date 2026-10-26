@@ -15,25 +15,27 @@ import volcano from './assets/volcanogame.webp'
 import bathroom from './assets/Portada TNBITD.webp'
 import moleimage from './assets/moleicon.webp'
 import portfolioimage from './assets/Portfolio-web.webp'
-import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage, BathroomPage, MolePage, PortfolioPage} from './Projects'
+import mages from './assets/Mow portada.webp'
+import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage, BathroomPage, MolePage, PortfolioPage, MagesPage} from './Projects'
 import {ProjectLink, Arrow} from './ProjectUtils'
 
 
 type Category = 'Todos' | 'Videojuegos' | 'Programación'
 type Language = 'EN' | 'ES'
-const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', 'Node.js', 'OpenGL', 'Engine Tools', 'VFX', 'Game AI', 'Technical Art', 'Kotlin', 'Python', 'Android Studio'] as const
+const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', 'Node.js', 'OpenGL', 'Engine Tools', 'VFX', 'Game AI', 'Technical Art', 'Kotlin', 'Python', 'Android Studio', 'HTML'] as const
 type Tag = typeof tags[number]
 type Project = { id: string; title: string; category: Category; description: string; tags: Tag[]; year: string; art: string; page: ComponentType ;images?: { src: string; alt: string }[]; video?: string; featured?: boolean }
 
 function getProjects(){
 const projects: Project[] = [
-  { id: 'neboas', title: t("neboas-title"), category: 'Videojuegos', description: t("neboas-card"), tags: ['Unreal Engine', 'C++', 'UI/UX'], year: '2026', art: neboas, page: NeboasPage, featured: true },
+  { id: 'neboas', title: t("neboas-title"), category: 'Videojuegos', description: t("neboas-card"), tags: ['Unreal Engine', 'C++', 'UI/UX', 'Technical Art'], year: '2026', art: neboas, page: NeboasPage, featured: true },
   { id: 'petanca', title: t("petanca-title"), category: 'Todos', description: t("petanca-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: petanca, page: PetancaPage, featured: false },
   { id: 'asteroids', title: t("asteroids-title"), category: 'Todos', description: t("asteroids-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: asteroids, page: AsteroidsPage, featured: false },
   { id: 'volcano', title: t("volcano-title"), category: 'Todos', description: t("volcano-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: volcano, page: VolcanoPage, featured: false },
   { id: 'bathroom', title: t("bathroom-title"), category: 'Videojuegos', description: t("bathroom-card"), tags: ['Unreal Engine', 'C++', 'UI/UX', 'VFX', 'Game AI', 'Technical Art'], year: '2026', art: bathroom, page: BathroomPage, featured: false },
   { id: 'mole', title: t("mole-title"), category: 'Programación', description: t("mole-card"), tags: ['Kotlin', 'Python', 'Android Studio'], year: '2024', art: moleimage, page: MolePage, featured: true },
-    { id: 'portfolio', title: t("portfolio-title"), category: 'Programación', description: t("portfolio-card"), tags: [ 'React', 'TypeScript', 'Node.js'], year: '2026', art: portfolioimage, page: PortfolioPage, featured: true },
+  { id: 'portfolio', title: t("portfolio-title"), category: 'Programación', description: t("portfolio-card"), tags: [ 'React', 'TypeScript', 'Node.js', 'HTML'], year: '2026', art: portfolioimage, page: PortfolioPage, featured: true },
+  { id: 'mages', title: t("mages-title"), category: 'Videojuegos', description: t("mages-card"), tags: [ 'Unreal Engine', 'C++', 'VFX', 'Technical Art'], year: '2026', art: mages, page: MagesPage, featured: false },
 ]
 projects.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || parseInt(b.year) - parseInt(a.year))
     
