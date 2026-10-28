@@ -171,7 +171,14 @@
     "mages-card": "Enfrentate a oleadas de enemigos en este shooter mágico en primera persona.",
     "mages-desc1": "Este es un shooter en primera persona en el que te enfrentas a oleadas de enemigos solo o acompañado utilizando armas mágicas elementales. Tiene un estilo artistico retro y pixelizado para simular una estética de PS1.",
     "mages-desc2": "Este proyecto aún se encuentra en desarrollo y mi contribución fue parte de mi colaboración con Reckless Monster Studio.",
-    "mages-role": "Mis funciones principales para este proyecto fueron de artista técnico y de efectos especiales",
+    "mages-role": "Mis funciones principales para este proyecto fueron las de artista técnico y de efectos especiales, incluyendo:",
+    "mages-role2": "Aunque posteriormente también realicé tareas de programación de gameplay y arreglo de fallos en UI.",
+    "mages-role-en1": "VFX de efectos de disparo y recarga de armas.",
+    "mages-role-en2": "Creación de un anim notify personalizado para modificar el color y textura de los VFX elementales automáticamente.",
+    "mages-role-en3": "Creación de un material para landscape que evita el texture repetition y cuenta con un canal que cambia la textura en función de la inclinación del terreno.",
+    "mages-role-en4": "VFX y materiales para decorados del mapa.",
+    "mages-role-en5": "Networking para asegurar el correcto funcionamiento de los VFX en multijugador.",
+    "mages-role-en6": "Colaboración con el enviromental artist para optimizar los assets del mapa.",
 
     "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam."
 }

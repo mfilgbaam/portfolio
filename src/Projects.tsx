@@ -30,6 +30,7 @@ import shoot from './assets/bathroomshoot.mp4'
 import ult from './assets/bathroomult.mp4'
 import molevideo from './assets/molevideo.mp4'
 import portfolioimage from './assets/Portfolio-web.webp'
+import mages from './assets/Mow portada.webp'
 
 
 
@@ -336,16 +337,20 @@ export function MagesPage(){
       ]}
     >
       <section id="intro">
-            <ProjectDesc title={t("mages-title")} desc={[t("mages-desc1"), t("mages-desc2")]} Media={() => <FullImage image={portfolioimage} desc='' /> } links={Links}/>
+            <ProjectDesc title={t("mages-title")} desc={[t("mages-desc1"), t("mages-desc2")]} Media={() => <FullImage image={mages} desc='' /> } links={Links}/>
       </section>
       <section id="role">
         <h2 className='project-sectitle'>{t("myrole-nav")}</h2>
+        <p className="project-text">{t("mages-role")}</p>
         <ul>    
-            <li>{t("portfolio-what1")}</li>
-            <li>{t("portfolio-what2")}</li>
-            <li>{t("portfolio-what3")}</li>
-            <li>{t("portfolio-what4")}</li>
+            <li>{t("mages-role-en1")}</li>
+            <li>{t("mages-role-en2")}</li>
+            <li>{t("mages-role-en3")}</li>
+            <li>{t("mages-role-en4")}</li>
+            <li>{t("mages-role-en5")}</li>
+            <li>{t("mages-role-en6")}</li>
         </ul>
+        <p className="project-text">{t("mages-role2")}</p>
       </section>
       <section id="objective">
         <h2 className='project-sectitle'>{t("objective-nav")}</h2>
