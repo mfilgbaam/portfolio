@@ -179,6 +179,13 @@
     "mages-role-en4": "VFX y materiales para decorados del mapa.",
     "mages-role-en5": "Networking para asegurar el correcto funcionamiento de los VFX en multijugador.",
     "mages-role-en6": "Colaboración con el enviromental artist para optimizar los assets del mapa.",
+    "mages-enviroment": "Efectos del Mapa",
+    "mages-landscape": "Material del landscape",
+    "mages-weaponsvfx": "VFX de armas",
+    "mages-postprocess": "Postprocesados elementales",
+    "mages-postprocess-text": "Materiales de postprocesado que cambian dependiendo del elemento de la sala en la que se encuentra el jugador.",
+    "mages-barrier": "Efecto de barrera para proteger las entradas del mapa. Los anillos indician la resistencia restante de la barrera.",
+    "mages-landscape-text": "Material para el ladscape que varía su textura en función de la inclinación del terreno. Además también varía el tamaño de la textura en función de la distancia con la cámara.",
 
     "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam."
 }

@@ -178,7 +178,14 @@
     "mages-role-en3": "Creation of a landscape material that avoids texture repetition and includes a channel that changes the texture based on the slope of the terrain.",
     "mages-role-en4": "VFX and materials for map set pieces.",
     "mages-role-en5": "Networking to ensure the proper functioning of VFX in multiplayer.",
-    "mages-role-en6": "Collaboration with the environmental artist to optimize map assets.",   
+    "mages-role-en6": "Collaboration with the environmental artist to optimize map assets.",
+    "mages-enviroment": "Map effects",
+    "mages-landscape": "Landscape material",
+    "mages-weaponsvfx": "Weapons VFX",
+    "mages-postprocess": "Elemental post-process effects",
+    "mages-postprocess-text": "Post-processing materials that change depending on the element of the room in which the player is located.",
+    "mages-barrier": "Barrier effect to protect map entrances. The rings indicate the barrier's remaining strength.",
+    "mages-landscape-text": "A material for the landscape that varies its texture based on the slope of the terrain. It also adjusts the texture scale according to the distance from the camera.",
 
     "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam."
 }
