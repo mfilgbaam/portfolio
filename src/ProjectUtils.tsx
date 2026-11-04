@@ -166,3 +166,20 @@ export function YoutubeVideo({id}: {id: string}){
     <YouTube className="video-full" videoId={id} id="video"/>
   )
 }
+
+export function TwoVideos({video1, video2}: {video1: string, video2: string}){
+
+  return(
+
+    <div className="half-content">
+
+      <video className="video-half" controls playsInline autoPlay muted loop >
+        <source src={video1} type="video/mp4" />
+      </video>
+      <video className="video-half" controls playsInline autoPlay muted loop >
+        <source src={video2} type="video/mp4" />
+      </video>
+    </div>
+
+  )
+}

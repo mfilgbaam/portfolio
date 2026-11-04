@@ -179,6 +179,13 @@
     "mages-role-en4": "VFX y materiales para decorados del mapa.",
     "mages-role-en5": "Networking para asegurar el correcto funcionamiento de los VFX en multijugador.",
     "mages-role-en6": "Colaboración con el enviromental artist para optimizar los assets del mapa.",
+    "mages-enviroment": "Efectos del Mapa",
+    "mages-landscape": "Material del landscape",
+    "mages-weaponsvfx": "VFX de armas",
+    "mages-postprocess": "Postprocesados elementales",
+    "mages-postprocess-text": "Materiales de postprocesado que cambian dependiendo del elemento de la sala en la que se encuentra el jugador.",
+    "mages-barrier": "Efecto de barrera para proteger las entradas del mapa. Los anillos indician la resistencia restante de la barrera.",
+    "mages-landscape-text": "Material para el ladscape que varía su textura en función de la inclinación del terreno. Además también varía el tamaño de la textura en función de la distancia con la cámara.",
 
     "row-title": "Realms of Wilorth",
     "row-card": "Rogelite top down en el que exploras mazmorras y derrotas enemigos por orden del mago Wilorth.",

@@ -180,6 +180,14 @@
     "mages-role-en5": "Networking to ensure the proper functioning of VFX in multiplayer.",
     "mages-role-en6": "Collaboration with the environmental artist to optimize map assets.",
 
+    "mages-enviroment": "Map effects",
+    "mages-landscape": "Landscape material",
+    "mages-weaponsvfx": "Weapons VFX",
+    "mages-postprocess": "Elemental post-process effects",
+    "mages-postprocess-text": "Post-processing materials that change depending on the element of the room in which the player is located.",
+    "mages-barrier": "Barrier effect to protect map entrances. The rings indicate the barrier's remaining strength.",
+    "mages-landscape-text": "A material for the landscape that varies its texture based on the slope of the terrain. It also adjusts the texture scale according to the distance from the camera.",
+
     "row-title": "Realms of Wilorth",
     "row-card": "Roguelite top-down game where you explore dungeons and defeat enemies on the orders of the wizard Wilorth.",
 

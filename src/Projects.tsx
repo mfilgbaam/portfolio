@@ -1,4 +1,4 @@
-import ProjectLayout, { FullImage } from './ProjectUtils'
+import ProjectLayout, { FullImage, TwoVideos } from './ProjectUtils'
 import {FullVideo, HalfImage, HalfVideo, YoutubeVideo, ProjectDesc, type Link } from './ProjectUtils'
 import './i18n'
 
@@ -31,6 +31,22 @@ import ult from './assets/bathroomult.mp4'
 import molevideo from './assets/molevideo.mp4'
 import portfolioimage from './assets/Portfolio-web.webp'
 import mages from './assets/Mow portada.webp'
+import mow_barrier from './assets/MOW_barrier.mp4'
+import mow_barrier_repair from './assets/MOW_barrier_repair.mp4'
+import mow_barrier_break from './assets/MOW_barrierbreak.mp4'
+import mow_portal from './assets/MOW_portal.mp4'
+import mow_landscape from './assets/MOW_landscape.mp4'
+import mow_dragon from './assets/MOW_dragon.mp4'
+import mow_wand from './assets/MOW_wand.mp4'
+import mow_sword from './assets/MOW_sword.mp4'
+import mow_minigun from './assets/MOW_minigun.mp4'
+import mow_lava from './assets/MOW_lava.mp4'
+import mow_holy_portal from './assets/MOW_holy_portal.mp4'
+import mow_post_dark from './assets/MOW_post_dark.mp4'
+import mow_post_fire from './assets/MOW_post_fire.mp4'
+import mow_post_light from './assets/MOW_post_light.mp4'
+import mow_post_nature from './assets/MOW_post_nature.mp4'
+import mow_post_water from './assets/MOW_post_water.mp4'
 
 
 
@@ -333,7 +349,10 @@ export function MagesPage(){
       sections={[
         { id: 'intro', label: t("intro-nav") },
         { id: 'role', label: t("myrole-nav") },
-        { id: 'objective', label: t("objective-nav") },
+        { id: 'enviroment', label: t("mages-enviroment") },
+        { id: 'landscape', label: t("mages-landscape") },
+        { id: 'weapons', label: t("mages-weaponsvfx") },
+        { id: 'postprocess', label: t("mages-postprocess") },
       ]}
     >
       <section id="intro">
@@ -352,10 +371,27 @@ export function MagesPage(){
         </ul>
         <p className="project-text">{t("mages-role2")}</p>
       </section>
-      <section id="objective">
-        <h2 className='project-sectitle'>{t("objective-nav")}</h2>
-        <p className="project-text">{t("portfolio-objective")}</p>
-        <p className="project-text">{t("portfolio-objetcive2")}</p>
+      <section id="enviroment">
+        <h2 className='project-sectitle'>{t("mages-enviroment")}</h2>
+        <HalfVideo video={mow_barrier} textleft={true} texts={[t("mages-barrier")]}/>
+        <TwoVideos video1={mow_barrier_break} video2={mow_barrier_repair}/>
+        <TwoVideos video1={mow_lava} video2={mow_holy_portal}/>
+        <FullVideo video={mow_portal}/>
+      </section>
+      <section id="landscape">
+        <h2 className='project-sectitle'>{t("mages-landscape")}</h2>
+        <HalfVideo video={mow_landscape} textleft={false} texts={[t("mages-landscape-text")]}/>
+      </section>
+      <section id="weapons">
+        <h2 className='project-sectitle'>{t("mages-weaponsvfx")}</h2>
+        <TwoVideos video1={mow_wand} video2={mow_sword}/>
+        <TwoVideos video1={mow_minigun} video2={mow_dragon}/>
+      </section>
+      <section id="postprocess">
+        <h2 className='project-sectitle'>{t("mages-postprocess")}</h2>
+        <HalfVideo video={mow_post_nature} textleft={true} texts={[t("mages-postprocess-text")]}/>
+        <TwoVideos video1={mow_post_water} video2={mow_post_fire}/>
+        <TwoVideos video1={mow_post_dark} video2={mow_post_light}/>
       </section>
     </ProjectLayout>
   )
