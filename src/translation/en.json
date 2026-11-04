@@ -187,5 +187,19 @@
     "mages-barrier": "Barrier effect to protect map entrances. The rings indicate the barrier's remaining strength.",
     "mages-landscape-text": "A material for the landscape that varies its texture based on the slope of the terrain. It also adjusts the texture scale according to the distance from the camera.",
 
+    "kaiju-title": "Kaijuu Panic!",
+    "kaiju-title2": "Kaijuu Panic",
+    "kaiju-card": "A mobile game where you control a kaiju and destroy cities as you pass by.",
+    "kaiju-desc1": "Kaijuu Panic! is a mobile game where you control a kaiju and destroy cities as you pass by. The objective is to destroy the population center before the kaiju runs out of energy.",
+    "kaiju-desc2": "This project is still in a very early stage of development and my contribution was part of my collaboration with Reckless Monster Studio.",
+    "kaiju-role": "At first, my role in this project was to supervise the junior programming team and review how the game mechanics were being implemented, as well as identify critical optimization issues.",
+    "kaiju-role2": "However, a critical optimization problem was found for which no solution could be found, so I personally took charge of resolving it. This problem involved creating background characters that would flee from the player, which consumed excessive resources when implementing individual AI, especially considering the target platform, which is a mobile device.",
+    "kaiju-role3": "To resolve this issue, I incorporated the behavior of these characters into a niagara system, which has much lower consumption and allows for generating many more characters on screen without affecting the game's performance. Additionally, I also took charge of creating the models and animations for these characters in Blender.",
+    "kaiju-model-nav": "Characters Modeling and Animation",
+    "kaiju-model": "I modeled a set of characters with a low-poly style and flat texturing, as a top-down view doesn't reveal much detail.",
+    "kaiju-anim": "All characters use the same rig and animations, making it easier to create new characters and reducing resource consumption.",
+    "kaiju-niagara-nav": "Niagara System",
+    "kaiju-niagara": "Implementatión using a niagara system with component renderers. The characters use bounceless collisions to avoid buildings and dissappear once they are far enough from the player.",
+
     "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam."
 }

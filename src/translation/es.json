@@ -187,5 +187,19 @@
     "mages-barrier": "Efecto de barrera para proteger las entradas del mapa. Los anillos indician la resistencia restante de la barrera.",
     "mages-landscape-text": "Material para el ladscape que varía su textura en función de la inclinación del terreno. Además también varía el tamaño de la textura en función de la distancia con la cámara.",
 
+    "kaiju-title": "Kaijuu Panic!",
+    "kaiju-title2": "Kaijuu Panic",
+    "kaiju-card": "Juego móvil en el que controlas un kaiju y destruyes ciudades a tu paso.",
+    "kaiju-desc1": "Kaijuu Panic! es un juego móvil en el que controlas un kaiju y destruyes ciudades a tu paso. El objetivo es destruir el nucleo de población antes de que el kaiju se quede sin energía.",
+    "kaiju-desc2": "Este proyecto aún se encuentra en una fase muy temprana de desarrollo y mi contribución fue parte de mi colaboración con Reckless Monster Studio.",
+    "kaiju-role": "En principio mi rol en este proyecto iba a limitarse únicamente a la supervisión del equipo de programadores junior, y hacer revisiones de como se estaban implementando las mecánicas de juego, y encontrar problemas de optimización críticos.",
+    "kaiju-role2": "Sin embargo, se encontró un problema de optimización para el cuál no hallaban solución, así que me encargué personalmente de resolverlo. Este problema consistia en crear unos personajes de fondo que huyeran del jugador, los cuales consumían demasiados recursos al implementar una IA individual, más teniendo en cuenta la plataforma de destino, que es un dispositivo móvil.",
+    "kaiju-role3": "Para resolver este problema, incorporé el comportamiento de estos personajes en un sistema niagara, que tiene un consumo mucho menor y permite que se puedan generar muchos más personajes en pantalla sin afectar al rendimiento del juego. Además, también me encargué de crear los modelos y animaciónes de estos personajes en blender.",
+    "kaiju-model-nav": "Modelado y animación de los personajes",
+    "kaiju-model": "Modelé un set de personajes con un estilo low poly y texturizado plano, ya que con una vista top down no se aprecia el detalle.",
+    "kaiju-anim": "Todos los personajes utilizan el mismo rig, y animaciónes, de esta manera se facilita la creación de nuevos personajes y se reduce el consumo de recursos.",
+    "kaiju-niagara-nav": "Sistema Niagara",
+    "kaiju-niagara": "Implementación using a niagara system with component renderers. The characters use bounceless collisions to avoid buildings and disappear once they are far enough from the player.",
+
     "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam."
 }

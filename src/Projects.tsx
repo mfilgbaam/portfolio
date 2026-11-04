@@ -47,6 +47,12 @@ import mow_post_fire from './assets/MOW_post_fire.mp4'
 import mow_post_light from './assets/MOW_post_light.mp4'
 import mow_post_nature from './assets/MOW_post_nature.mp4'
 import mow_post_water from './assets/MOW_post_water.mp4'
+import kaiju from './assets/Kaijuu portada.webp'
+import kaiju_model from './assets/Kaiju-character.webp'
+import kaiju_idle from './assets/Kaiju_anim_idle.mp4'
+import kaiju_run from './assets/Kaiju_anim_run.mp4'
+import kaiju_niagara from './assets/Kaiju_niagara.webp'
+import kaiju_gameplay from './assets/Kaijuu_Gameplay.mp4'
 
 
 
@@ -392,6 +398,41 @@ export function MagesPage(){
         <HalfVideo video={mow_post_nature} textleft={true} texts={[t("mages-postprocess-text")]}/>
         <TwoVideos video1={mow_post_water} video2={mow_post_fire}/>
         <TwoVideos video1={mow_post_dark} video2={mow_post_light}/>
+      </section>
+    </ProjectLayout>
+  )
+} 
+
+export function KaijuPage(){
+  const Links: Link[] = [
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'role', label: t("myrole-nav") },
+        { id: 'model', label: t("kaiju-model-nav") },
+        { id: 'niagara', label: t("kaiju-niagara-nav") },
+      ]}
+    >
+      <section id="intro">
+            <ProjectDesc title={t("kaiju-title2")} desc={[t("kaiju-desc1"), t("kaiju-desc2")]} Media={() => <FullImage image={kaiju} desc='' /> } links={Links} punctuation="!"/>
+      </section>
+      <section id="role">
+        <h2 className='project-sectitle'>{t("myrole-nav")}</h2>
+        <p className="project-text">{t("kaiju-role")}</p>
+        <p className="project-text">{t("kaiju-role2")}</p>
+        <p className="project-text">{t("kaiju-role3")}</p>
+      </section>
+      <section id="model">
+        <h2 className='project-sectitle'>{t("kaiju-model-nav")}</h2>
+        <HalfImage image={kaiju_model} textleft={true} texts={[t("kaiju-model"), t("kaiju-anim")]}/>
+        <TwoVideos video1={kaiju_idle} video2={kaiju_run}/>
+      </section>
+      <section id="niagara">
+        <h2 className='project-sectitle'>{t("kaiju-niagara-nav")}</h2>
+        <HalfImage image={kaiju_niagara} textleft={true} texts={[t("kaiju-niagara")]}/>
+        <FullVideo video={kaiju_gameplay}/>
       </section>
     </ProjectLayout>
   )

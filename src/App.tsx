@@ -16,7 +16,8 @@ import bathroom from './assets/Portada TNBITD.webp'
 import moleimage from './assets/moleicon.webp'
 import portfolioimage from './assets/Portfolio-web.webp'
 import mages from './assets/Mow portada.webp'
-import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage, BathroomPage, MolePage, PortfolioPage, MagesPage} from './Projects'
+import kaiju from './assets/Kaijuu portada.webp'
+import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage, BathroomPage, MolePage, PortfolioPage, MagesPage, KaijuPage} from './Projects'
 import {ProjectLink, Arrow} from './ProjectUtils'
 
 
@@ -36,6 +37,7 @@ const projects: Project[] = [
   { id: 'mole', title: t("mole-title"), category: 'Programación', description: t("mole-card"), tags: ['Kotlin', 'Python', 'Android Studio'], year: '2024', art: moleimage, page: MolePage, featured: true },
   { id: 'portfolio', title: t("portfolio-title"), category: 'Programación', description: t("portfolio-card"), tags: [ 'React', 'TypeScript', 'Node.js', 'HTML'], year: '2026', art: portfolioimage, page: PortfolioPage, featured: true },
   { id: 'mages', title: t("mages-title"), category: 'Videojuegos', description: t("mages-card"), tags: [ 'Unreal Engine', 'C++', 'VFX', 'Technical Art'], year: '2026', art: mages, page: MagesPage, featured: false },
+  { id: 'kaiju', title: t("kaiju-title"), category: 'Videojuegos', description: t("kaiju-card"), tags: [ 'Unreal Engine', 'C++', 'Technical Art'], year: '2026', art: kaiju, page: KaijuPage, featured: false },
 ]
 projects.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || parseInt(b.year) - parseInt(a.year))
     

@@ -81,7 +81,7 @@ export function FullImage({image, desc}: {image: string, desc: string}){
   )
 }
 
-export function HalfImage({image, textleft, texts, desc}: {image: string,textleft: boolean,texts: string[], desc: string})
+export function HalfImage({image, textleft, texts, desc}: {image: string,textleft: boolean,texts: string[], desc?: string})
 {
   return(
     <div className="half-content">
@@ -120,11 +120,11 @@ export function HalfVideo({video, textleft, texts}: {video: string, textleft: bo
   )
 }
 
-export function ProjectDesc({title, desc, Media, links}: {title: string, desc: string[], Media: ComponentType, links:Link[]}){
+export function ProjectDesc({title, desc, Media, links, punctuation}: {title: string, desc: string[], Media: ComponentType, links:Link[], punctuation?: string}){
   return(
     <div className="half-content">
       <div className="project-basics">
-        <ProjectTitle title={title}/>
+        <ProjectTitle title={title} punctuation={punctuation}/>
         <TextsParagraph texts={desc}/>
         <div className="page-links">
         {links.map(l => <ProjectLink link={l.link} image={l.image} text={l.text}/>)}
@@ -142,9 +142,9 @@ export type Link = {
 }
 
 
-export function ProjectTitle({title}: {title: string}){
+export function ProjectTitle({title, punctuation}: {title: string, punctuation?: string}){
   return(
-    <h1 className='project-title'>{title}<span>.</span></h1>
+    <h1 className='project-title'>{title}<span>{punctuation || '.'}</span></h1>
   )
 }
 
