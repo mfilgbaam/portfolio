@@ -360,3 +360,39 @@ export function MagesPage(){
     </ProjectLayout>
   )
 } 
+
+export function RowPage(){
+  const Links: Link[] = [
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'role', label: t("myrole-nav") },
+        { id: 'objective', label: t("objective-nav") },
+      ]}
+    >
+      <section id="intro">
+            <ProjectDesc title={t("mages-title")} desc={[t("mages-desc1"), t("mages-desc2")]} Media={() => <FullImage image={mages} desc='' /> } links={Links}/>
+      </section>
+      <section id="role">
+        <h2 className='project-sectitle'>{t("myrole-nav")}</h2>
+        <p className="project-text">{t("mages-role")}</p>
+        <ul>    
+            <li>{t("mages-role-en1")}</li>
+            <li>{t("mages-role-en2")}</li>
+            <li>{t("mages-role-en3")}</li>
+            <li>{t("mages-role-en4")}</li>
+            <li>{t("mages-role-en5")}</li>
+            <li>{t("mages-role-en6")}</li>
+        </ul>
+        <p className="project-text">{t("mages-role2")}</p>
+      </section>
+      <section id="objective">
+        <h2 className='project-sectitle'>{t("objective-nav")}</h2>
+        <p className="project-text">{t("portfolio-objective")}</p>
+        <p className="project-text">{t("portfolio-objetcive2")}</p>
+      </section>
+    </ProjectLayout>
+  )
+} 

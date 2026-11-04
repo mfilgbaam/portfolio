@@ -16,13 +16,14 @@ import bathroom from './assets/Portada TNBITD.webp'
 import moleimage from './assets/moleicon.webp'
 import portfolioimage from './assets/Portfolio-web.webp'
 import mages from './assets/Mow portada.webp'
+import row from './assets/ROW_portada.webp'
 import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage, BathroomPage, MolePage, PortfolioPage, MagesPage} from './Projects'
 import {ProjectLink, Arrow} from './ProjectUtils'
 
 
 type Category = 'Todos' | 'Videojuegos' | 'Programación'
 type Language = 'EN' | 'ES'
-const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', 'Node.js', 'OpenGL', 'Engine Tools', 'VFX', 'Game AI', 'Technical Art', 'Kotlin', 'Python', 'Android Studio', 'HTML'] as const
+const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', 'Node.js', 'OpenGL', 'Engine Tools', 'VFX', 'Game AI', 'Technical Art', 'QA', 'Kotlin', 'Python', 'Android Studio', 'HTML'] as const
 type Tag = typeof tags[number]
 type Project = { id: string; title: string; category: Category; description: string; tags: Tag[]; year: string; art: string; page: ComponentType ;images?: { src: string; alt: string }[]; video?: string; featured?: boolean }
 
@@ -36,6 +37,7 @@ const projects: Project[] = [
   { id: 'mole', title: t("mole-title"), category: 'Programación', description: t("mole-card"), tags: ['Kotlin', 'Python', 'Android Studio'], year: '2024', art: moleimage, page: MolePage, featured: true },
   { id: 'portfolio', title: t("portfolio-title"), category: 'Programación', description: t("portfolio-card"), tags: [ 'React', 'TypeScript', 'Node.js', 'HTML'], year: '2026', art: portfolioimage, page: PortfolioPage, featured: true },
   { id: 'mages', title: t("mages-title"), category: 'Videojuegos', description: t("mages-card"), tags: [ 'Unreal Engine', 'C++', 'VFX', 'Technical Art'], year: '2026', art: mages, page: MagesPage, featured: false },
+  { id: 'row', title: t("row-title"), category: 'Videojuegos', description: t("row-card"), tags: [ 'Unreal Engine', 'C++', 'VFX', 'Technical Art', 'UI/UX', 'QA'], year: '2026', art: row, page: RowPage, featured: false },
 ]
 projects.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || parseInt(b.year) - parseInt(a.year))
     
