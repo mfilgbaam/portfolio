@@ -47,6 +47,7 @@
     "github-link": "Github",
     "itchio-link": "itch.io",
     "doc-link": "Trabajo completo",
+    "steam-link": "Steam",
 
     "intro-nav": "Introducción",
     "whati-nav": "Que construí",
@@ -203,6 +204,15 @@
 
     "row-title": "Realms of Wilorth",
     "row-card": "Rogelite top down en el que exploras mazmorras y derrotas enemigos por orden del mago Wilorth.",
+    "row-desc1": "Roguelite de acción moderno, con estética retro. Controla almas de héroes sacrificados por los diferentes reinos elementales. Destruye a los guardianes que te aprisionaron y quédate con sus semillas elementales para volverte imparable. Libera a Wilorth o muere en el intento.",
+    "row-desc2": "Este proyecto cuenta ya con una versión jugable en Steam, y mi contribución fue parte de mi colaboración con Reckless Monster Studio.",
+    "row-role": "Cuando me integré a este proyecto, ya había una base de código con más de tres años de desarrollo a sus espaldas y a la que había contribuido un gran número de personas. Pese a esto fui capaz de realizar multitud de contribuciones en un corto periodo de tiempo, entre las que se encuentran:",
+    "row-role-en1": "Integración de nuevos enemigos y sus mecánicas de juego.",
+    "row-role-en2": "Creación de VFX y SFX para los enemigos y sus habilidades.",
+    "row-role-en3": "Corrección de animaciónes de ataque y movimiento en Blender.",
+    "row-role-en4": "Testeo del juego para encontrar fallos críticos",
+    "row-role-en6": "Corrección de bugs de gameplay",
+    "row-role-en7": "Corrección de bugs de inputs y navegación de menús",
 
     "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam."
 }

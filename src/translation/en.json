@@ -47,6 +47,7 @@
     "github-link": "Github",
     "itchio-link": "itch.io",
     "doc-link": "Full paper",
+    "steam-link": "Steam",
 
     "intro-nav": "Introduction",
     "whati-nav": "What I built",
@@ -204,6 +205,15 @@
 
     "row-title": "Realms of Wilorth",
     "row-card": "Roguelite top-down game where you explore dungeons and defeat enemies on the orders of the wizard Wilorth.",
+    "row-desc1": "Modern action roguelite with a retro aesthetic. Control the souls of heroes sacrificed by the different elemental realms. Defeat the guardians that imprisoned you and take their elemental seeds to become unstoppable. Free Wilorth or die trying.",
+    "row-desc2": "This project already has a playable version on Steam, and my contribution was part of my collaboration with Reckless Monster Studio.",
+    "row-role": "When I joined this project, there was already a codebase with over three years of development behind it and many people had contributed. Despite this, I was able to make numerous contributions in a short period of time, including:",
+    "row-role-en1": "Integration of new enemies and their game mechanics.",
+    "row-role-en2": "Creation of VFX and SFX for the enemies and their abilities.",
+    "row-role-en3": "Correction of attack and movement animations in Blender.",
+    "row-role-en4": "Gameplay testing to identify critical issues.",
+    "row-role-en6": "Bug fixes for gameplay elements.",
+    "row-role-en7": "Bug fixes for input handling and menu navigation.",
 
     "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam."
 }

@@ -8,6 +8,7 @@ import { t } from 'i18next'
 import github from './assets/github.webp'
 import itchio from './assets/itchio.webp'
 import doc from './assets/docicon.webp'
+import steam from './assets/Steam_logo.webp'
 import neboasflujo from './assets/flujoneboas.webp'
 import neboasintro from './assets/neboasintro.mp4'
 import petanca from './assets/PetancaOpenGL.mp4'
@@ -53,6 +54,7 @@ import kaiju_idle from './assets/Kaiju_anim_idle.mp4'
 import kaiju_run from './assets/Kaiju_anim_run.mp4'
 import kaiju_niagara from './assets/Kaiju_niagara.webp'
 import kaiju_gameplay from './assets/Kaijuu_Gameplay.mp4'
+import row from './assets/ROW_portada.webp'
 
 
 
@@ -433,6 +435,36 @@ export function KaijuPage(){
         <h2 className='project-sectitle'>{t("kaiju-niagara-nav")}</h2>
         <HalfImage image={kaiju_niagara} textleft={true} texts={[t("kaiju-niagara")]}/>
         <FullVideo video={kaiju_gameplay}/>
+      </section>
+    </ProjectLayout>
+  )
+} 
+
+export function RowPage(){
+  const Links: Link[] = [
+          {link : "https://store.steampowered.com/app/2420090/Realms_of_Wilorth/", image : steam, text: t("steam-link") },
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'role', label: t("myrole-nav") },
+      ]}
+    >
+      <section id="intro">
+            <ProjectDesc title={t("row-title")} desc={[t("row-desc1"),t("row-desc2")]} Media={() => <FullImage image={row} desc='' /> } links={Links}/>
+      </section>
+      <section id="role">
+        <h2 className='project-sectitle'>{t("myrole-nav")}</h2>
+        <p className="project-text">{t("row-role")}</p>
+        <ul>    
+            <li>{t("row-role-en1")}</li>
+            <li>{t("row-role-en2")}</li>
+            <li>{t("row-role-en3")}</li>
+            <li>{t("row-role-en4")}</li>
+            <li>{t("row-role-en6")}</li>
+            <li>{t("row-role-en7")}</li>
+        </ul>
       </section>
     </ProjectLayout>
   )

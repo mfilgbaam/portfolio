@@ -18,7 +18,7 @@ import portfolioimage from './assets/Portfolio-web.webp'
 import mages from './assets/Mow portada.webp'
 import kaiju from './assets/Kaijuu portada.webp'
 import row from './assets/ROW_portada.webp'
-import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage, BathroomPage, MolePage, PortfolioPage, MagesPage, KaijuPage} from './Projects'
+import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage, BathroomPage, MolePage, PortfolioPage, MagesPage, KaijuPage, RowPage} from './Projects'
 import {ProjectLink, Arrow} from './ProjectUtils'
 
 
