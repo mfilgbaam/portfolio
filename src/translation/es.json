@@ -201,5 +201,8 @@
     "kaiju-niagara-nav": "Sistema Niagara",
     "kaiju-niagara": "Implementación using a niagara system with component renderers. The characters use bounceless collisions to avoid buildings and disappear once they are far enough from the player.",
 
+    "row-title": "Realms of Wilorth",
+    "row-card": "Rogelite top down en el que exploras mazmorras y derrotas enemigos por orden del mago Wilorth.",
+
     "lorem-ipsum": "Lorem ipsum dolor sit amet consectetur adipiscing elit tempus ligula arcu leo ad parturient facilisis luctus, ornare ante a tempor rhoncus dictumst auctor lacus netus posuere cubilia donec ridiculus interdum. Suscipit fermentum venenatis quis massa, parturient feugiat et, sodales pulvinar dis. Dictumst pulvinar at duis cubilia felis sociis nibh rutrum fermentum fringilla donec eget sociosqu, lacus eleifend justo urna conubia ridiculus lacinia ligula nulla per nullam."
 }
