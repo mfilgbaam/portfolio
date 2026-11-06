@@ -1,0 +1,471 @@
+import ProjectLayout, { FullImage, TwoVideos } from './ProjectUtils'
+import {FullVideo, HalfImage, HalfVideo, YoutubeVideo, ProjectDesc, type Link } from './ProjectUtils'
+import './i18n'
+
+
+import { t } from 'i18next'
+
+import github from './assets/github.webp'
+import itchio from './assets/itchio.webp'
+import doc from './assets/docicon.webp'
+import steam from './assets/Steam_logo.webp'
+import neboasflujo from './assets/flujoneboas.webp'
+import neboasintro from './assets/neboasintro.mp4'
+import petanca from './assets/PetancaOpenGL.mp4'
+import asteroids from './assets/AsteroidOpenGL.mp4'
+import volcan from './assets/VolcanoGame.mp4'
+import descripcionlibro from './assets/descripcionlibro.webp'
+import mortero from './assets/morteroweb.mp4'
+import menulibro from './assets/menulibro.mp4'
+import colisioneslibro from './assets/colisioneslibro.mp4'
+import optimizations from './assets/optimizations.webp'
+import charmovement from './assets/bathroom movement.mp4'
+import enemyia from './assets/bathroomenemies.mp4'
+import inventory from './assets/inventory.webp'
+import mainmenu from './assets/mainmenu.mp4'
+import pieces from './assets/map pieces.webp'
+import throne from './assets/throne.webp'
+import bigroom from './assets/bigroom.webp'
+import flooded from './assets/flooded.webp'
+import shoot from './assets/bathroomshoot.mp4'
+import ult from './assets/bathroomult.mp4'
+import molevideo from './assets/molevideo.mp4'
+import portfolioimage from './assets/Portfolio-web.webp'
+import mages from './assets/Mow portada.webp'
+import mow_barrier from './assets/MOW_barrier.mp4'
+import mow_barrier_repair from './assets/MOW_barrier_repair.mp4'
+import mow_barrier_break from './assets/MOW_barrierbreak.mp4'
+import mow_portal from './assets/MOW_portal.mp4'
+import mow_landscape from './assets/MOW_landscape.mp4'
+import mow_dragon from './assets/MOW_dragon.mp4'
+import mow_wand from './assets/MOW_wand.mp4'
+import mow_sword from './assets/MOW_sword.mp4'
+import mow_minigun from './assets/MOW_minigun.mp4'
+import mow_lava from './assets/MOW_lava.mp4'
+import mow_holy_portal from './assets/MOW_holy_portal.mp4'
+import mow_post_dark from './assets/MOW_post_dark.mp4'
+import mow_post_fire from './assets/MOW_post_fire.mp4'
+import mow_post_light from './assets/MOW_post_light.mp4'
+import mow_post_nature from './assets/MOW_post_nature.mp4'
+import mow_post_water from './assets/MOW_post_water.mp4'
+import kaiju from './assets/Kaijuu portada.webp'
+import kaiju_model from './assets/Kaiju-character.webp'
+import kaiju_idle from './assets/Kaiju_anim_idle.mp4'
+import kaiju_run from './assets/Kaiju_anim_run.mp4'
+import kaiju_niagara from './assets/Kaiju_niagara.webp'
+import kaiju_gameplay from './assets/Kaijuu_Gameplay.mp4'
+import row from './assets/ROW_portada.webp'
+
+
+
+
+
+export function NeboasPage(){
+    const Links: Link[] = [
+        {link : "https://conxuro-studio.itch.io/neboashut", image : itchio, text: t("itchio-link") },
+    ]
+
+    return(
+        <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'mirol', label: t("myrole-nav") },
+        { id: 'uxdesign', label: t("neboas-uxdesign") },
+        { id: 'potdesign', label: t("neboas-potdesign") },
+        { id: 'uidesign', label: t("neboas-uidesign") },
+        { id: 'menucurve', label: t("neboas-menucurve") },
+        { id: 'optimizations', label: t("neboas-optimizations") },
+      ]}
+    >
+        <section id="intro">
+            <ProjectDesc title="Neboa's Hut" desc={[t("neboas-intro"), t("neboas-intro2")]} Media={() => <FullVideo video={neboasintro} /> } links={Links}/>
+        </section>
+        <section id="mirol">
+            <h2 className='project-sectitle'>{t("myrole-nav")}</h2>
+            <p className="project-text">{t("neboas-role")}</p>
+            <ul>
+                <li>{t("neboas-role-en1")}</li>
+                <li>{t("neboas-role-en2")}</li>
+                <li>{t("neboas-role-en3")}</li>
+                <li>{t("neboas-role-en4")}</li>
+                <li>{t("neboas-role-en5")}</li>
+                <li>{t("neboas-role-en6")}</li>
+                <li>{t("neboas-role-en7")}</li>
+            </ul>
+        </section>
+        <section id='uxdesign'>
+          <h2 className='project-sectitle'>{t("neboas-uxdesign")}</h2>
+          <p className="project-text">{t("neboas-design1")}</p>
+          
+          
+        </section>
+        <section id='potdesign'>
+          <h2 className='project-sectitle'>{t("neboas-potdesign")}</h2>
+          <HalfImage image={descripcionlibro} textleft={false} texts={[t("neboas-design2")]} desc=''/>
+          <HalfVideo video={mortero} textleft={true} texts={[t("neboas-design3"),t("neboas-design4") ]}/>
+        </section>
+        <section id='uidesign'>
+          <h2 className='project-sectitle'>{t("neboas-uidesign")}</h2>
+          <HalfImage image={neboasflujo} textleft={false} texts={[t("neboas-design5"),t("neboas-design6")]} desc=''/>
+          
+        </section>
+        <section id='menucurve'>
+          <h2 className='project-sectitle'>{t("neboas-menucurve")}</h2>
+          <HalfVideo video={menulibro} textleft={true} texts={[t("neboas-curve1"),t("neboas-curve2") ]}/>
+          <HalfVideo video={colisioneslibro} textleft={false} texts={[t("neboas-curve3") ]}/>
+        </section>
+        <section id='optimizations'>
+          <h2 className='project-sectitle'>{t("neboas-optimizations")}</h2>
+          <HalfImage image={optimizations} textleft={true} texts={[t("neboas-opt1"),t("neboas-opt2")]} desc=''/>
+        </section>
+
+    </ProjectLayout>
+    )
+}
+
+export function PetancaPage(){
+  const Links: Link[] = [
+          {link : "https://github.com/mfilgbaam/PetancaOpenGL", image : github, text: t("github-link") },
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'whatbuilt', label: t("whatbuilt-nav") },
+        { id: 'objective', label: t("objective-nav") },
+      ]}
+    >
+      <section id="intro">
+            <ProjectDesc title={t("petanca-title")} desc={[t("petanca-desc1"), t("petanca-desc2")]} Media={() => <FullVideo video={petanca} /> } links={Links}/>
+      </section>
+      <section id="whatbuilt">
+        <h2 className='project-sectitle'>{t("whatbuilt-nav")}</h2>
+        <ul>    
+            <li>{t("petanca-what1")}</li>
+            <li>{t("petanca-what2")}</li>
+            <li>{t("petanca-what3")}</li>
+        </ul>
+      </section>
+      <section id="objective">
+        <h2 className='project-sectitle'>{t("objective-nav")}</h2>
+        <p className="project-text">{t("petanca-objective")}</p>
+      </section>
+    </ProjectLayout>
+  )
+} 
+
+export function AsteroidsPage(){
+  const Links: Link[] = [
+          {link : "https://github.com/mfilgbaam/AsteroidsOpenGL", image : github, text: t("github-link") },
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'whatbuilt', label: t("whatbuilt-nav") },
+        { id: 'objective', label: t("objective-nav") },
+      ]}
+    >
+      <section id="intro">
+            <ProjectDesc title={t("asteroids-title")} desc={[t("asteroids-desc1"), t("asteroids-desc2")]} Media={() => <FullVideo video={asteroids} /> } links={Links}/>
+      </section>
+      <section id="whatbuilt">
+        <h2 className='project-sectitle'>{t("whatbuilt-nav")}</h2>
+        <ul>    
+            <li>{t("asteroids-what1")}</li>
+            <li>{t("asteroids-what2")}</li>
+            <li>{t("asteroids-what3")}</li>
+            <li>{t("asteroids-what4")}</li>
+        </ul>
+      </section>
+      <section id="objective">
+        <h2 className='project-sectitle'>{t("objective-nav")}</h2>
+        <p className="project-text">{t("asteroids-objective")}</p>
+      </section>
+    </ProjectLayout>
+  )
+} 
+
+export function VolcanoPage(){
+  const Links: Link[] = [
+          {link : "https://github.com/mfilgbaam/VolcanoGameOpenGL", image : github, text: t("github-link") },
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'whatbuilt', label: t("whatbuilt-nav") },
+        { id: 'objective', label: t("objective-nav") },
+      ]}
+    >
+      <section id="intro">
+            <ProjectDesc title={t("volcano-title")} desc={[t("volcano-desc1")]} Media={() => <FullVideo video={volcan} /> } links={Links}/>
+      </section>
+      <section id="whatbuilt">
+        <h2 className='project-sectitle'>{t("whatbuilt-nav")}</h2>
+        <ul>    
+            <li>{t("volcano-what1")}</li>
+            <li>{t("volcano-what2")}</li>
+            <li>{t("volcano-what3")}</li>
+            <li>{t("volcano-what4")}</li>
+            <li>{t("volcano-what5")}</li>
+        </ul>
+      </section>
+      <section id="objective">
+        <h2 className='project-sectitle'>{t("objective-nav")}</h2>
+        <p className="project-text">{t("volcano-objective")}</p>
+      </section>
+    </ProjectLayout>
+  )
+} 
+
+export function BathroomPage(){
+  const Links: Link[] = [
+          {link : "https://shadowlinkv5.itch.io/there-is-no-bathroom-in-this-dungeon", image : itchio, text: t("itchio-link") },
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'mirol', label: t("myrole-nav") },
+        { id: 'character', label: t("bathroom-character") },
+        { id: 'enemyia', label: t("bathroom-enemyai") },
+        { id: 'ui', label: t("bathroom-ui") },
+        { id: 'level', label: t("bathroom-level") },
+      ]}
+    >
+      <section id="intro">
+        <ProjectDesc title={t("bathroom-title")} desc={[t("bathroom-intro1"),t("bathroom-intro2")]} Media={() => <YoutubeVideo id="u7VQM7oTTeQ" /> } links={Links}/>
+      </section>
+      <section id="mirol">
+            <h2 className='project-sectitle'>{t("myrole-nav")}</h2>
+            <p className="project-text">{t("bathroom-role")}</p>
+            <ul>
+                <li>{t("bathroom-role-en1")}</li>
+                <li>{t("bathroom-role-en2")}</li>
+                <li>{t("bathroom-role-en3")}</li>
+                <li>{t("bathroom-role-en4")}</li>
+                <li>{t("bathroom-role-en5")}</li>
+                <li>{t("bathroom-role-en6")}</li>
+            </ul>
+      </section>
+      <section id="character">
+        <h2 className='project-sectitle'>{t("bathroom-character")}</h2>
+        <HalfVideo video={charmovement} textleft={false} texts={[t("bathroom-char1"),t("bathroom-char2") ]}/>
+      </section>
+      <section id="enemyia">
+        <h2 className='project-sectitle'>{t("bathroom-enemyai")}</h2>
+        <HalfVideo video={enemyia} textleft={true} texts={[t("bathroom-ia1"),t("bathroom-ia2"),t("bathroom-ia3"), ]}/>
+      </section>
+      <section id="ui">
+        <h2 className='project-sectitle'>{t("bathroom-ui")}</h2>
+        <p className="project-text">{t("bathroom-ui1")}</p>
+        <HalfImage image={inventory} textleft={false} texts={[ t("bathroom-ui2")]} desc={''}/>
+        <HalfVideo video={mainmenu} textleft={true} texts={[t("bathroom-ui3") ]}/>
+      </section>
+      <section id="level">
+        <h2 className='project-sectitle'>{t("bathroom-level")}</h2>
+        <HalfImage image={pieces} textleft={false} texts={[ t("bathroom-lvl1"), t("bathroom-lvl2")]} desc={''}/>
+        <FullImage image={throne} desc=''/>
+        <FullImage image={bigroom} desc=''/>
+        <FullImage image={flooded} desc=''/>
+      </section>
+      <section id="vfx">
+        <h2 className='project-sectitle'>{t("bathroom-vfx")}</h2>
+        <FullVideo video={shoot}/>
+        <FullVideo video={ult}/>
+      </section>
+      
+
+    </ProjectLayout>
+  )
+} 
+
+export function MolePage(){
+  const Links: Link[] = [
+          {link : "http://hdl.handle.net/2183/39634", image : doc, text: t("doc-link") },
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'whatbuilt', label: t("whatbuilt-nav") },
+        { id: 'objective', label: t("objective-nav") },
+      ]}
+    >
+      <section id="intro">
+            <ProjectDesc title={t("mole-title")} desc={[t("mole-desc1"),t("mole-desc2"),t("mole-desc3")]} Media={() => <FullVideo video={molevideo} /> } links={Links}/>
+      </section>
+      <section id="whatbuilt">
+        <h2 className='project-sectitle'>{t("whatbuilt-nav")}</h2>
+        <ul>    
+            <li>{t("mole-what1")}</li>
+            <li>{t("mole-what2")}</li>
+            <li>{t("mole-what3")}</li>
+            <li>{t("mole-what4")}</li>
+            <li>{t("mole-what5")}</li>
+            <li>{t("mole-what6")}</li>
+            <li>{t("mole-what7")}</li>
+            <li>{t("mole-what8")}</li>
+        </ul>
+      </section>
+      <section id="objective">
+        <h2 className='project-sectitle'>{t("objective-nav")}</h2>
+        <p className="project-text">{t("mole-objective")}</p>
+      </section>
+    </ProjectLayout>
+  )
+} 
+
+export function PortfolioPage(){
+  const Links: Link[] = [
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'whatbuilt', label: t("whatbuilt-nav") },
+        { id: 'objective', label: t("objective-nav") },
+      ]}
+    >
+      <section id="intro">
+            <ProjectDesc title={t("portfolio-title")} desc={[t("portfolio-desc1"), t("portfolio-desc2")]} Media={() => <FullImage image={portfolioimage} desc='' /> } links={Links}/>
+      </section>
+      <section id="whatbuilt">
+        <h2 className='project-sectitle'>{t("whatbuilt-nav")}</h2>
+        <ul>    
+            <li>{t("portfolio-what1")}</li>
+            <li>{t("portfolio-what2")}</li>
+            <li>{t("portfolio-what3")}</li>
+            <li>{t("portfolio-what4")}</li>
+        </ul>
+      </section>
+      <section id="objective">
+        <h2 className='project-sectitle'>{t("objective-nav")}</h2>
+        <p className="project-text">{t("portfolio-objective")}</p>
+        <p className="project-text">{t("portfolio-objetcive2")}</p>
+      </section>
+    </ProjectLayout>
+  )
+} 
+
+export function MagesPage(){
+  const Links: Link[] = [
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'role', label: t("myrole-nav") },
+        { id: 'enviroment', label: t("mages-enviroment") },
+        { id: 'landscape', label: t("mages-landscape") },
+        { id: 'weapons', label: t("mages-weaponsvfx") },
+        { id: 'postprocess', label: t("mages-postprocess") },
+      ]}
+    >
+      <section id="intro">
+            <ProjectDesc title={t("mages-title")} desc={[t("mages-desc1"), t("mages-desc2")]} Media={() => <FullImage image={mages} desc='' /> } links={Links}/>
+      </section>
+      <section id="role">
+        <h2 className='project-sectitle'>{t("myrole-nav")}</h2>
+        <p className="project-text">{t("mages-role")}</p>
+        <ul>    
+            <li>{t("mages-role-en1")}</li>
+            <li>{t("mages-role-en2")}</li>
+            <li>{t("mages-role-en3")}</li>
+            <li>{t("mages-role-en4")}</li>
+            <li>{t("mages-role-en5")}</li>
+            <li>{t("mages-role-en6")}</li>
+        </ul>
+        <p className="project-text">{t("mages-role2")}</p>
+      </section>
+      <section id="enviroment">
+        <h2 className='project-sectitle'>{t("mages-enviroment")}</h2>
+        <HalfVideo video={mow_barrier} textleft={true} texts={[t("mages-barrier")]}/>
+        <TwoVideos video1={mow_barrier_break} video2={mow_barrier_repair}/>
+        <TwoVideos video1={mow_lava} video2={mow_holy_portal}/>
+        <FullVideo video={mow_portal}/>
+      </section>
+      <section id="landscape">
+        <h2 className='project-sectitle'>{t("mages-landscape")}</h2>
+        <HalfVideo video={mow_landscape} textleft={false} texts={[t("mages-landscape-text")]}/>
+      </section>
+      <section id="weapons">
+        <h2 className='project-sectitle'>{t("mages-weaponsvfx")}</h2>
+        <TwoVideos video1={mow_wand} video2={mow_sword}/>
+        <TwoVideos video1={mow_minigun} video2={mow_dragon}/>
+      </section>
+      <section id="postprocess">
+        <h2 className='project-sectitle'>{t("mages-postprocess")}</h2>
+        <HalfVideo video={mow_post_nature} textleft={true} texts={[t("mages-postprocess-text")]}/>
+        <TwoVideos video1={mow_post_water} video2={mow_post_fire}/>
+        <TwoVideos video1={mow_post_dark} video2={mow_post_light}/>
+      </section>
+    </ProjectLayout>
+  )
+} 
+
+export function KaijuPage(){
+  const Links: Link[] = [
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'role', label: t("myrole-nav") },
+        { id: 'model', label: t("kaiju-model-nav") },
+        { id: 'niagara', label: t("kaiju-niagara-nav") },
+      ]}
+    >
+      <section id="intro">
+            <ProjectDesc title={t("kaiju-title2")} desc={[t("kaiju-desc1"), t("kaiju-desc2")]} Media={() => <FullImage image={kaiju} desc='' /> } links={Links} punctuation="!"/>
+      </section>
+      <section id="role">
+        <h2 className='project-sectitle'>{t("myrole-nav")}</h2>
+        <p className="project-text">{t("kaiju-role")}</p>
+        <p className="project-text">{t("kaiju-role2")}</p>
+        <p className="project-text">{t("kaiju-role3")}</p>
+      </section>
+      <section id="model">
+        <h2 className='project-sectitle'>{t("kaiju-model-nav")}</h2>
+        <HalfImage image={kaiju_model} textleft={true} texts={[t("kaiju-model"), t("kaiju-anim")]}/>
+        <TwoVideos video1={kaiju_idle} video2={kaiju_run}/>
+      </section>
+      <section id="niagara">
+        <h2 className='project-sectitle'>{t("kaiju-niagara-nav")}</h2>
+        <HalfImage image={kaiju_niagara} textleft={true} texts={[t("kaiju-niagara")]}/>
+        <FullVideo video={kaiju_gameplay}/>
+      </section>
+    </ProjectLayout>
+  )
+} 
+
+export function RowPage(){
+  const Links: Link[] = [
+          {link : "https://store.steampowered.com/app/2420090/Realms_of_Wilorth/", image : steam, text: t("steam-link") },
+      ]
+  return(
+      <ProjectLayout
+      sections={[
+        { id: 'intro', label: t("intro-nav") },
+        { id: 'role', label: t("myrole-nav") },
+      ]}
+    >
+      <section id="intro">
+            <ProjectDesc title={t("row-title")} desc={[t("row-desc1"),t("row-desc2")]} Media={() => <FullImage image={row} desc='' /> } links={Links}/>
+      </section>
+      <section id="role">
+        <h2 className='project-sectitle'>{t("myrole-nav")}</h2>
+        <p className="project-text">{t("row-role")}</p>
+        <ul>    
+            <li>{t("row-role-en1")}</li>
+            <li>{t("row-role-en2")}</li>
+            <li>{t("row-role-en3")}</li>
+            <li>{t("row-role-en4")}</li>
+            <li>{t("row-role-en6")}</li>
+            <li>{t("row-role-en7")}</li>
+        </ul>
+      </section>
+    </ProjectLayout>
+  )
+} 

@@ -1,31 +1,53 @@
-import { useEffect, useState } from 'react'
+import { type ComponentType, useEffect, useState } from 'react'
 import './App.css'
 import './i18n'
+import { t } from 'i18next'
 import { useTranslation } from 'react-i18next'
 import PatternWaves from './PatternWaves'
+import pfimagen from './assets/profile.webp'
+import github from './assets/github.webp'
+import linkedin from './assets/linkedin.webp'
+import itchio from './assets/itchio.webp'
+import neboas from './assets/neboasmain.webp'
+import petanca from './assets/petanca.webp'
+import asteroids from './assets/Asteroids.webp'
+import volcano from './assets/volcanogame.webp'
+import bathroom from './assets/Portada TNBITD.webp'
+import moleimage from './assets/moleicon.webp'
+import portfolioimage from './assets/Portfolio-web.webp'
+import mages from './assets/Mow portada.webp'
+import kaiju from './assets/Kaijuu portada.webp'
+import row from './assets/ROW_portada.webp'
+import {NeboasPage, PetancaPage, AsteroidsPage, VolcanoPage, BathroomPage, MolePage, PortfolioPage, MagesPage, KaijuPage, RowPage} from './Projects'
+import {ProjectLink, Arrow} from './ProjectUtils'
+
 
 type Category = 'Todos' | 'Videojuegos' | 'Programación'
 type Language = 'EN' | 'ES'
-const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', 'Node.js'] as const
+const tags = ['Unreal Engine', 'C++', 'Godot', 'React', 'TypeScript', 'UI/UX', 'Node.js', 'OpenGL', 'Engine Tools', 'VFX', 'Game AI', 'Technical Art', 'QA', 'Kotlin', 'Python', 'Android Studio', 'HTML'] as const
 type Tag = typeof tags[number]
-type Project = { id: string; title: string; category: Exclude<Category, 'Todos'>; description: string; tags: Tag[]; year: string; art: string; detail: string; images?: { src: string; alt: string }[]; video?: string }
+type Project = { id: string; title: string; category: Category; description: string; tags: Tag[]; year: string; art: string; page: ComponentType ;images?: { src: string; alt: string }[]; video?: string; featured?: boolean }
+
+function getProjects(){
 const projects: Project[] = [
-  { id: 'orbital', title: 'Orbital', category: 'Videojuegos', description: 'Una aventura espacial donde cada órbita cuenta.', tags: [], year: '2025', art: 'space', detail: 'Un concepto de exploración espacial centrado en el movimiento y el descubrimiento. El jugador navega entre pequeños mundos, encuentra nuevas rutas y aprende a utilizar la gravedad a su favor.' },
-  { id: 'flow', title: 'Flow', category: 'Programación', description: 'Menos ruido. Más foco. Tu trabajo, en un solo lugar.', tags: ['React', 'TypeScript', 'UI/UX'], year: '2025', art: 'dashboard', detail: 'Un concepto de aplicación para organizar proyectos y tareas con una interfaz clara. La propuesta reúne tableros, actividad y prioridades para hacer más fácil el trabajo diario.' },
-  { id: 'ember', title: 'Ember', category: 'Videojuegos', description: 'Un pequeño héroe en un mundo que se apaga.', tags: [], year: '2024', art: 'pixel', detail: 'Un concepto de plataformas en pixel art sobre una pequeña criatura que lleva luz a un mundo olvidado. La exploración, los saltos y una atmósfera cálida guían la experiencia.' },
-  { id: 'nexus', title: 'Nexus', category: 'Programación', description: 'Una API pensada para conectar ideas y herramientas.', tags: [], year: '2024', art: 'code', detail: 'Un concepto de API modular para conectar aplicaciones. Su diseño prioriza contratos claros, respuestas consistentes y una documentación fácil de seguir.' },
+  { id: 'neboas', title: t("neboas-title"), category: 'Videojuegos', description: t("neboas-card"), tags: ['Unreal Engine', 'C++', 'UI/UX', 'Technical Art'], year: '2026', art: neboas, page: NeboasPage, featured: true },
+  { id: 'petanca', title: t("petanca-title"), category: 'Todos', description: t("petanca-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: petanca, page: PetancaPage, featured: false },
+  { id: 'asteroids', title: t("asteroids-title"), category: 'Todos', description: t("asteroids-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: asteroids, page: AsteroidsPage, featured: false },
+  { id: 'volcano', title: t("volcano-title"), category: 'Todos', description: t("volcano-card"), tags: ['OpenGL', 'C++', 'Engine Tools'], year: '2022', art: volcano, page: VolcanoPage, featured: false },
+  { id: 'bathroom', title: t("bathroom-title"), category: 'Videojuegos', description: t("bathroom-card"), tags: ['Unreal Engine', 'C++', 'UI/UX', 'VFX', 'Game AI', 'Technical Art'], year: '2026', art: bathroom, page: BathroomPage, featured: false },
+  { id: 'mole', title: t("mole-title"), category: 'Programación', description: t("mole-card"), tags: ['Kotlin', 'Python', 'Android Studio'], year: '2024', art: moleimage, page: MolePage, featured: true },
+  { id: 'portfolio', title: t("portfolio-title"), category: 'Programación', description: t("portfolio-card"), tags: [ 'React', 'TypeScript', 'Node.js', 'HTML'], year: '2026', art: portfolioimage, page: PortfolioPage, featured: true },
+  { id: 'mages', title: t("mages-title"), category: 'Videojuegos', description: t("mages-card"), tags: [ 'Unreal Engine', 'C++', 'VFX', 'Technical Art'], year: '2026', art: mages, page: MagesPage, featured: false },
+  { id: 'kaiju', title: t("kaiju-title"), category: 'Videojuegos', description: t("kaiju-card"), tags: [ 'Unreal Engine', 'C++', 'Technical Art'], year: '2026', art: kaiju, page: KaijuPage, featured: false },
+  { id: 'row', title: t("row-title"), category: 'Videojuegos', description: t("row-card"), tags: [ 'Unreal Engine', 'C++', 'VFX', 'Technical Art', 'UI/UX', 'QA'], year: '2026', art: row, page: RowPage, featured: false },
 ]
-function Arrow() { return <svg className="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" /></svg> }
-
-
-function Art({ kind, title }: { kind: string; title: string }) {
-  return <div className={`art art-${kind}`} role="img" aria-label={`Ilustración de ${title}`}>
-    {kind === 'space' && <><div className="stars" /><div className="orbit orbit-one" /><div className="orbit orbit-two" /><div className="planet" /><span className="art-word">ORBITAL<span>BEYOND THE KNOWN</span></span><span className="coordinate">SECTOR 07 / 042.8</span></>}
-    {kind === 'dashboard' && <div className="mock-app"><div className="mock-sidebar"><b>◈ flow</b><span>▦ Overview</span><span>▤ Projects</span><span>◷ Activity</span><span>⚙ Settings</span></div><div className="mock-content"><small>WORKSPACE</small><h3>Good morning, Alex <span>✦</span></h3><div className="mock-stats"><div>Projects<b>12 <i>↗</i></b></div><div>In progress<b>04</b></div><div>Completed<b>28</b></div></div><h4>Your projects <span>+ New project</span></h4><div className="mock-row"><i />Website redesign<span>In progress</span></div><div className="mock-row"><i />Mobile application<span>Planning</span></div><div className="mock-row"><i />Design system<span>Review</span></div></div></div>}
-    {kind === 'pixel' && <><div className="pixel-moon" /><div className="mountains" /><div className="pixel-ground" /><div className="pixel-person">✦</div><span className="pixel-title">EMBER<small>A LITTLE LIGHT IN THE DARK</small></span></>}
-    {kind === 'code' && <div className="code-window"><div className="window-dots">● ● ● <span>nexus / routes.ts</span></div><pre><span>// Ideas, connected.</span>{'\n'}<em>import</em> {'{ Router }'} <em>from</em> <i>'nexus'</i>{'\n\n'}<em>const</em> api = <b>Router</b>(){'\n\n'}api.<b>get</b>(<i>'/projects'</i>, <em>async</em> () =&gt; {'{\n'}{'  '}<em>return</em> {'{'}{'\n'}{'    '}status: <i>'connected'</i>,{'\n'}{'    '}possibilities: <b>Infinity</b>{'\n  }\n})'}</pre><div className="code-status">● All systems connected <span>TypeScript</span></div></div>}
-  </div>
+projects.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || parseInt(b.year) - parseInt(a.year))
+    
+return projects
 }
+  
+function ConditionalInterrogation({ l }: { l: Language }){return <span>{(l === 'ES' ? '¿' : '')}</span>}
+
 
 function App() {
 
@@ -59,9 +81,12 @@ function App() {
   useEffect(() => {
     i18n.changeLanguage(navigator.language)
   }, [])
-  const project = projects.find(p => route === `#/proyecto/${p.id}`)
+
+  
+  const project = getProjects().find(p => route === `#/proyecto/${p.id}`)
+  const ProjectPage = project?.page
   const unknown = route.startsWith('#/proyecto/') && !project
-  const filtered = projects.filter(p => (category === 'Todos' || p.category === category) && selectedTags.every(t => p.tags.includes(t)))
+  const filtered = getProjects().filter(p => (category === 'Todos' || p.category === category || p.category === 'Todos') && selectedTags.every(t => p.tags.includes(t)))
   const home = () => { window.location.hash = ''; window.scrollTo({ top: 0, behavior: 'smooth' }) }
   const goSection = (id: string) => { if (project || unknown) { window.location.hash = ''; setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 0) } else document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }) }
   
@@ -84,54 +109,11 @@ function App() {
       <h1>{t("notfound-desc")}</h1>
       <button className="primary" onClick={home}>{t("notfound-back")}</button>
     </main> : project ? <main className="detail">                                                     {/* Pagina de proyecto existente */}
-      <button className="back" onClick={() => goSection('proyectos')}>← Volver a proyectos</button>
-      <div className="detail-heading">
-        <div>
-          <p className="eyebrow">{project.category} / {project.year}</p>
-          <h1>{project.title}<span>.</span></h1>
-          <p>{project.description}</p>
-        </div>
-        <div className="tag-list">{project.tags.map(t => <span key={t}>{t}</span>)}</div>
-      </div>
-      <Art kind={project.art} title={project.title} />
-      <div className="detail-copy">
-        <h2>Detrás de la idea</h2>
-        <div>
-          <p>{project.detail}</p>
-          <p className="sample-note">Proyecto de ejemplo · Las ilustraciones son conceptuales. Sustituye este contenido por tu trabajo y tus recursos.</p>
-        </div>
-      </div>
-      <div className="gallery-heading">
-        <h2>Una mirada más cerca<span>.</span></h2>
-        <span>GALERÍA / 01</span>
-      </div>
-      {project.images?.map(image => 
-        <figure className="real-image" key={image.src}>
-          <img src={image.src} alt={image.alt} loading="lazy" />
-          <figcaption>{image.alt}</figcaption>
-        </figure>)}
-      <button className="gallery-image" onClick={() => setLightbox(true)} aria-label={`Ampliar imagen de ${project.title}`}>
-        <Art kind={project.art} title={project.title} />
-        <span>Ampliar imagen <Arrow /></span>
-      </button>
-      <div className="video-block">
-        <div>
-          <p className="eyebrow">EN MOVIMIENTO</p>
-          <h2>El proyecto en acción</h2>
-          <p>Espacio preparado para un vídeo de gameplay o una demostración.</p>
-        </div>
-        {project.video ? 
-          <video className="project-video" src={project.video} controls preload="metadata" aria-label={`Demostración de ${project.title}`} /> : 
-          <div className="video-placeholder">
-            <span>▷</span>
-            <p>Vídeo pendiente</p>
-            <small>Añade tu vídeo a este proyecto</small>
-          </div>}
-      </div>
-      <a className="next-project" href={`#/proyecto/${projects[(projects.indexOf(project) + 1) % projects.length].id}`}>
-        <small>SIGUIENTE PROYECTO</small>
-        <span>{projects[(projects.indexOf(project) + 1) % projects.length].title} ↗</span>
-      </a>
+      <button className="back" onClick={() => goSection('proyectos')}>← {t("back")}</button>
+      <div className="tag-list">{project.tags.map(t => <span key={t}>{t}</span>)}</div>
+      {ProjectPage ? <ProjectPage /> : null}
+      
+    <button className="back" style={{ marginTop: '50px' }} onClick={() => goSection('proyectos')}>← {t("back")}</button>
     </main> : <main>                                                                                      {/* Pagina principal */}
       <section className="hero">                                                                          {/* Encabezado pagina principal */}
         <div id="wrapper">
@@ -156,7 +138,7 @@ function App() {
         <div className="section-heading">
           <div>
             <p className="eyebrow">{t('project-section')}</p>
-            <h2><span>{(language === 'ES' ? '¿' : '')}</span>{t('project-sectitle')}<span>?</span></h2>
+            <h2><ConditionalInterrogation l={language}/>{t('project-sectitle')}<span>?</span></h2>
           </div>
           <p className="projects-desc">{category === 'Todos' ? t('project-gendesc') : category === 'Videojuegos' ? t('project-gamedesc') : t('project-codedesc')}</p>
         </div>
@@ -171,58 +153,70 @@ function App() {
           <span>{t('project-filter-tags')}</span>
           {tags.map(t => <button key={t} aria-pressed={selectedTags.includes(t)} className={selectedTags.includes(t) ? 'active' : ''} onClick={() => setSelectedTags(prev => prev.includes(t) ? prev.filter(x => x !== t) : [...prev, t])}>{t}</button>)}{selectedTags.length > 0 && <button className="clear" onClick={() => setSelectedTags([])}>Limpiar ×</button>}
         </div>
-        <div className="project-grid">
-        {filtered.map((p, i) => <a className="project-card" key={p.id} href={`#/proyecto/${p.id}`}>
+        <div className="project-grid">{filtered.map((p) => <a className="project-card" key={p.id} href={`#/proyecto/${p.id}`}>
           <div className="card-image">
-            <Art kind={p.art} title={p.title} />
-            <span className="card-category">{p.category}</span>
-            <span className="featured-tag">
-              <span className="star" aria-hidden="true" />
-              </span>
+            <img className='image-art' src={p.art} alt='' loading="lazy"/>
+            <span className="card-category">{p.category === 'Todos' ? t('project-filter-alltag') : p.category === 'Videojuegos' ? t('project-filter-games') : t('project-filter-code')}</span>
+            {p.featured ?
+            (<><span className="featured-tag">
+                <span className="star" aria-hidden="true" />
+                {t('featured')}
+              </span></>) : null}
             <span className="card-open"><Arrow /></span>
           </div>
           <div className="card-top">
-            <h3>{p.title}<span> <Arrow /></span></h3>
-            <span>{p.year}</span>
+            <h3>{p.title}<span></span></h3>
+            
+            <p className="card-year">{p.year}</p>
           </div>
           <p>{p.description}</p>
-          <div className="card-tags">{p.tags.map(t => <span key={t}>{t}</span>)}<span className="card-number">/ 0{i + 1}</span></div></a>)}</div>
+          <div className="card-tags">{p.tags.map(t => <span key={t}>{t}</span>)}</div>
+          
+        </a>)}</div>
         {!filtered.length && <div className="empty">
-            <h3>Ningún proyecto con esta combinación.</h3>
-            <p>Prueba con menos tags para descubrir otras ideas.</p>
-            <button onClick={() => { setSelectedTags([]); setCategory('Todos') }}>Ver todos los proyectos ↗</button>
+            <h3>{t('no-combination-title')}</h3>
+            <p>{t('no-combination-desc')}</p>
+            <button onClick={() => { setSelectedTags([]); setCategory('Todos') }}>{t('no-combination-button')}</button>
           </div>}
-        <p className="sample-label">SELECCIÓN DE EJEMPLO · UN ESPACIO PARA TUS PRÓXIMAS IDEAS</p>
-      </section> 
-      <section id="sobre-mi" className="about"> {/* Sobre mi */}
-        <p className="eyebrow">{t('about-title')}</p>
+      </section>
+      <section id="sobre-mi" className="about">                                                   {/* Sobre mi */}
+        <p className="eyebrow">{t('about-section')}</p>
         <div>
-          <h2>La curiosidad es<br />mi punto de partida<span>.</span></h2>
-          <div>
-            <p>Me interesa lo que pasa cuando la tecnología y la creatividad se encuentran. Desde una mecánica de juego hasta una interfaz, busco crear experiencias que se sientan bien.</p>
-            <p>Este es mi espacio para experimentar, aprender y compartir lo que construyo.</p>
-            <div className="about-tags">
-              <span>⌘ Desarrollo</span>
-              <span>⊕ Videojuegos</span>
-              <span>✦ Creatividad</span>
+            <div>
+            <h2 className="about-header">{t('about-title1')} {t('about-title2')}<span>.</span></h2>
+            <p className="about-description">{t('about-desc1')} {t('about-desc2')}<br/> {t('about-desc3')} {t('about-desc4')}</p>
+            <strong className="about-description">{t('about-desc-me')}</strong>
             </div>
-          </div>
+            <img className="profile-image" src={pfimagen} alt="Descripción de la imagen" loading="lazy"/>
+          
         </div>
       </section>
       <section id="contacto" className="contact"> {/* Contacto */}
-        <p className="eyebrow">03 / LA PRÓXIMA IDEA</p>
-        <h2>¿Construimos algo<br /><em>interesante?</em> <span><Arrow /></span></h2>
-        <p>Las buenas historias empiezan con una conversación.</p>
-        <a href="https://github.com/mfilgbaam" target="_blank" rel="noreferrer">Encuéntrame en GitHub <Arrow /></a>
+        <p className="eyebrow">{t('contact-section')}</p>
+        <h2><ConditionalInterrogation l={language}/>{t('contact-title')}<span>?</span></h2>
+        <div className="contact-info">
+          <div className="contact-links">
+            <a href="tel:+34665516462">{t('contact-phone')}(+34) 665 51 64 62</a>
+            <a href="mailto:m.filgueirasbaamonde@gmail.com">{t('contact-email')}m.filgueirasbaamonde@gmail.com</a>
+          </div>
+          <p className="song">Hey, I just met you<br/>and this is crazy<br/>but here's my number<br/>so call me, maybe</p>
+        </div>
+        <div className="page-links">
+        
+          <ProjectLink link="https://github.com/mfilgbaam" image={github} text={t('contact-github')}/>
+         
+          <ProjectLink link="https://shadowlinkv5.itch.io/" image={itchio} text={t('contact-itchio')}/>
+          
+          <ProjectLink link="https://www.linkedin.com/in/marcos-filgueiras-baamonde-a70bab1b0" image={linkedin} text={t('contact-linkedin')}/>
+        </div>
       </section>
     </main>}
-    <footer> {/* Pie de página */}
+    <footer>                                                          {/* Pie de página */}
       <button className="brand" onClick={home}>m<span>.</span></button>
-      <p>Hecho con intención. Y con React + TypeScript.</p>
+      <p>{t('footer-text')}</p>
       <span>© {new Date().getFullYear()} · Portfolio</span>
       <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Volver arriba">↑</button>
     </footer>
-    {lightbox && project && <div className="lightbox" role="dialog" aria-modal="true" aria-label={`Imagen de ${project.title}`} onClick={() => setLightbox(false)}><button autoFocus onClick={() => setLightbox(false)} aria-label="Cerrar imagen">Cerrar ×</button><Art kind={project.art} title={project.title} /></div>}
   </>
 }
 export default App
